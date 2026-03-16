@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 8, in script
+    define a = Characteer ("Anna")
+  File "game/script.rpy", line 8, in <module>
+    define a = Characteer ("Anna")
+NameError: name 'Characteer' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 8, in script
+    define a = Characteer ("Anna")
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 2248, in execute
+    self.set()
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 2262, in set
+    value = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 8, in <module>
+    define a = Characteer ("Anna")
+NameError: name 'Characteer' is not defined
+
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.3.7.25031702
+Charlotte 1.0
+Fri Mar 13 10:06:32 2026

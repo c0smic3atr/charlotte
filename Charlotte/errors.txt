@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 81: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    "Knock on door 2":
+    ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Fri Mar 13 10:04:13 2026
