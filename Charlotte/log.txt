@@ -1,10 +1,10 @@
-2026-03-13 17:20:54 UTC
+2026-03-16 16:39:21 UTC
 Windows-10-10.0.19045
 Ren'Py 8.3.7.25031702
 
-Early init took 0.06s
-Loading error handling took 0.03s
-Loading script took 0.09s
+Early init took 0.05s
+Loading error handling took 0.02s
+Loading script took 0.12s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
 Running init code took 0.03s
@@ -12,6 +12,7 @@ Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
+Backing up script files to 'C:\\Users\\27kennherron\\AppData\\Roaming/RenPy/backups\\Charlotte':
 Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
@@ -19,18 +20,18 @@ Initial gc took 0.03s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.29s
+Creating interface object took 0.28s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
 Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.28s
+Interface start took 0.25s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -42,3 +43,49 @@ Version: b'4.6.0 NVIDIA 582.08'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
 Maximum texture size: 4096x4096
+
+Full traceback:
+  File "renpy/common/00start.rpy", line 214, in script call
+    call _gl_test
+  File "renpy/common/00gltest.rpy", line 390, in script
+    $ __gl_test()
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gltest.rpy", line 390, in <module>
+    $ __gl_test()
+  File "renpy/common/00gltest.rpy", line 319, in _m1_00gltest__gl_test
+    _gl_performance_test()
+  File "renpy/common/00gltest.rpy", line 342, in _gl_performance_test
+    ui.interact(suppress_underlay=True, suppress_overlay=True)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\display\core.py", line 2175, in interact
+    self.start()
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\display\core.py", line 1064, in start
+    surf = renpy.display.im.load_surface(fn)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\display\im.py", line 2111, in load_surface
+    return cache.get(image(im))
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\display\im.py", line 304, in get
+    surf = image.load()
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\display\im.py", line 788, in load
+    raise e
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\display\im.py", line 738, in load
+    filelike = renpy.loader.load(self.filename, directory="images")
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\loader.py", line 690, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'images/cursor_normal.png'.
+
+While loading <renpy.display.im.Image object ('images/cursor_normal.png') at 0x0000000005abef70>:
+  File "renpy/common/00start.rpy", line 214, in script call
+    call _gl_test
+  File "renpy/common/00gltest.rpy", line 390, in script
+    $ __gl_test()
+  File "renpy/common/00gltest.rpy", line 390, in <module>
+    $ __gl_test()
+  File "renpy/common/00gltest.rpy", line 319, in _m1_00gltest__gl_test
+    _gl_performance_test()
+  File "renpy/common/00gltest.rpy", line 342, in _gl_performance_test
+    ui.interact(suppress_underlay=True, suppress_overlay=True)
+OSError: Couldn't find file 'images/cursor_normal.png'.
