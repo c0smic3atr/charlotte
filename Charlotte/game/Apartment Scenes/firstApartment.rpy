@@ -17,7 +17,7 @@
 
 screen firstApartmentNavigation():
 
-    # Left door → Room A
+    # to the first apartment scene
     frame:
         xpos 240
         ypos 250
@@ -38,24 +38,42 @@ screen firstApartmentNavigation():
         action Jump("second_apartment_scene")
 
 
-screen fenceNavigation():
-
-    # Left door → Room A
+        # to the apartment fence area
     frame:
-        xpos 1419
-        ypos 276
-        xsize 1199 - 1419
-        ysize 289 - 276
-        background "#e0005d88"
+        xpos 1200
+        ypos 300
+        xsize 1475 - 1200
+        ysize 500 - 300
+        background "#000000"
 
     button:
-        xpos 1419
-        ypos 276
-        xsize 1199 - 1419
-        ysize 289 - 276
+        xpos 1200
+        ypos 300
+        xsize 1475 - 1200
+        ysize 500 - 300
         background None
         hover_background None
 
         mouse "move"
 
         action Jump("third_apartment_scene")
+
+        # to the fifth apartment scene
+    frame:
+        xpos 660
+        ypos 50
+        xsize 930 - 660
+        ysize 200 - 50
+        background "#A0DB53"
+
+    button:
+        xpos 660
+        ypos 50
+        xsize 930 - 660
+        ysize 200 - 50
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("fifth_apartment_scene")
