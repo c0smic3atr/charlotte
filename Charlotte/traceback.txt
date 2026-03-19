@@ -1,28 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Apartment Scenes/firstApartment.rpy", line 3, in script
-    call screen firstApartmentNavigation
-ScriptError: could not find label 'third_apartment_scene'.
+  File "game/Apartment Scenes/secondApartmentScene.rpy", line 27, in script
+    show chara2second at middle
+  File "game/Apartment Scenes/secondApartmentScene.rpy", line 27, in <module>
+    show chara2second at middle
+NameError: name 'middle' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "game/Apartment Scenes/firstApartment.rpy", line 3, in script
-    call screen firstApartmentNavigation
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'third_apartment_scene'.
+  File "game/Apartment Scenes/secondApartmentScene.rpy", line 27, in script
+    show chara2second at middle
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1124, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1083, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1083, in <listcomp>
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/Apartment Scenes/secondApartmentScene.rpy", line 27, in <module>
+    show chara2second at middle
+NameError: name 'middle' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Wed Mar 18 08:58:22 2026
+Thu Mar 19 11:02:07 2026

@@ -6,10 +6,10 @@ init -1 python:
 
     # Default cursor
     config.mouse["default"] = [
-        ("images/cursor_normal.png", 0, 0)
+        ("images/Cursors/cursor_normal.png", 0, 0)
     ]
 
     # Hover cursor for doors
     config.mouse["move"] = [
-        ("images/cursor_move.png", 0, 0)
+        ("images/Cursors/cursor_move.png", 0, 0)
     ]
