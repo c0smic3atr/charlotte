@@ -3,7 +3,7 @@ label second_apartment_scene:
 
     menu:
         "Knock on door 1":
-            show first apartment npc
+            show chara1first at left
             a "..."
             a "You don't look familiar"
             a "I'd know, being there's so few people in town these days"
