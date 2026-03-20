@@ -3,6 +3,7 @@
 *.rpyc
 *.rpymc
 *.rpyb
+*.save
 
 # --- Ren'Py Generated / Temporary Files ---
 # Temporary backups and output logs.
