@@ -1,5 +1,6 @@
 label second_apartment_scene:
     scene bg apartments2
+    call screen secondApartmentNavigation
 
     menu:
         "Knock on door 1":
@@ -59,7 +60,74 @@ label second_apartment_scene:
 
 
 
-        "Go Back":
-            jump first_apartment_scene
+        #"Go Back":
+            #jump first_apartment_scene
 
     jump second_apartment_scene
+
+
+label DoorOneConversation:
+    #door 1 stuff
+
+            show chara1first at left
+            a "..."
+            a "You don't look familiar"
+            a "I'd know, being there's so few people in town these days"
+            a "Not like there ever was many"
+            a "What's your deal? If you're here to tell me to keep the noise down, you can get lost"
+            p "Um, no"
+            p "I've been sent to check up on the residents here. See how you're handling... things"
+            a "Huh. I guess that checks out"
+            a "Some of us will be pretty happy to see you here"
+            a "But most of us gave up on an intervention a long time ago"
+            p "Intervention?"
+            a "Yeah. I mean, you can't blame us for wanting out"
+            p "You know we can't just let you go"
+            a "Some of us know better than others"
+            a "You should talk to Sarah next door. She's something of an optimist"
+            a "Seems to be handling things better than most"
+
+            jump second_apartment_scene
+
+
+screen secondApartmentNavigation():
+    # back to the first apartment scene
+
+    frame:
+        xpos 500
+        ypos 980
+        xsize 1190 - 500
+        ysize 1060 - 980
+        background "#6527F5"
+
+    button:
+        xpos 500
+        ypos 980
+        xsize 1190 - 500
+        ysize 1060 - 980
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("first_apartment_scene")
+
+    # to door 1 convo
+    frame:
+        xpos 500
+        ypos 250
+        xsize 820 - 500
+        ysize 820 - 250
+        background "#7AC288"
+
+    button:
+        xpos 500
+        ypos 250
+        xsize 820 - 500
+        ysize 820 - 250
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("DoorOneConversation")

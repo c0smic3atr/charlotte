@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 278: expected ':' not found.
-    label twentyeigth_apartment_scene
-                                     ^
+File "game/Apartment Scenes/secondApartmentScene.rpy", line 90: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Mar 19 10:21:39 2026
+Fri Mar 20 09:19:39 2026
