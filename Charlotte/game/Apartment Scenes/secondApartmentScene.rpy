@@ -19,7 +19,7 @@ label second_apartment_scene:
             #a "Yeah. I mean, you can't blame us for wanting out"
             #p "You know we can't just let you go"
             #a "Some of us know better than others"
-            #a "You should talk to Sarah next door. She's something of an optimist"
+            #a "Make sure to talk to Sarah next door. She's something of an optimist"
             #a "Seems to be handling things better than most"
 
             #jump second_apartment_scene
@@ -41,7 +41,7 @@ label second_apartment_scene:
             #p "I guess..."
             #p "Anyway, how have you been feeling? Any aches, nausea..."
             #p "Uh, fatigue? Anything like that?"
-            #s "Oh, I dunno. I guess, maybe."
+            #s "Oh, I dunno."
             #p "How about your neighbors?"
             #s "The only neighbor I really talk to is Anna, and she's a real stiff"
             #s "We've been neighbors for I can't remember how long, and I still barely know anything about her!"
@@ -53,8 +53,9 @@ label second_apartment_scene:
             #s "Well, before you go, can you check on someone for me?"
             #s "My grandpa... He's too far away, I can't risk going to visit."
             #p "What do you mean?"
-            #s "We were told to stay inside. Quarentine, ya' know? Can you check on him for me?"
-            #s "His name's Huan."
+            #s "We were told to stay inside. Quarentine, ya' know?"
+            #s "Can you check on him for me? His name's Huan."
+    
             #p "Yeah, I'll keep my eye out."
             #s "Thank you!"
 

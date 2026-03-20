@@ -60,15 +60,16 @@ label fifth_apartment_scene:
     scene bg apartments3
     call screen fifthApartmentNav
 
+label fifthButtonMenu:
     menu:
-        #"Investigate parking lot":
-            #jump sixth_apartment_scene
-            #scene bg parking lot
+        "Investigate parking lot":
+            jump sixth_apartment_scene
+            scene bg parking lot
             
            
-        #"Investigate apartment block two":
-            #jump seventh_apartment_scene
-            #scene bg apartments2
+        "Investigate apartment block two":
+            jump seventh_apartment_scene
+            scene bg apartments2
 
         "Investigate park":
             jump eigth_apartment_scene
@@ -317,6 +318,30 @@ label thirtieth_apartment_scene:
 
 
 screen fifthApartmentNav():
+    
+    #mouse menu
+    frame:
+        xpos 1600
+        ypos 100
+        xsize 200
+        ysize 200
+        background "#e0005d88"
+
+    button:
+        xpos 1600
+        ypos 100
+        xsize 200
+        ysize 200
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("fifthButtonMenu")
+    
+    
+    
+    
     # to the parking lot scene
     frame:
         xpos 150
