@@ -89,6 +89,44 @@ label DoorOneConversation:
 
             jump second_apartment_scene
 
+label DoorTwoConversation:
+    #door 2 stuff!
+
+            show chara2second at left
+          
+            s "No way!"
+            s "You've finally come back..."
+            p "Huh?"
+            s "We've been waiting so long, some of us started to give up hope"
+            s "Not me though, I knew you'd come and rescue us."
+            p "I'm sorry, I think you have the wrong idea"
+            p "I'm officer Walker, I'm here to evaluate the wellbeing of y'all here."
+            s "Oh..."
+            s "Well, I was still right to trust you"
+            s "Comin' back at all"
+            s "It proves it."
+            p "I guess..."
+            p "Anyway, how have you been feeling? Any aches, nausea..."
+            p "Uh, fatigue? Anything like that?"
+            s "Oh, I dunno. I guess, maybe."
+            p "How about your neighbors?"
+            s "The only neighbor I really talk to is Anna, and she's a real stiff"
+            s "We've been neighbors for I can't remember how long, and I still barely know anything about her!"
+            p "Alright, well thank you for your time."
+            s "Wait!"
+            s "Uh"
+            s "Are you gonna stay long?"
+            p "Just as long as I have to."
+            s "Well, before you go, can you check on someone for me?"
+            s "My grandpa... He's too far away, I can't risk going to visit."
+            p "What do you mean?"
+            s "We were told to stay inside. Quarentine, ya' know? Can you check on him for me?"
+            s "His name's Huan."
+            p "Yeah, I'll keep my eye out."
+            s "Thank you!"
+
+            jump second_apartment_scene
+
 
 screen secondApartmentNavigation():
     # back to the first apartment scene
@@ -131,3 +169,23 @@ screen secondApartmentNavigation():
         mouse "move"
 
         action Jump("DoorOneConversation")
+
+    # to door 2 convo
+    frame:
+        xpos 895
+        ypos 280
+        xsize 1230 - 895
+        ysize 800 - 280
+        background "#C27ABB"
+
+    button:
+        xpos 895
+        ypos 280
+        xsize 1230 - 895
+        ysize 800 - 280
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("DoorTwoConversation")

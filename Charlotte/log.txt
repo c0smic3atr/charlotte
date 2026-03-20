@@ -1,10 +1,10 @@
-2026-03-20 16:20:07 UTC
+2026-03-20 16:26:33 UTC
 Windows-10-10.0.19045
 Ren'Py 8.3.7.25031702
 
 Early init took 0.06s
-Loading error handling took 0.03s
-Loading script took 0.15s
+Loading error handling took 0.02s
+Loading script took 0.14s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
 Running init code took 0.04s
@@ -29,7 +29,7 @@ Analyze screens took 0.01s
 Save screen analysis took 0.02s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.01s
-Save bytecode. took 0.03s
+Save bytecode. took 0.02s
 Running _start took 0.00s
 Interface start took 0.24s
 
