@@ -58,16 +58,17 @@ label start:
 
 label fifth_apartment_scene:
     scene bg apartments3
+    call screen fifthApartmentNav
 
     menu:
-        "Investigate parking lot":
-            jump sixth_apartment_scene
-            scene bg parking lot
+        #"Investigate parking lot":
+            #jump sixth_apartment_scene
+            #scene bg parking lot
             
            
-        "Investigate apartment block two":
-            jump seventh_apartment_scene
-            scene bg apartments2
+        #"Investigate apartment block two":
+            #jump seventh_apartment_scene
+            #scene bg apartments2
 
         "Investigate park":
             jump eigth_apartment_scene
@@ -87,6 +88,8 @@ label fifth_apartment_scene:
 
 label sixth_apartment_scene:
     scene bg parking lot
+    call screen sixthApartmentNav
+
     "In parking lot"
     menu:
         "Go back":
@@ -95,6 +98,8 @@ label sixth_apartment_scene:
 
 label seventh_apartment_scene:
     scene bg apartments2
+    call screen seventhApartmentNav
+
     "At apartments2"
     
     menu:
@@ -309,3 +314,114 @@ label thirtieth_apartment_scene:
     # This ends the game.
 
     return
+
+
+screen fifthApartmentNav():
+    # to the parking lot scene
+    frame:
+        xpos 150
+        ypos 190
+        xsize 380 - 150
+        ysize 430 - 190
+        background "#e0005d88"
+
+    button:
+        xpos 150
+        ypos 190
+        xsize 380 - 150
+        ysize 430 - 190
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("sixth_apartment_scene")
+
+
+    # to the second set of apartments
+    frame:
+        xpos 1195
+        ypos 25
+        xsize 1410 - 1195
+        ysize 190 - 25
+        background "#e0005d88"
+
+    button:
+        xpos 1195
+        ypos 25
+        xsize 1410 - 1195
+        ysize 190 - 25
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("seventh_apartment_scene")
+
+
+    #back to 1st apartment scene
+
+    frame:
+        xpos 500
+        ypos 980
+        xsize 1190 - 500
+        ysize 1060 - 980
+        background "#6527F5"
+
+    button:
+        xpos 500
+        ypos 980
+        xsize 1190 - 500
+        ysize 1060 - 980
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("first_apartment_scene")
+
+
+screen sixthApartmentNav():
+    #back to 5th apartment scene
+
+    frame:
+        xpos 500
+        ypos 980
+        xsize 1190 - 500
+        ysize 1060 - 980
+        background "#6527F5"
+
+    button:
+        xpos 500
+        ypos 980
+        xsize 1190 - 500
+        ysize 1060 - 980
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("fifth_apartment_scene")
+
+
+screen seventhApartmentNav():
+    #back to 5th apartment scene
+
+    frame:
+        xpos 500
+        ypos 980
+        xsize 1190 - 500
+        ysize 1060 - 980
+        background "#6527F5"
+
+    button:
+        xpos 500
+        ypos 980
+        xsize 1190 - 500
+        ysize 1060 - 980
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("fifth_apartment_scene")

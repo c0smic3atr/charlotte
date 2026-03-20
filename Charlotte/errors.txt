@@ -2,7 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/secondApartmentScene.rpy", line 90: Indentation mismatch.
+File "game/Apartment Scenes/thirdApartmentScene.rpy", line 23: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Mar 20 09:19:39 2026
+Fri Mar 20 09:28:54 2026
