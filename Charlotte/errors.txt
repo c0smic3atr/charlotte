@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/thirdApartmentScene.rpy", line 23: Indentation mismatch.
+File "game/script.rpy", line 454: Line is indented, but the preceding screen statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    frame:
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Mar 20 09:28:54 2026
+Mon Mar 23 08:56:58 2026
