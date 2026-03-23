@@ -70,7 +70,7 @@ label second_apartment_scene:
 label DoorOneConversation:
     #door 1 stuff
 
-            show chara1first at left
+            show chara1color at left
             a "..."
             a "You don't look familiar"
             a "I'd know, being there's so few people in town these days"
@@ -93,7 +93,7 @@ label DoorOneConversation:
 label DoorTwoConversation:
     #door 2 stuff!
 
-            show chara2second at left
+            show chara2color at left
           
             s "No way!"
             s "You've finally come back..."
@@ -109,7 +109,7 @@ label DoorTwoConversation:
             p "I guess..."
             p "Anyway, how have you been feeling? Any aches, nausea..."
             p "Uh, fatigue? Anything like that?"
-            s "Oh, I dunno. I guess, maybe."
+            s "Oh, I dunno..."
             p "How about your neighbors?"
             s "The only neighbor I really talk to is Anna, and she's a real stiff"
             s "We've been neighbors for I can't remember how long, and I still barely know anything about her!"
