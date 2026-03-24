@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/thirdApartmentScene.rpy", line 23: Indentation mismatch.
+File "game/script.rpy", line 111: Only one say menuitem may exist per menu.
+    k "whats up with the gas mask dude"
+                                       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Mar 20 09:28:54 2026
+Tue Mar 24 11:29:23 2026

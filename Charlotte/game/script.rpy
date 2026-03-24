@@ -7,6 +7,7 @@ define e = Character("Employer")
 define p = Character ("Player")
 define a = Character ("Anna")
 define s = Character ("Sarah")
+define k = Character ("Katelin")
 
 
 # The game starts here.
@@ -102,7 +103,16 @@ label seventh_apartment_scene:
     call screen seventhApartmentNav
 
     "At apartments2"
-    
+    menu:
+        "Talk to door one":
+            show chara4fourth at left
+
+    p "question question"
+    k "whats up with the gas mask dude"
+
+    menu:
+        "Go back":
+            jump fifth_apartment_scene
     menu:
         "Go back":
             jump fifth_apartment_scene
