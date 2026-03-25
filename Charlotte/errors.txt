@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 215: expected statement.
-    eigteenthApartmentNav
-                         ^
+File "game/script.rpy", line 73: Line with id eleventh_apartment_scene_646d3e01 appears twice. The other line is game/office.rpy:5
+
+File "game/script.rpy", line 83: Line with id twelvth_apartment_scene_a3aa858d appears twice. The other line is game/office.rpy:15
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Mar 24 10:08:00 2026
+Wed Mar 25 09:01:41 2026
