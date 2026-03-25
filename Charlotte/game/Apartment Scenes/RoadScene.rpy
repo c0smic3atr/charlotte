@@ -1,5 +1,5 @@
 label sixth_apartment_scene:
-    scene bg parking lot
+    scene bg parking lot again
     call screen sixthApartmentNav
 
     "In parking lot"
