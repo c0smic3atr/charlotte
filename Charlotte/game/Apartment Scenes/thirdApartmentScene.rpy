@@ -1,9 +1,9 @@
 
 define t = Character("Placeholder")
-define m = Character ("Mullan")
+define m = Character ("Rick")
 
 label third_apartment_scene:
-    scene bg apartmentsfence again
+    scene bg dumpster
 
     t "You are at the fence"
 
@@ -12,7 +12,7 @@ label third_apartment_scene:
             jump first_apartment_scene
 
         "Talk":
-            show chara3color at left
+            show chara3colorr at left
 
     p "Bla bla bla placeholder"
     m "Bla bla bla responce vague disinterest"
