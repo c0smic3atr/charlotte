@@ -3,7 +3,7 @@ define t = Character("Placeholder")
 define m = Character ("Mullan")
 
 label third_apartment_scene:
-    scene bg apartmentsfence
+    scene bg apartmentsfence again
 
     t "You are at the fence"
 
