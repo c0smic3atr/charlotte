@@ -12,6 +12,10 @@ label seventh_apartment_scene:
     call screen seventhApartmentNav
 
     "At apartments2"
+    menu: 
+        "Talk":
+            show chara4color at left
+        p "Blablabla"
     
     menu:
         "Go back":
