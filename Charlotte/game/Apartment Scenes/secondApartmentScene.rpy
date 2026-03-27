@@ -97,6 +97,11 @@ label DoorOneConversation:
             p "And what's that?"
             a "That it all worked out, and you're forgiven."
 
+            #Discovered Anna!!
+            $ anna_facts['portrait'] = "anna portrait"
+            $ anna_facts['name'] = "Anna"
+            $ anna_facts['fact1'] = "Kinda sus ngl"
+
             jump second_apartment_scene
     elif secondAptDoor1NumberOfVisits == 2:
         
