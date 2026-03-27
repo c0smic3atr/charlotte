@@ -1,5 +1,5 @@
 ﻿label first_apartment_scene:
-    scene bg aptone
+    scene bg aptonee
     
     call screen firstApartmentNavigation
     #
