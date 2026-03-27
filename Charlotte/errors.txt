@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 73: Line with id eleventh_apartment_scene_646d3e01 appears twice. The other line is game/office.rpy:5
+File "game/Apartment Scenes/thirdApartmentScene.rpy", line 42: expected statement.
+    elif fenceInteract1NumberOfVisits==2:
+                                     ^
 
-File "game/script.rpy", line 83: Line with id twelvth_apartment_scene_a3aa858d appears twice. The other line is game/office.rpy:15
+File "game/Apartment Scenes/thirdApartmentScene.rpy", line 46: expected statement.
+    elif fenceInteract1NumberOfVisits==3:
+                                     ^
+
+File "game/Apartment Scenes/thirdApartmentScene.rpy", line 49: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Mar 25 09:01:41 2026
+Fri Mar 27 09:21:35 2026

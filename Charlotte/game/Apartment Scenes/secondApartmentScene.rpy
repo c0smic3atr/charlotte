@@ -1,3 +1,7 @@
+default secondAptDoor1NumberOfVisits = 0
+default secondAptDoor2NumberOfVisits = 0
+
+
 label second_apartment_scene:
     scene bg apartments4
     call screen secondApartmentNavigation
@@ -68,9 +72,14 @@ label second_apartment_scene:
 
 
 label DoorOneConversation:
+
+    $ secondAptDoor1NumberOfVisits += 1
+
     #door 1 stuff
 
-            show chara1color at left
+    if secondAptDoor1NumberOfVisits == 1:
+
+            show chara1colorr at left
             a "..."
             a "You don't look familiar"
             a "There's so few in town these days, people don't have the luxury of slipping through the cracks anymore."
@@ -89,11 +98,25 @@ label DoorOneConversation:
             a "That it all worked out, and you're forgiven."
 
             jump second_apartment_scene
+    elif secondAptDoor1NumberOfVisits == 2:
+        
+        show chara1colorr at left
+
+        a "Come on, lady."
+        a "Might not look it, but I'm a busy person."
+        jump second_apartment_scene
+
+    else:
+
+        thought "She's not gonna answer..."
+        jump second_apartment_scene
 
 label DoorTwoConversation:
+    $ secondAptDoor2NumberOfVisits += 1
     #door 2 stuff!
+    if secondAptDoor2NumberOfVisits == 1:
 
-            show chara2color at left
+            show chara2colorr at left
           
             p "Hello, my name is-"
             s "Oh my gosh"
@@ -112,8 +135,8 @@ label DoorTwoConversation:
             p "I'm sorry, do we know each other?"
             s "No, but I know you."
             s "I mean, I know who you are. Who you work for."
-            p "Were the people here given warning that I was coming?"
-            p "Doesn't matter. I just need to get my notes and get out of here."
+            thought "Were the people here given warning that I was coming?"
+            thought "Doesn't matter. I just need to get my notes and get out of here."
             p "Right... so how are you feeling?"
             p "Any headaches, nausea"
             p "Uh, fatigue? Maybe?"
@@ -130,7 +153,7 @@ label DoorTwoConversation:
             s "Check up on my mom? I haven't seen her in forever, she's just across town."
             p "How come you can't go yourself?"
             s "Well, we were told to stay inside. Quarentine, right?"
-            p "Oh, yeah"
+            thought "Oh, yeah"
             p "Fine."
             s "Thank you! She should be somewhere in the offices, I think. Her name's Iris."
             s "She's such a worrier, please tell her I'm ok."
@@ -138,6 +161,17 @@ label DoorTwoConversation:
             s "Yeah! Thanks!"
 
             jump second_apartment_scene
+    elif secondAptDoor2NumberOfVisits == 2:
+        show chara2colorr at left
+        s "Oh, hey! You're back!"
+        s "Do you need something?"
+        p "Um... no. Never mind."
+        jump second_apartment_scene
+    else:
+        
+        thought "What am I doing?"
+        jump second_apartment_scene
+
 
 
 screen secondApartmentNavigation():

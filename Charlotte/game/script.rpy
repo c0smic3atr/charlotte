@@ -5,6 +5,7 @@
 
 define e = Character("Employer")
 define p = Character ("Player")
+define thought = Character (None, what_prefix = "{i}", what_suffix="{/i}")
 define a = Character ("Anna")
 define s = Character ("Sarah")
 

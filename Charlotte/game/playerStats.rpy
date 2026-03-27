@@ -1,0 +1,1 @@
+default numberOfPeopleKilled = 0
