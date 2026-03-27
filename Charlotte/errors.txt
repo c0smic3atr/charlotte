@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/thirdApartmentScene.rpy", line 42: expected statement.
-    elif fenceInteract1NumberOfVisits==2:
-                                     ^
-
-File "game/Apartment Scenes/thirdApartmentScene.rpy", line 46: expected statement.
-    elif fenceInteract1NumberOfVisits==3:
-                                     ^
-
-File "game/Apartment Scenes/thirdApartmentScene.rpy", line 49: expected statement.
-    else:
-        ^
+File "game/Apartment Scenes/RoadScene.rpy", line 22: Only one say menuitem may exist per menu.
+    l "What's with the gas mask?"
+                                 ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Mar 27 09:21:35 2026
+Fri Mar 27 10:12:00 2026
