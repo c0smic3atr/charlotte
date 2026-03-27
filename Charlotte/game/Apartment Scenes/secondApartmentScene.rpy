@@ -88,6 +88,11 @@ label DoorOneConversation:
             a "You should talk to Sarah next door. She's something of an optimist"
             a "Seems to be handling things better than most"
 
+            #Discovered Anna!!
+            $ anna_facts['portrait'] = "anna portrait"
+            $ anna_facts['name'] = "Anna"
+            $ anna_facts['fact1'] = "Kinda sus ngl"
+
             jump second_apartment_scene
 
 label DoorTwoConversation:
