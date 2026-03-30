@@ -6,7 +6,7 @@ default notebook_page = 0
 
 # Total number of pages minus 1
 # If there are 2 pages, the max page index is 1.
-default notebook_max_page = 1
+default notebook_max_page = 2
 
 
 # =========================================================
@@ -55,6 +55,10 @@ screen notebook_screen():
                     add sarah_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
+                elif notebook_page == 2:
+                    add rick_facts['portrait']:
+                        xalign 0.5
+                        yalign 0.5
 
             # =================================================
             # RIGHT SIDE: CHARACTER NOTES
@@ -86,6 +90,14 @@ screen notebook_screen():
                         text "* [sarah_facts['fact1']]"
                         text "* [sarah_facts['fact2']]"
                         text "* [sarah_facts['fact3']]"
+                    elif notebook_page == 2:
+
+                        text rick_facts['name'] size 42
+                        text "Notes:" size 30
+
+                        text "* [rick_facts['fact1']]"
+                        text "* [rick_facts['fact2']]"
+                        text "* [rick_facts['fact3']]"
 
         # -------------------------------------------------
         # PAGE NUMBER

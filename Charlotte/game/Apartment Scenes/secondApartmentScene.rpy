@@ -165,6 +165,11 @@ label DoorTwoConversation:
             p "Right. Thank you for your time."
             s "Yeah! Thanks!"
 
+            $ sarah_facts['portrait'] = "sarah portrait"
+            $ sarah_facts['name'] = "Sarah"
+            $ sarah_facts['fact1'] = "Very optimistic"
+
+
             jump second_apartment_scene
     elif secondAptDoor2NumberOfVisits == 2:
         show chara2colorr at left

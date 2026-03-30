@@ -35,6 +35,11 @@ label third_apartment_scene:
             r "Small, town, could hear your chat with the girls from a mile away."
             p "Alright, then, are you gonna cooperate or not?"
 
+             #Discovered Rick!!
+            $ rick_facts['portrait'] = "rick portrait"
+            $ rick_facts['name'] = "Rick"
+            $ rick_facts['fact1'] = "Very sassy"
+
         else: 
             r "And why would I?"
             r "You just here to interrogate the lot of us?"
