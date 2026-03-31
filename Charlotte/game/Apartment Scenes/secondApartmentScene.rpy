@@ -3,7 +3,7 @@ default secondAptDoor2NumberOfVisits = 0
 
 
 label second_apartment_scene:
-    scene bg aptfront
+    scene bg doors
 
 
     call screen secondApartmentNavigation
@@ -168,11 +168,29 @@ label DoorTwoConversation:
             s "Yeah! Thanks!"
 
             #Discovered Sarah!!
-            $ anna_facts['portrait'] = "sarah portrait"
-            $ anna_facts['name'] = "Sarah Han"
-            $ anna_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
+            $ sarah_facts['portrait'] = "sarah portrait"
+            $ sarah_facts['name'] = "Sarah Han"
+            $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
 
             jump second_apartment_scene
+
+            # boolean (?) After first interaction with Sarah Employer will have conversation with player character which goes as follows
+    if secondAptDoor2NumberOfVisits == 1:
+            e "Walker."
+            thought "I didn't expect contact so soon..."
+            p "Yuh- yes?"
+            e "Remember when we told you to watch out for people who 'fit the profile'?"
+            e "It's people like her."
+            p "People like her? What do you mean?"
+            p "She seems-"
+            e "You'll figure it out"
+            e "You're a lot of things, but incompetent ain't one of them."
+            e "Dispose of her."
+            # Immediately after, the player gains access to their logbook for the first time which has tutorial information, character info, gas mask management, and employer trust management
+            # From here you can interact with Sarah again and choose whether or not to kill her, and whether or not to mark her as killed in your logbook
+            
+
+
     elif secondAptDoor2NumberOfVisits == 2:
         show chara2colorr at left
         s "Oh, hey! You're back!"
