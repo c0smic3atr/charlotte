@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 73: Line with id eleventh_apartment_scene_646d3e01 appears twice. The other line is game/office.rpy:5
-
-File "game/script.rpy", line 83: Line with id twelvth_apartment_scene_a3aa858d appears twice. The other line is game/office.rpy:15
+File "game/Apartment Scenes/RoadScene.rpy", line 22: Only one say menuitem may exist per menu.
+    l "What's with the gas mask?"
+                                 ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Mar 25 09:01:41 2026
+Fri Mar 27 10:12:00 2026

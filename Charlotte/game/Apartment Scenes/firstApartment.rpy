@@ -1,5 +1,6 @@
 ﻿label first_apartment_scene:
-    scene bg apartments1
+    scene bg aptonee
+    
     call screen firstApartmentNavigation
     #
     #menu:

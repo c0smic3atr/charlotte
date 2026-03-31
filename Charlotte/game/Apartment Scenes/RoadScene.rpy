@@ -1,3 +1,6 @@
+define l = Character ("Lydia")
+
+
 label sixth_apartment_scene:
     scene bg parking lot again
     call screen sixthApartmentNav
@@ -12,7 +15,31 @@ label seventh_apartment_scene:
     call screen seventhApartmentNav
 
     "At apartments2"
-    
+    menu: 
+        "Talk":
+            show chara4colorr at left
+            p "Hello, I'm agent Walker, I'm here to-"
+            l "What's with the gas mask?"
+            p "Huh? Why?"
+            l "Just makes you look a little weird 's all."
+            p "Thanks for the note."
+            l "So what's with it?"
+            thought "What's with your persistence?"
+            #Choice - tell her the truth
+            p "We're, uh, worried. About the disease."
+            p "Spreading further, that is."
+            l "Oh, you're one of them."
+            l "You should do yourself, and all of us, a favor and get lost."
+            l "We haven't been fooled by your bullshit."
+            p "..."
+            p "Are you alright?"
+            l "What?"
+            p "You look pretty roughed up."
+            l "..."
+            l "'S nothing..."
+            l "But I'm being serious when I tell 'ya"
+            l "Get out of here."
+
     menu:
         "Go back":
             jump fifth_apartment_scene
