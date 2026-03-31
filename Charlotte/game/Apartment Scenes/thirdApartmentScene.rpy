@@ -43,6 +43,11 @@ label third_apartment_scene:
             p "No time? You're dumpster-diving, don't exactly look like somebody with a bustling schedule."
             r "Yeah, screw you too."
 
+            #Discovered Rick!!
+            $ anna_facts['portrait'] = "rick portrait"
+            $ anna_facts['name'] = "Rick Madden"
+            $ anna_facts['fact1'] = "Just a hick searching the trash. Do the people here not have enough supplies?"
+
         jump third_apartment_scene
 
     elif fenceInteract1NumberOfVisits==2:
