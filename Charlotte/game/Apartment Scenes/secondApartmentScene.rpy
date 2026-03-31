@@ -3,7 +3,9 @@ default secondAptDoor2NumberOfVisits = 0
 
 
 label second_apartment_scene:
-    scene bg apartments4
+    scene bg aptfront
+
+
     call screen secondApartmentNavigation
 
     #menu:
@@ -99,8 +101,8 @@ label DoorOneConversation:
 
             #Discovered Anna!!
             $ anna_facts['portrait'] = "anna portrait"
-            $ anna_facts['name'] = "Anna"
-            $ anna_facts['fact1'] = "Kinda sus ngl"
+            $ anna_facts['name'] = "Anna Martina"
+            $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
 
             jump second_apartment_scene
     elif secondAptDoor1NumberOfVisits == 2:
@@ -164,6 +166,11 @@ label DoorTwoConversation:
             s "She's such a worrier, please tell her I'm ok."
             p "Right. Thank you for your time."
             s "Yeah! Thanks!"
+
+            #Discovered Sarah!!
+            $ anna_facts['portrait'] = "sarah portrait"
+            $ anna_facts['name'] = "Sarah Han"
+            $ anna_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
 
             jump second_apartment_scene
     elif secondAptDoor2NumberOfVisits == 2:
