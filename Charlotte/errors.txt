@@ -2,7 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/secondApartmentScene.rpy", line 176: Indentation mismatch.
+File "game/Apartment Scenes/thirdApartmentScene.rpy", line 89: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    show chara3colorr at left
+    ^
+
+File "game/Apartment Scenes/thirdApartmentScene.rpy", line 92: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Mar 31 09:20:53 2026
+Wed Apr  1 09:20:21 2026

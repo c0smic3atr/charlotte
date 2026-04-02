@@ -111,6 +111,20 @@ label DoorOneConversation:
 
         a "Come on, lady."
         a "Might not look it, but I'm a busy person."
+        menu:
+            "Kill Her":
+                a "I told you to leave-"
+                $ anna_facts ['status'] = "Dead"
+                hide chara1colorr
+                show chara1mono
+                pause 3.0
+                # increase trust
+                $ trust += 5
+             
+            "Do nothing":
+                $ anna_facts['status'] = "Spared"
+                p "..."
+                
         jump second_apartment_scene
 
     else:
@@ -123,7 +137,7 @@ label DoorTwoConversation:
     #door 2 stuff!
     if secondAptDoor2NumberOfVisits == 1:
 
-            show chara2colorr at left
+            show chara2 at center
           
             p "Hello, my name is-"
             s "Oh my gosh"
@@ -172,7 +186,7 @@ label DoorTwoConversation:
             $ sarah_facts['name'] = "Sarah Han"
             $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
 
-            jump second_apartment_scene
+            hide chara2
 
             # boolean (?) After first interaction with Sarah Employer will have conversation with player character which goes as follows
     if secondAptDoor2NumberOfVisits == 1:
@@ -186,16 +200,41 @@ label DoorTwoConversation:
             e "You'll figure it out"
             e "You're a lot of things, but incompetent ain't one of them."
             e "Dispose of her."
+            e "And for the love of God, remember to mark it in your logbook."
+
+     
+               
+            #Goes to front doors again, in which you can click on Sarah again and now have the option to execute
             # Immediately after, the player gains access to their logbook for the first time which has tutorial information, character info, gas mask management, and employer trust management
             # From here you can interact with Sarah again and choose whether or not to kill her, and whether or not to mark her as killed in your logbook
+
+            $ sarah_facts['status'] = "Targeted"
+
+            jump second_apartment_scene
             
 
 
     elif secondAptDoor2NumberOfVisits == 2:
-        show chara2colorr at left
+        show chara2 at center
         s "Oh, hey! You're back!"
         s "Do you need something?"
-        p "Um... no. Never mind."
+        menu:
+            "Kill Her":
+                s "Um... is there something wrong?"
+                $ sarah_facts ['status'] = "Dead"
+                hide chara2
+                show chara2mono at center
+                pause 3.0
+                jump bossConversation
+            "Tell her to hide":
+                $ sarah_facts ['status'] = "Hiding"
+                jump bossConversation
+            "Do nothing":
+                $ sarah_facts['status'] = "Spared"
+                p "Um... no. Never mind."
+                jump bossConversation
+                
+   
         jump second_apartment_scene
     else:
         
@@ -203,6 +242,20 @@ label DoorTwoConversation:
         jump second_apartment_scene
 
 
+label bossConversation:
+    scene black
+    if sarah_facts['status'] == "Dead":
+        
+        # increase trust
+        $ trust += 10
+    elif sarah_facts['status'] == "Hiding":
+        
+        $ trust += 2
+    elif sarah_facts['status'] == "Spared":
+        
+        $ trust -= 20
+    jump second_apartment_scene
+    
 
 screen secondApartmentNavigation():
     # back to the first apartment scene
