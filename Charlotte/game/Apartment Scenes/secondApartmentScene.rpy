@@ -81,7 +81,7 @@ label DoorOneConversation:
 
     if secondAptDoor1NumberOfVisits == 1:
 
-            show chara1colorr at left
+            show chara11 at left
             a "..."
             a "You don't look familiar"
             a "There's so few in town these days, people don't have the luxury of slipping through the cracks anymore."
@@ -102,8 +102,10 @@ label DoorOneConversation:
             #Discovered Anna!!
             $ anna_facts['portrait'] = "anna portrait"
             $ anna_facts['name'] = "Anna Martina"
-            $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
-
+    
+            if anna_facts ['status'] == "Undiscovered":
+                $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
+           
             jump second_apartment_scene
     elif secondAptDoor1NumberOfVisits == 2:
         
@@ -120,10 +122,14 @@ label DoorOneConversation:
                 pause 3.0
                 # increase trust
                 $ trust += 5
-             
+               
+                $ anna_facts['fact1'] = "What do I write? Can't feel my fingers. Her body sounded heavy when it hit the floor. She didn't say much. Guess the people here are pretty hopeless. Can't say I blame them."   
+
             "Do nothing":
                 $ anna_facts['status'] = "Spared"
                 p "..."
+
+                $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
                 
         jump second_apartment_scene
 
@@ -131,6 +137,13 @@ label DoorOneConversation:
 
         thought "She's not gonna answer..."
         jump second_apartment_scene
+#if
+    #$ anna_facts ['status']= "Dead"
+        #$ anna_facts['fact2']= "Blabla2ndfacts"
+
+
+
+
 
 label DoorTwoConversation:
     $ secondAptDoor2NumberOfVisits += 1
@@ -184,13 +197,14 @@ label DoorTwoConversation:
             #Discovered Sarah!!
             $ sarah_facts['portrait'] = "sarah portrait"
             $ sarah_facts['name'] = "Sarah Han"
-            $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
+            if sarah_facts ['status'] == "Undiscovered":
+                $ sarah_facts['fact1'] = "Not much, again... gonna find her mom, see if she knows anything."
 
             hide chara2
 
             # boolean (?) After first interaction with Sarah Employer will have conversation with player character which goes as follows
     if secondAptDoor2NumberOfVisits == 1:
-            e "Walker."
+            e "Walker." 
             thought "I didn't expect contact so soon..."
             p "Yuh- yes?"
             e "Remember when we told you to watch out for people who 'fit the profile'?"
@@ -202,7 +216,9 @@ label DoorTwoConversation:
             e "Dispose of her."
             e "And for the love of God, remember to mark it in your logbook."
 
-     
+            
+            t "Press N for Logbook"
+                
                
             #Goes to front doors again, in which you can click on Sarah again and now have the option to execute
             # Immediately after, the player gains access to their logbook for the first time which has tutorial information, character info, gas mask management, and employer trust management
@@ -225,13 +241,13 @@ label DoorTwoConversation:
                 hide chara2
                 show chara2mono at center
                 pause 3.0
+                $ sarah_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her. My head hurts."
                 jump bossConversation
-            "Tell her to hide":
-                $ sarah_facts ['status'] = "Hiding"
-                jump bossConversation
+            
             "Do nothing":
                 $ sarah_facts['status'] = "Spared"
                 p "Um... no. Never mind."
+                $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
                 jump bossConversation
                 
    

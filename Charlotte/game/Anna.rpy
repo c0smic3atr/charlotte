@@ -8,6 +8,7 @@ image anna  = "characters/anna/chara 1 colorr.png"
 #Notebook facts about anna
 default anna_facts = {
  "hasBeenDiscovered": False,
+ "status" : "Undiscovered",
  "portrait": "unknown portrait",
  "name":"Undiscovered",
  "fact1":"Undiscovered",

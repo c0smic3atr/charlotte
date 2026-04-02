@@ -1,8 +1,8 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Apartment Scenes/firstApartment.rpy", line 3, in script
-    call screen firstApartmentNavigation
+  File "game/Apartment Scenes/secondApartmentScene.rpy", line 9, in script
+    call screen secondApartmentNavigation
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
   File "game/LogBook.rpy", line 15, in execute
@@ -13,21 +13,21 @@ While running game code:
     frame:
   File "game/LogBook.rpy", line 36, in execute
     hbox:
-  File "game/LogBook.rpy", line 44, in execute
+  File "game/LogBook.rpy", line 66, in execute
     frame:
-  File "game/LogBook.rpy", line 49, in execute
+  File "game/LogBook.rpy", line 70, in execute
+    vbox:
+  File "game/LogBook.rpy", line 76, in execute
     if notebook_page == 0:
-  File "game/LogBook.rpy", line 50, in execute
-    add anna_facts['portrait']:
-  File "game/LogBook.rpy", line 50, in <module>
-    add anna_facts['portrait']:
-NameError: name 'anna_facts' is not defined
+  File "game/LogBook.rpy", line 82, in execute
+    text "* [anna_facts['fact2']]"
+KeyError: 'fact2'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/Apartment Scenes/firstApartment.rpy", line 3, in script
-    call screen firstApartmentNavigation
+  File "game/Apartment Scenes/secondApartmentScene.rpy", line 9, in script
+    call screen secondApartmentNavigation
   File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
     self.call("execute")
   File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
@@ -66,17 +66,32 @@ Full traceback:
     frame:
   File "game/LogBook.rpy", line 36, in execute
     hbox:
-  File "game/LogBook.rpy", line 44, in execute
+  File "game/LogBook.rpy", line 66, in execute
     frame:
-  File "game/LogBook.rpy", line 49, in execute
+  File "game/LogBook.rpy", line 70, in execute
+    vbox:
+  File "game/LogBook.rpy", line 76, in execute
     if notebook_page == 0:
-  File "game/LogBook.rpy", line 50, in execute
-    add anna_facts['portrait']:
-  File "game/LogBook.rpy", line 50, in <module>
-    add anna_facts['portrait']:
-NameError: name 'anna_facts' is not defined
+  File "game/LogBook.rpy", line 82, in execute
+    text "* [anna_facts['fact2']]"
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
+    return self.set_text(self.text_parameter, scope, self.substitute, update)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+KeyError: 'fact2'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Fri Mar 27 09:51:26 2026
+Thu Apr  2 08:51:47 2026

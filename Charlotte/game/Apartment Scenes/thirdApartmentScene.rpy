@@ -2,6 +2,7 @@
 define t = Character("Placeholder")
 define r = Character ("Rick")
 default fenceInteract1NumberOfVisits = 0
+default timesTalkedtoRick = 0
 
 
 label third_apartment_scene:
@@ -9,7 +10,7 @@ label third_apartment_scene:
     $ fenceInteract1NumberOfVisits +=1
     
     scene bg dumpster
-    if fenceInteract1NumberOfVisits == 1:
+    if timesTalkedtoRick == 0:
 
         t "You are at the fence"
 
@@ -19,6 +20,7 @@ label third_apartment_scene:
 
             "Talk":
                 show chara3colorr at left
+                $ timesTalkedtoRick +=1
 
 
         if numberOfPeopleKilled == 0:
@@ -47,35 +49,52 @@ label third_apartment_scene:
             #Discovered Rick!!
             $ rick_facts['portrait'] = "rick portrait"
             $ rick_facts['name'] = "Rick Madden"
-            $ rick_facts['fact1'] = "Just a hick searching the trash. Do the people here not have enough supplies?"
+            if rick_facts ['status'] == "undiscovered":
+                $ rick_facts['fact1'] = "Just a hick searching the trash. Do the people here not have enough supplies?"
 
         jump third_apartment_scene
 
-    elif fenceInteract1NumberOfVisits==2:
+    elif timesTalkedtoRick == 1:
+        
         menu:
             "Return":
                 jump first_apartment_scene
 
             "Talk":
+                $ timesTalkedtoRick += 1 
                 show chara3colorr at left
-        show chara3colorr at left
-        r "I told ya', I'm busy"
-        menu:
-            "Kill Him":
-             
-                $ rick_facts ['status'] = "Dead"
-                hide chara3colorr
-                show chara3thirdmono at left
-                pause 3.0
-                # increase trust
-                $ trust += 5
-                "Bang"
-                jump third_apartment_scene
-                
+                show chara3colorr at left
+                r "I told ya', I'm busy"
+                if rick_facts['status'] != "Dead":
+                    menu:
+                        "Kill Him":
+                        
+                            $ rick_facts ['status'] = "Dead"
+                            hide chara3colorr
+                            show chara3thirdmono at left
+                            pause 3.0
+                            # increase trust
+                            $ trust += 5
+                        
 
-            "Do nothing":
-                $ rick_facts['status'] = "Spared"   
-                jump third_apartment_scene
+                            if sarah_facts ['status']== "Dead" or anna_facts ['status']== "Dead":
+                                $ rick_facts['fact1']= "What's the profile? I don't get it. Helpfulness? Positivity? Do they even know... am I supposed to just kill everyone?"
+
+                            elif rick_facts['status']== "Dead": 
+                                $ rick_facts['fact1'] = "I forgot what it felt like to shoot a gun. I'd always been so nervous to hit a person by mistake, before... by mistake. This is a mistake. What am I doing?"
+                            
+                            jump third_apartment_scene
+                            
+
+                        "Do nothing":
+                            $ rick_facts['status'] = "Spared"   
+                            jump third_apartment_scene
+                else:
+                    thought "he's not gonna answer"
+                    menu:
+                        "Return":
+                            jump first_apartment_scene
+
 
 
     else:
@@ -84,11 +103,17 @@ label third_apartment_scene:
                 jump first_apartment_scene
 
             "Talk":
-                if rick_facts['status'] == "Spared":
+                if rick_facts['status'] == "Spared" and sarah_facts['status']== "Spared" and anna_facts['status']=="Spared":
 
                     show chara3colorr at left
                     r "I'm just tryna keep myself fed here, girl. Quit buggin me."
                     jump third_apartment_scene
+
+                if rick_facts['status']== "Spared" and sarah_facts['status']== "Dead" or anna_facts['status']== "Dead":
+                    show chara3colorr at left
+                    r "What, you want me to do something about it?"
+                    r "Assuage your guilt?"
+                    r "Not gonna happen."
                 else:
                     thought "He's not gonna answer..."   
                     jump third_apartment_scene
