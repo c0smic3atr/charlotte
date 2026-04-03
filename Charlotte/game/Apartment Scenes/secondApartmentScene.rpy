@@ -239,7 +239,7 @@ label DoorTwoConversation:
                 s "Um... is there something wrong?"
                 $ sarah_facts ['status'] = "Dead"
                 hide chara2
-                show chara2mono at center
+                show chara2monoo at center
                 pause 3.0
                 $ sarah_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her. My head hurts."
                 jump bossConversation

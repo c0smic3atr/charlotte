@@ -19,7 +19,7 @@ label third_apartment_scene:
                 jump first_apartment_scene
 
             "Talk":
-                show chara3colorr at left
+                show chara3again at left
                 $ timesTalkedtoRick +=1
 
 
@@ -37,8 +37,7 @@ label third_apartment_scene:
             r "Small, town, could hear your chat with the girls from a mile away."
             p "Alright, then, are you gonna cooperate or not?"
 
-            if
-                $ sarah_facts['status']== "Dead" or anna_facts['status']== "Dead"
+            if sarah_facts['status']== "Dead" or anna_facts['status']== "Dead":
                     r "Think I'm gonna cooperate with a killer like you?"
                     r "What ya gonna do, shoot me too?"
                     p "..."
@@ -50,12 +49,14 @@ label third_apartment_scene:
                     r "What, a creep in a gas mask poppin' off rounds on kids?"
                     r "Psh, why would I care one way or another..."
                     r "I got shit to do."
-            r "And why would I?"
-            r "You just here to interrogate the lot of us?"
-            p "I mean, yeah."
-            r "Nobody got time for that"
-            p "No time? You're dumpster-diving, don't exactly look like somebody with a bustling schedule."
-            r "Yeah, screw you too."
+            else:
+
+                r "And why would I?"
+                r "You just here to interrogate the lot of us?"
+                p "I mean, yeah."
+                r "Nobody got time for that"
+                p "No time? You're dumpster-diving, don't exactly look like somebody with a bustling schedule."
+                r "Yeah, screw you too."
 
             #Discovered Rick!!
             $ rick_facts['portrait'] = "rick portrait"
@@ -73,22 +74,23 @@ label third_apartment_scene:
 
             "Talk":
                 $ timesTalkedtoRick += 1 
-                show chara3colorr at left
-                show chara3colorr at left
-                r "I told ya', I'm busy"
+                
                 if rick_facts['status'] != "Dead":
+                    show chara3again at left
+                    show chara3again at left
+                    r "I told ya', I'm busy"
                     menu:
                         "Kill Him":
                         
                             $ rick_facts ['status'] = "Dead"
-                            hide chara3colorr
+                            hide chara3again
                             show chara3thirdmono at left
                             pause 3.0
                             # increase trust
                             $ trust += 5
                         
 
-                            if sarah_facts ['status']== "Dead" or anna_facts ['status']== "Dead":
+                            if sarah_facts['status']== "Dead" or anna_facts ['status']== "Dead":
                                 $ rick_facts['fact1']= "What's the profile? I don't get it. Helpfulness? Positivity? Do they even know... am I supposed to just kill everyone?"
 
                             elif rick_facts['status']== "Dead": 
@@ -116,12 +118,12 @@ label third_apartment_scene:
             "Talk":
                 if rick_facts['status'] == "Spared" and sarah_facts['status']== "Spared" and anna_facts['status']=="Spared":
 
-                    show chara3colorr at left
+                    show chara3again at left
                     r "I'm just tryna keep myself fed here, girl. Quit buggin me."
                     jump third_apartment_scene
 
-                if rick_facts['status']== "Spared" and sarah_facts['status']== "Dead" or anna_facts['status']== "Dead":
-                    show chara3colorr at left
+                if rick_facts['status']== "Spared" and (sarah_facts['status']== "Dead" or anna_facts['status']== "Dead"):
+                    show chara3again at left
                     r "What, you want me to do something about it?"
                     r "Assuage your guilt?"
                     r "Not gonna happen."

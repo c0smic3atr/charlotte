@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/secondApartmentScene.rpy", line 219: Menu does not contain any choices.
-    menu:
-         ^
+File "game/Apartment Scenes/thirdApartmentScene.rpy", line 40: reached end of line when expecting ':'.
+    if
+      ^
+
+File "game/Apartment Scenes/thirdApartmentScene.rpy", line 53: expected statement.
+    else
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Apr  2 09:40:24 2026
+Fri Apr  3 08:21:14 2026
