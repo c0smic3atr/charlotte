@@ -37,8 +37,19 @@ label third_apartment_scene:
             r "Small, town, could hear your chat with the girls from a mile away."
             p "Alright, then, are you gonna cooperate or not?"
 
-             
-        
+            if
+                $ sarah_facts['status']== "Dead" or anna_facts['status']== "Dead"
+                    r "Think I'm gonna cooperate with a killer like you?"
+                    r "What ya gonna do, shoot me too?"
+                    p "..."
+                    p "Wuh- well, why didn't you leave? When you saw?"
+                    thought "I'm talking like he caught me in a... lie, or something"
+                    thought "Something normal"
+                    thought "It's not..."
+                    thought "It's not, it can't be"
+                    r "What, a creep in a gas mask poppin' off rounds on kids?"
+                    r "Psh, why would I care one way or another..."
+                    r "I got shit to do."
             r "And why would I?"
             r "You just here to interrogate the lot of us?"
             p "I mean, yeah."
