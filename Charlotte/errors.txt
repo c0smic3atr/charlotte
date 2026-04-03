@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/LogBook.rpy", line 30: 'notebook' is not a keyword argument or valid child of the add statement.
-    add bg notebook
-                   ^
+File "game/Apartment Scenes/thirdApartmentScene.rpy", line 40: reached end of line when expecting ':'.
+    if
+      ^
+
+File "game/Apartment Scenes/thirdApartmentScene.rpy", line 53: expected statement.
+    else
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Apr  2 10:16:28 2026
+Fri Apr  3 08:21:14 2026
