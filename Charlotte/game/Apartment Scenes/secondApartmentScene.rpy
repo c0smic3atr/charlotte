@@ -178,7 +178,7 @@ label DoorTwoConversation:
             p "Wuh- what about your neighbors? Know about them?"
             s "The only neighbor I really talk to is Anna, and she's a total stiff"
             s "We've lived next to each other for who-knows-how-long, and I still barely know anything about her!"
-            p "Guess she's that tight-lipped with everyone."
+            thought "Guess she's that tight-lipped with everyone."
             p "Right, well, thank you for your time."
             s "Wait!"
             s "Uh, how long are you planning to stay?"

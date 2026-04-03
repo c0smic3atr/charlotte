@@ -2,7 +2,7 @@ define l = Character ("Lydia")
 
 
 label sixth_apartment_scene:
-    scene bg parking lot again
+    scene bg parking lot
     call screen sixthApartmentNav
 
     "In parking lot"
@@ -11,7 +11,7 @@ label sixth_apartment_scene:
             jump fifth_apartment_scene
 
 label seventh_apartment_scene:
-    scene bg apartments2
+    scene bg aptdoors
     call screen seventhApartmentNav
 
     "At apartments2"

@@ -1,5 +1,5 @@
 label fifth_apartment_scene:
-    scene bg apartments3
+    scene bg apttwo
     call screen fifthApartmentNav
 
 
