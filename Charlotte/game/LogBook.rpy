@@ -6,7 +6,7 @@ default notebook_page = 0
 
 # Total number of pages minus 1
 # If there are 2 pages, the max page index is 1.
-default notebook_max_page = 2
+default notebook_max_page = 3
 
 
 # =========================================================
@@ -60,6 +60,7 @@ screen notebook_screen():
                         xalign 0.5
                         yalign 0.5
 
+
             # =================================================
             # RIGHT SIDE: CHARACTER NOTES
             # =================================================
@@ -99,6 +100,32 @@ screen notebook_screen():
                         text "* [rick_facts['fact2']]"
                         text "* [rick_facts['fact3']]"
 
+                    elif notebook_page == 3:
+
+                        text "Player Stats" size 42
+                        text "Current Status" size 30
+
+                        text "Trust" size 28
+
+                        bar:
+                            value trust
+                            range max_trust
+                            xmaximum 500
+                            ymaximum 30
+
+                        text "[trust] / [max_trust]" size 22
+
+                        null height 30
+
+                        text "Oxygen" size 28
+
+                        bar:
+                            value oxygen
+                            range max_oxygen
+                            xmaximum 500
+                            ymaximum 30
+
+                        text "[oxygen] / [max_oxygen]" size 22
         # -------------------------------------------------
         # PAGE NUMBER
         # -------------------------------------------------

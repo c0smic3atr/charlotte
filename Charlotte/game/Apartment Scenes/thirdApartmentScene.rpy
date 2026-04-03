@@ -37,8 +37,7 @@ label third_apartment_scene:
             r "Small, town, could hear your chat with the girls from a mile away."
             p "Alright, then, are you gonna cooperate or not?"
 
-            if
-                $ sarah_facts['status']== "Dead" or anna_facts['status']== "Dead"
+            if $ sarah_facts['status']== "Dead" or anna_facts['status']== "Dead":
                     r "Think I'm gonna cooperate with a killer like you?"
                     r "What ya gonna do, shoot me too?"
                     p "..."
