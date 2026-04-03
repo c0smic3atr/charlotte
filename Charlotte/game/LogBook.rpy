@@ -1,4 +1,8 @@
-# =========================================================
+# IMAGES
+#========================================================
+image bgnotebook = "UserInterface/Notebook.png"
+
+
 # NOTEBOOK PAGE TRACKING
 # =========================================================
 # This keeps track of which page the player is viewing.
@@ -27,6 +31,14 @@ screen notebook_screen():
         xsize 1400
         ysize 800
 
+        # Remove frame background
+        background None
+
+        # Remove default margins
+        padding (0,0)
+
+        add "bgnotebook"
+
         # -------------------------------------------------
         # MAIN LAYOUT
         # -------------------------------------------------
@@ -42,8 +54,16 @@ screen notebook_screen():
             # LEFT SIDE: CHARACTER PORTRAIT
             # =================================================
             frame:
-                xsize 350
-                ysize 350
+                xsize 310
+                ysize 260
+                xpos 190 - 45
+                ypos 120 - 35
+
+                # Remove frame background
+                background None
+
+                # Remove default margins
+                padding (0,0)
 
                 # Show a different portrait depending on the current page
                 if notebook_page == 0:
@@ -64,12 +84,20 @@ screen notebook_screen():
             # RIGHT SIDE: CHARACTER NOTES
             # =================================================
             frame:
-                xsize 930
+                xsize 750
                 ysize 650
+                xpos 550 - 350
+                ypos 90 - 80
+
+                # Remove frame background
+                background None
+
+                # Remove default margins
+                padding (0,0)
 
                 vbox:
                     spacing 20
-                    xpos 30
+                    xpos 30   
                     ypos 30
 
                     # Show different notes depending on the current page
