@@ -1,5 +1,5 @@
 define l = Character ("Lydia")
-
+define o = Character ("Orion")
 
 label sixth_apartment_scene:
     scene bg parking lot
@@ -39,6 +39,71 @@ label seventh_apartment_scene:
             l "'S nothing..."
             l "But I'm being serious when I tell 'ya"
             l "Get out of here."
+        "Go back":
+            call screen seventhApartmentNav
+    menu: 
+        "Talk to the other door":
+            show chara5kid at center
+            if timesTalkedtoOrion == 0:
+                o "What's up?"
+                thought "There's kids here... of course there are."
+                p "I'm, um, agent Walker and-"
+                o "Agent! Woah!"
+                p "Hah, yeah"
+                p "I'm here to see if you're doing alright?"
+                o "Wait, so do you, like, work for the government or something?"
+                p "Uh..."
+                o "Have you ever killed someone?"
+
+            if anna_facts['status']=="Dead" or sarah_facts['status']=="Dead" or rick_facts['status']=="Dead" or nolan_facts['status']=="Dead" or lydia_facts['status']=="Dead":
+                thought "I'm gonna be sick..."
+            else: 
+                    p "..."
+                    o "It's ok, my dad used to have a total secret job too. Couldn't tell me anything about it."
+                    p "Your dad?"
+                    o "Yeah, he's gone now though..."
+                    o "Most people are."
+                    p "Where'd they go?"
+                    thought "Finally getting some information."
+                    o "Dunno..."
+                    thought "Never mind I guess."
+                    p "..."
+                    p "Um, cool shirt."
+                    p "Crabs."
+                    thought "What am I doing?"
+                    o "Thanks... Wait, so you're here to make sure everybody's ok?"
+                    p "Yes."
+                    o "Even my mom?"
+                    p "Of course."
+                    o "Well, she's not ok. She's in the hospital."
+                    p "Okay."
+                    p "I mean, uh"
+                    p "What happened?"
+                    o "She's all sick... couldn't stay home. Are you going to save her?"
+                    thought "Christ, kid."
+                    thought "At least I have some kind of lead; someone's sick."
+                    p "If I see her, I'll find a way to help her. What's her name?"
+                    o "She's Violet- Oh, I'm Orion! What's your name?"
+                    p "I'm agent Walker."
+                    o "Yeah, I know that. I mean your real name!"
+                    p "..."
+                    p "Wait, if both your parents- are you all alone here?"
+                    o "Oh, nah. Lydia takes care of me. Of everyone in the apartments, really."
+                    o "Well, whenever she can..."
+                    o "She's really nice."
+            if lydia_facts['status']=="Dead"
+                    thought "Oh my God"
+                    thought "I'm gonna throw up"
+                    thought "What am I-"
+                    thought "Ugh..."
+            else:
+                    p "I see... Thanks for telling me, kid"
+                    o "Yeah, no problem!"
+                    p "Stay safe."
+                    o "You too!"
+            
+            if timesTalkedtoOrion == 1:
+
 
     menu:
         "Go back":
