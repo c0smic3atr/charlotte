@@ -6,7 +6,7 @@ label eleventh_apartment_scene:
 
     "You are at the office"
     show charaoffice at left
-    if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead" or lydia_facts['status']== "Dead" or orion_facts['status']=="Dead" or nolan_facts['status']=="Dead"
+    if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead" or lydia_facts['status']== "Dead":
         p "Um, hello?"
         x "Jane, is that you?"
         p "No, it's not."
@@ -39,7 +39,7 @@ label eleventh_apartment_scene:
         p "Yeah."
         p "Guess so."
 
-    else 
+    #else 
         p "Um, hello?"
         x "Jane? Is that you?"
         p "No, I'm not Jane. I'm agent Walker."

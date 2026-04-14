@@ -2,15 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/RoadScene.rpy", line 94: Indentation mismatch.
-
-File "game/OfficeScenes/office.rpy", line 9: reached end of line when expecting ':'.
-    if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead" or lydia_facts['status']== "Dead" or orion_facts['status']=="Dead" or nolan_facts['status']=="Dead"
-                                                                                                                                                                                                          ^
-
-File "game/OfficeScenes/office.rpy", line 42: expected statement.
-    else 
-         ^
+File "game/OfficeScenes/office.rpy", line 10: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    p "Um, hello?"
+                  ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Apr 13 10:14:17 2026
+Tue Apr 14 10:46:30 2026

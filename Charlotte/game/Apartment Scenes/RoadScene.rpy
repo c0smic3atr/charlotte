@@ -39,11 +39,11 @@ label seventh_apartment_scene:
             l "'S nothing..."
             l "But I'm being serious when I tell 'ya"
             l "Get out of here."
-        "Go back":
+        #"Go back":
             call screen seventhApartmentNav
     menu: 
         "Talk to the other door":
-            show chara5kid at center
+            show chara5color at center
             if timesTalkedtoOrion == 0:
                 o "What's up?"
                 thought "There's kids here... of course there are."
@@ -55,7 +55,7 @@ label seventh_apartment_scene:
                 p "Uh..."
                 o "Have you ever killed someone?"
 
-            if anna_facts['status']=="Dead" or sarah_facts['status']=="Dead" or rick_facts['status']=="Dead" or nolan_facts['status']=="Dead" or lydia_facts['status']=="Dead":
+            #if anna_facts['status']=="Dead" or sarah_facts['status']=="Dead" or rick_facts['status']=="Dead" or nolan_facts['status']=="Dead" or lydia_facts['status']=="Dead":
                 thought "I'm gonna be sick..."
             else: 
                     p "..."
@@ -91,18 +91,18 @@ label seventh_apartment_scene:
                     o "Oh, nah. Lydia takes care of me. Of everyone in the apartments, really."
                     o "Well, whenever she can..."
                     o "She's really nice."
-            if lydia_facts['status']=="Dead"
+            #if lydia_facts['status']=="Dead"
                     thought "Oh my God"
                     thought "I'm gonna throw up"
                     thought "What am I-"
                     thought "Ugh..."
-            else:
+            #else:
                     p "I see... Thanks for telling me, kid"
                     o "Yeah, no problem!"
                     p "Stay safe."
                     o "You too!"
             
-            if timesTalkedtoOrion == 1:
+            #if timesTalkedtoOrion == 1:
 
 
     menu:
@@ -120,7 +120,7 @@ label eigth_apartment_scene:
 
 
 label ninth_apartment_scene:
-    scene bg blocked area
+    scene bg blockedroad
     call screen ninthApartmentNav
 
     "You cannot go here"
