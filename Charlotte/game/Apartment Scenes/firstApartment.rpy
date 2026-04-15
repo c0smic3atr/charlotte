@@ -20,17 +20,18 @@ screen firstApartmentNavigation():
 
     # to the first apartment scene
     frame:
-        xpos 240
-        ypos 250
-        xsize 350 - 240
-        ysize 320 - 250
-        background "#e0005d88"
+        xpos 6
+        ypos 150
+        xsize 490 - 6
+        ysize 465 - 150
+        background None
+
 
     button:
-        xpos 240
-        ypos 250
-        xsize 350 - 240
-        ysize 320 - 250
+        xpos 6
+        ypos 150
+        xsize 490 - 6
+        ysize 465 - 150
         background None
         hover_background None
 
@@ -41,17 +42,17 @@ screen firstApartmentNavigation():
 
         # to the apartment fence area
     frame:
-        xpos 1200
-        ypos 300
-        xsize 1475 - 1200
-        ysize 500 - 300
-        background "#000000"
+        xpos 1675
+        ypos 400
+        xsize 1915 - 1675
+        ysize 840 - 400
+        background None
 
     button:
-        xpos 1200
-        ypos 300
-        xsize 1475 - 1200
-        ysize 500 - 300
+        xpos 1675
+        ypos 400
+        xsize 1915 - 1675
+        ysize 840 - 400
         background None
         hover_background None
 
@@ -61,17 +62,17 @@ screen firstApartmentNavigation():
 
         # to the fifth apartment scene
     frame:
-        xpos 660
-        ypos 50
-        xsize 930 - 660
-        ysize 200 - 50
-        background "#A0DB53"
+        xpos 1320
+        ypos 130
+        xsize 1580 - 1320
+        ysize 415 - 130
+        background None
 
     button:
-        xpos 660
-        ypos 50
-        xsize 930 - 660
-        ysize 200 - 50
+        xpos 1320
+        ypos 130
+        xsize 1580 - 1320
+        ysize 415 - 130
         background None
         hover_background None
 
