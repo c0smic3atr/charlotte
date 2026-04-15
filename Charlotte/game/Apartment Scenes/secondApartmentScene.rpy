@@ -281,7 +281,7 @@ screen secondApartmentNavigation():
         ypos 980
         xsize 1190 - 500
         ysize 1060 - 980
-        background "#6527F5"
+        background None
 
     button:
         xpos 500
@@ -297,17 +297,17 @@ screen secondApartmentNavigation():
 
     # to door 1 convo
     frame:
-        xpos 500
-        ypos 250
-        xsize 820 - 500
-        ysize 820 - 250
-        background "#7AC288"
+        xpos 440
+        ypos 210
+        xsize 720 - 440
+        ysize 920 - 210
+        background None
 
     button:
-        xpos 500
-        ypos 250
-        xsize 820 - 500
-        ysize 820 - 250
+        xpos 440
+        ypos 210
+        xsize 720 - 440
+        ysize 920 - 210
         background None
         hover_background None
 
@@ -317,17 +317,17 @@ screen secondApartmentNavigation():
 
     # to door 2 convo
     frame:
-        xpos 895
-        ypos 280
-        xsize 1230 - 895
-        ysize 800 - 280
-        background "#C27ABB"
+        xpos 840
+        ypos 210
+        xsize 1110 - 840
+        ysize 920 - 210
+        background None
 
     button:
-        xpos 895
-        ypos 280
-        xsize 1230 - 895
-        ysize 800 - 280
+        xpos 840
+        ypos 210
+        xsize 1110 - 840
+        ysize 920 - 210
         background None
         hover_background None
 

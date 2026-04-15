@@ -7,17 +7,17 @@ label fifth_apartment_scene:
 screen fifthApartmentNav():
     # to the parking lot scene
     frame:
-        xpos 150
-        ypos 190
-        xsize 380 - 150
-        ysize 430 - 190
-        background "#e0005d88"
+        xpos 230
+        ypos 165
+        xsize 520 - 230
+        ysize 560 - 165
+        background None
 
     button:
-        xpos 150
-        ypos 190
-        xsize 380 - 150
-        ysize 430 - 190
+        xpos 230
+        ypos 165
+        xsize 520 - 230
+        ysize 560 - 165
         background None
         hover_background None
 
@@ -28,17 +28,17 @@ screen fifthApartmentNav():
 
     # to the second set of apartments
     frame:
-        xpos 1195
-        ypos 25
-        xsize 1410 - 1195
-        ysize 190 - 25
-        background "#e0005d88"
+        xpos 790
+        ypos 70
+        xsize 1200 - 790
+        ysize 285 - 70
+        background None
 
     button:
-        xpos 1195
-        ypos 25
-        xsize 1410 - 1195
-        ysize 190 - 25
+        xpos 790
+        ypos 70
+        xsize 1200 - 790
+        ysize 285 - 70
         background None
         hover_background None
 
@@ -49,17 +49,17 @@ screen fifthApartmentNav():
     # to continue down the road
 
     frame:
-        xpos 1770
-        ypos 230
-        xsize 1910 - 1770
-        ysize 400 - 230
-        background "#e0005d88"
+        xpos 1750
+        ypos 305
+        xsize 1900 - 1750
+        ysize 560 - 305
+        background None
 
     button:
-        xpos 1770
-        ypos 230
-        xsize 1910 - 1770
-        ysize 400 - 230
+        xpos 1750
+        ypos 305
+        xsize 1900 - 1750
+        ysize 560 - 305
         background None
         hover_background None
 
@@ -71,17 +71,17 @@ screen fifthApartmentNav():
     # to the park
 
     frame:
-        xpos 1160
-        ypos 550
-        xsize 1620 - 1160
-        ysize 760 - 550
-        background "#e0005d88"
+        xpos 1390
+        ypos 710
+        xsize 1880 - 1390
+        ysize 1030 - 710
+        background None
 
     button:
-        xpos 1160
-        ypos 550
-        xsize 1620 - 1160
-        ysize 760 - 550
+        xpos 1390
+        ypos 710
+        xsize 1880 - 1390
+        ysize 1030 - 710
         background None
         hover_background None
 
@@ -92,17 +92,17 @@ screen fifthApartmentNav():
     #back to 1st apartment scene
 
     frame:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background "#6527F5"
+        xpos 200
+        ypos 925
+        xsize 870 - 200
+        ysize 1060 - 925
+        background None
 
     button:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
+        xpos 200
+        ypos 925
+        xsize 870 - 200
+        ysize 1060 - 925
         background None
         hover_background None
 
