@@ -14,35 +14,64 @@ label seventh_apartment_scene:
     scene bg aptdoors
     call screen seventhApartmentNav
 
-    "At apartments2"
-    menu: 
-        "Talk":
-            show chara4colorr at left
-            p "Hello, I'm agent Walker, I'm here to-"
-            l "What's with the gas mask?"
-            p "Huh? Why?"
-            l "Just makes you look a little weird 's all."
-            p "Thanks for the note."
-            l "So what's with it?"
-            thought "What's with your persistence?"
+    #"At apartments2"
+    #menu: 
+        #"Talk":
+            #show chara4colorr at left
+            #p "Hello, I'm agent Walker, I'm here to-"
+            #l "What's with the gas mask?"
+            #p "Huh? Why?"
+            #l "Just makes you look a little weird 's all."
+            #p "Thanks for the note."
+            #l "So what's with it?"
+            #thought "What's with your persistence?"
             #Choice - tell her the truth
-            p "We're, uh, worried. About the disease."
-            p "Spreading further, that is."
-            l "Oh, you're one of them."
-            l "You should do yourself, and all of us, a favor and get lost."
-            l "We haven't been fooled by your bullshit."
-            p "..."
-            p "Are you alright?"
-            l "What?"
-            p "You look pretty roughed up."
-            l "..."
-            l "'S nothing..."
-            l "But I'm being serious when I tell 'ya"
-            l "Get out of here."
+            #p "We're, uh, worried. About the disease."
+            #p "Spreading further, that is."
+            #l "Oh, you're one of them."
+            #l "You should do yourself, and all of us, a favor and get lost."
+            #l "We haven't been fooled by your bullshit."
+            #p "..."
+            #p "Are you alright?"
+            #l "What?"
+            #p "You look pretty roughed up."
+            #l "..."
+            #l "'S nothing..."
+            #l "But I'm being serious when I tell 'ya"
+            #l "Get out of here."
 
-    menu:
-        "Go back":
-            jump fifth_apartment_scene
+    #menu:
+        #"Go back":
+            #jump fifth_apartment_scene
+
+label Door3Conversation:
+
+    # Door 3 stuff!
+
+    show chara4colorr at left
+    p "Hello, I'm agent Walker, I'm here to-"
+    l "What's with the gas mask?"
+    p "Huh? Why?"
+    l "Just makes you look a little weird 's all."
+    p "Thanks for the note."
+    l "So what's with it?"
+    thought "What's with your persistence?"
+    #Choice - tell her the truth
+    p "We're, uh, worried. About the disease."
+    p "Spreading further, that is."
+    l "Oh, you're one of them."
+    l "You should do yourself, and all of us, a favor and get lost."
+    l "We haven't been fooled by your bullshit."
+    p "..."
+    p "Are you alright?"
+    l "What?"
+    p "You look pretty roughed up."
+    l "..."
+    l "'S nothing..."
+    l "But I'm being serious when I tell 'ya"
+    l "Get out of here."
+
+    jump seventh_apartment_scene
 
 label eigth_apartment_scene:
     scene bg park
@@ -98,7 +127,7 @@ screen seventhApartmentNav():
         ypos 980
         xsize 1190 - 500
         ysize 1060 - 980
-        background "#6527F5"
+        background None
 
     button:
         xpos 500
@@ -111,55 +140,51 @@ screen seventhApartmentNav():
         mouse "move"
 
         action Jump("fifth_apartment_scene")
+
+    # Talk with Door 3
+
+    frame:
+        xpos 255
+        ypos 220
+        xsize 690 - 255
+        ysize 800 - 220
+        background None
+
+    button:
+        xpos 255
+        ypos 220
+        xsize 690 - 255
+        ysize 800 - 220
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("Door3Conversation")
+
+    # Talk with Door 4 (Commented out until we get the character in)
+    
+    #frame:
+        #xpos 1220
+        #ypos 220
+        #xsize 1660 - 1220
+        #ysize 800 - 220
+        #background None
+
+    #button:
+        #xpos 1220
+        #ypos 220
+        #xsize 1660 - 1220
+        #ysize 800 - 220
+        #background None
+        #hover_background None
+
+        #mouse "move"
+
+        #action Jump("fifth_apartment_scene")
 
 
 screen eigthApartmentNav():
-    #back to 5th apartment scene
-
-    frame:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background "#6527F5"
-
-    button:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background None
-        hover_background None
-
-        mouse "move"
-
-        action Jump("fifth_apartment_scene")
-
-
-screen sixthApartmentNav():
-    #back to 5th apartment scene
-
-    frame:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background "#6527F5"
-
-    button:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background None
-        hover_background None
-
-        mouse "move"
-
-        action Jump("fifth_apartment_scene")
-
-
-screen seventhApartmentNav():
     #back to 5th apartment scene
 
     frame:

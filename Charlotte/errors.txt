@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/thirdApartmentScene.rpy", line 40: reached end of line when expecting ':'.
-    if
-      ^
-
-File "game/Apartment Scenes/thirdApartmentScene.rpy", line 53: expected statement.
-    else
-        ^
+File "game/Apartment Scenes/RoadScene.rpy", line 47: expected ':' not found.
+    label Door3Conversation
+                           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Apr  3 08:21:14 2026
+Wed Apr 15 09:10:19 2026
