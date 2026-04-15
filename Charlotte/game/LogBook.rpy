@@ -1,4 +1,8 @@
-# =========================================================
+# IMAGES
+#========================================================
+image bgnotebook = "UserInterface/Notebook.png"
+
+
 # NOTEBOOK PAGE TRACKING
 # =========================================================
 # This keeps track of which page the player is viewing.
@@ -6,7 +10,7 @@ default notebook_page = 0
 
 # Total number of pages minus 1
 # If there are 2 pages, the max page index is 1.
-default notebook_max_page = 2
+default notebook_max_page = 3
 
 
 # =========================================================
@@ -27,6 +31,14 @@ screen notebook_screen():
         xsize 1400
         ysize 800
 
+        # Remove frame background
+        background None
+
+        # Remove default margins
+        padding (0,0)
+
+        add "bgnotebook"
+
         # -------------------------------------------------
         # MAIN LAYOUT
         # -------------------------------------------------
@@ -42,8 +54,16 @@ screen notebook_screen():
             # LEFT SIDE: CHARACTER PORTRAIT
             # =================================================
             frame:
-                xsize 350
-                ysize 350
+                xsize 310
+                ysize 260
+                xpos 190 - 45
+                ypos 120 - 35
+
+                # Remove frame background
+                background None
+
+                # Remove default margins
+                padding (0,0)
 
                 # Show a different portrait depending on the current page
                 if notebook_page == 0:
@@ -60,16 +80,25 @@ screen notebook_screen():
                         xalign 0.5
                         yalign 0.5
 
+
             # =================================================
             # RIGHT SIDE: CHARACTER NOTES
             # =================================================
             frame:
-                xsize 930
+                xsize 750
                 ysize 650
+                xpos 550 - 350
+                ypos 90 - 80
+
+                # Remove frame background
+                background None
+
+                # Remove default margins
+                padding (0,0)
 
                 vbox:
                     spacing 20
-                    xpos 30
+                    xpos 30   
                     ypos 30
 
                     # Show different notes depending on the current page
@@ -99,6 +128,32 @@ screen notebook_screen():
                         text "* [rick_facts['fact2']]"
                         text "* [rick_facts['fact3']]"
 
+                    elif notebook_page == 3:
+
+                        text "Player Stats" size 42
+                        text "Current Status" size 30
+
+                        text "Trust" size 28
+
+                        bar:
+                            value trust
+                            range max_trust
+                            xmaximum 500
+                            ymaximum 30
+
+                        text "[trust] / [max_trust]" size 22
+
+                        null height 30
+
+                        text "Oxygen" size 28
+
+                        bar:
+                            value oxygen
+                            range max_oxygen
+                            xmaximum 500
+                            ymaximum 30
+
+                        text "[oxygen] / [max_oxygen]" size 22
         # -------------------------------------------------
         # PAGE NUMBER
         # -------------------------------------------------

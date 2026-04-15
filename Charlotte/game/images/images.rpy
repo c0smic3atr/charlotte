@@ -1,1 +1,2 @@
-image bg carlayout = "Backgrounds/bg carlayout.png"
+image bg carlayout = "Backgrounds/bg Barlayout.png"
+image bgnotebook = "UserInterface/Notebook.png"
