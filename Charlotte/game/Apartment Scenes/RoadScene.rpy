@@ -92,7 +92,7 @@ label eigth_apartment_scene:
 
 
 label ninth_apartment_scene:
-    scene bg blocked area
+    scene bg blockedroad
     call screen ninthApartmentNav
 
     "You cannot go here"
@@ -170,26 +170,26 @@ screen seventhApartmentNav():
 
         action Jump("Door3Conversation")
 
-    # Talk with Door 4 (Commented out until we get the character in)
+    #Talk with Door 4 (Commented out until we get the character in)
     
-    #frame:
-        #xpos 1220
-        #ypos 220
-        #xsize 1660 - 1220
-        #ysize 800 - 220
-        #background None
+    frame:
+        xpos 1220
+        ypos 220
+        xsize 1660 - 1220
+        ysize 800 - 220
+        background None
 
-    #button:
-        #xpos 1220
-        #ypos 220
-        #xsize 1660 - 1220
-        #ysize 800 - 220
-        #background None
-        #hover_background None
+    button:
+        xpos 1220
+        ypos 220
+        xsize 1660 - 1220
+        ysize 800 - 220
+        background None
+        hover_background None
 
-        #mouse "move"
+        mouse "move"
 
-        #action Jump("fifth_apartment_scene")
+        action Jump("fifth_apartment_scene")
 
 
 screen eigthApartmentNav():
