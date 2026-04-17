@@ -13,7 +13,7 @@ label tenth_apartment_scene:
             jump ninth_apartment_scene
 
 label thirteenth_apartment_scene:
-    scene bg dead end alley one
+    scene bg alleyydead
     call screen deadEnd
 
     "You've met a dead end"

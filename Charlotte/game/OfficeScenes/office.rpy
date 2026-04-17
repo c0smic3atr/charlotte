@@ -1,7 +1,7 @@
 define x = Character("Austin")
 
 label eleventh_apartment_scene:
-    scene bg office
+    scene bg officeone
     call screen firstOffice
 
     "You are at the office"
@@ -68,7 +68,7 @@ label eleventh_apartment_scene:
             jump tenth_apartment_scene
 
 label twelvth_apartment_scene:
-    scene bg office one
+    scene bg officeone
     "You are in the office"
     menu:
         "Leave office":

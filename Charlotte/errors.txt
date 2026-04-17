@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/OfficeScenes/office.rpy", line 10: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    p "Um, hello?"
-                  ^
+File "game/Apartment Scenes/RoadScene.rpy", line 167: frame expects a non-empty block.
+    frame:
+          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Apr 14 10:46:30 2026
+Thu Apr 16 07:47:24 2026
