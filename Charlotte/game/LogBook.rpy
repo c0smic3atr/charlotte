@@ -10,7 +10,7 @@ default notebook_page = 0
 
 # Total number of pages minus 1
 # If there are 2 pages, the max page index is 1.
-default notebook_max_page = 3
+default notebook_max_page = 4
 
 
 # =========================================================
@@ -79,7 +79,10 @@ screen notebook_screen():
                     add rick_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-
+                elif notebook_page == 3:
+                    add lydia_facts['portrait']:
+                        xalign 0.5
+                        yalign 0.5
 
             # =================================================
             # RIGHT SIDE: CHARACTER NOTES
@@ -127,8 +130,15 @@ screen notebook_screen():
                         text "* [rick_facts['fact1']]"
                         text "* [rick_facts['fact2']]"
                         text "* [rick_facts['fact3']]"
-
                     elif notebook_page == 3:
+
+                        text lydia_facts['name'] size 42
+                        text "Notes:" size 30
+
+                        text "* [lydia_facts['fact1']]"
+                        text "* [lydia_facts['fact2']]"
+                        text "* [lydia_facts['fact3']]"
+                    elif notebook_page == 4:
 
                         text "Player Stats" size 42
                         text "Current Status" size 30
@@ -168,6 +178,8 @@ screen notebook_screen():
             textbutton "Previous":
                 xpos 60
                 ypos 730
+                text_idle_color "#9DA9C2" # Color when not hovered
+                text_hover_color "#404752" # Color when hovered
                 action SetVariable("notebook_page", notebook_page - 1)
 
         # -------------------------------------------------
@@ -177,6 +189,8 @@ screen notebook_screen():
             textbutton "Next":
                 xpos 1240
                 ypos 730
+                text_idle_color "#9DA9C2" # Color when not hovered
+                text_hover_color "#404752" # Color when hovered
                 action SetVariable("notebook_page", notebook_page + 1)
 
     # Press N to close notebook

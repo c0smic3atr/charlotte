@@ -3,6 +3,11 @@ default secondAptDoor2NumberOfVisits = 0
 
 
 label second_apartment_scene:
+    $ oxygen_loss = 2
+    call use_oxygen
+    if oxygen <= 0:
+     jump out_of_oxygen
+    
     scene bg doors
 
 

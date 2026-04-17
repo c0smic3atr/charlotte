@@ -1,4 +1,9 @@
 label fourteenth_apartment_scene:
+    $ oxygen_loss = 3
+    call use_oxygen
+    if oxygen <= 0:
+        jump out_of_oxygen
+    
     scene bg alley window
     call screen throughWindow
 

@@ -1,4 +1,9 @@
 label eigteenth_apartment_scene:
+    $ oxygen_loss = 6
+    call use_oxygen
+    if oxygen <= 0:
+        jump out_of_oxygen
+  
     scene bg road to hospital
     call screen eigteenthApartmentNav
 

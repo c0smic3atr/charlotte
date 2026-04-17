@@ -5,9 +5,13 @@ default oxygen = 100
 default max_trust = 100
 default max_oxygen = 100
 
+default oxygen_loss = 1
+
+
 
 label use_oxygen:
-    $ oxygen -= 5
+    $ oxygen -= oxygen_loss
+    
     
     return
 

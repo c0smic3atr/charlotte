@@ -1,6 +1,11 @@
 define x = Character("Austin")
 
 label eleventh_apartment_scene:
+    $ oxygen_loss = 3
+    call use_oxygen
+    if oxygen <= 0:
+        jump out_of_oxygen
+    
     scene bg office
     call screen firstOffice
 
