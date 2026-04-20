@@ -9,7 +9,7 @@ label fourteenth_apartment_scene:
             jump tenth_apartment_scene
 
 label fifteenth_apartment_scene:
-    scene bg office two
+    scene bg officeagain
     call screen officeTwoNav
 
     "You're in the second office"

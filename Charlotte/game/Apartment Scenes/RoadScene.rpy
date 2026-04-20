@@ -73,6 +73,10 @@ label Door3Conversation:
 
     jump seventh_apartment_scene
 
+label Door4Conversation:
+
+    show chara5color at center
+
 label eigth_apartment_scene:
     scene bg park
     call screen eigthApartmentNav
