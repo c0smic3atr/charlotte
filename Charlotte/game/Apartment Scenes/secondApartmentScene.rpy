@@ -81,7 +81,7 @@ label DoorOneConversation:
 
     if secondAptDoor1NumberOfVisits == 1:
 
-            show chara11 at left
+            show character1one at left
             a "..."
             a "You don't look familiar"
             a "There's so few in town these days, people don't have the luxury of slipping through the cracks anymore."
@@ -109,7 +109,7 @@ label DoorOneConversation:
             jump second_apartment_scene
     elif secondAptDoor1NumberOfVisits == 2:
         
-        show chara1colorr at left
+        show character1one at left
 
         a "Come on, lady."
         a "Might not look it, but I'm a busy person."
@@ -117,9 +117,10 @@ label DoorOneConversation:
             "Kill Her":
                 a "I told you to leave-"
                 $ anna_facts ['status'] = "Dead"
-                hide chara1colorr
-                show chara1mono
+                hide character1one
+                show character1mono
                 pause 3.0
+                hide character1mono
                 # increase trust
                 $ trust += 5
                
@@ -150,7 +151,7 @@ label DoorTwoConversation:
     #door 2 stuff!
     if secondAptDoor2NumberOfVisits == 1:
 
-            show chara2 at center
+            show character2two at center
           
             p "Hello, my name is-"
             s "Oh my gosh"
@@ -200,7 +201,7 @@ label DoorTwoConversation:
             if sarah_facts ['status'] == "Undiscovered":
                 $ sarah_facts['fact1'] = "Not much, again... gonna find her mom, see if she knows anything."
 
-            hide chara2
+            hide character2two
 
             # boolean (?) After first interaction with Sarah Employer will have conversation with player character which goes as follows
     if secondAptDoor2NumberOfVisits == 1:
@@ -231,15 +232,15 @@ label DoorTwoConversation:
 
 
     elif secondAptDoor2NumberOfVisits == 2:
-        show chara2 at center
+        show character2two at center
         s "Oh, hey! You're back!"
         s "Do you need something?"
         menu:
             "Kill Her":
                 s "Um... is there something wrong?"
                 $ sarah_facts ['status'] = "Dead"
-                hide chara2
-                show chara2monoo at center
+                hide character2two
+                show character2mono at center
                 pause 3.0
                 $ sarah_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her. My head hurts."
                 jump bossConversation

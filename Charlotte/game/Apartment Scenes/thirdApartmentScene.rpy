@@ -19,7 +19,7 @@ label third_apartment_scene:
                 jump first_apartment_scene
 
             "Talk":
-                show chara3again at left
+                show character4four at left
                 $ timesTalkedtoRick +=1
 
 
@@ -76,15 +76,15 @@ label third_apartment_scene:
                 $ timesTalkedtoRick += 1 
                 
                 if rick_facts['status'] != "Dead":
-                    show chara3again at left
-                    show chara3again at left
+                    show character4four at left
+                    show character4four at left
                     r "I told ya', I'm busy"
                     menu:
                         "Kill Him":
                         
                             $ rick_facts ['status'] = "Dead"
-                            hide chara3again
-                            show chara3thirdmono at left
+                            hide character4four
+                            show character3mono at left
                             pause 3.0
                             # increase trust
                             $ trust += 5
@@ -118,12 +118,12 @@ label third_apartment_scene:
             "Talk":
                 if rick_facts['status'] == "Spared" and sarah_facts['status']== "Spared" and anna_facts['status']=="Spared":
 
-                    show chara3again at left
+                    show character4four at left
                     r "I'm just tryna keep myself fed here, girl. Quit buggin me."
                     jump third_apartment_scene
 
                 if rick_facts['status']== "Spared" and (sarah_facts['status']== "Dead" or anna_facts['status']== "Dead"):
-                    show chara3again at left
+                    show character4four at left
                     r "What, you want me to do something about it?"
                     r "Assuage your guilt?"
                     r "Not gonna happen."

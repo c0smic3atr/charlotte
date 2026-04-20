@@ -1,6 +1,11 @@
 label tenth_apartment_scene:
     scene bg alley one
+
+    "I am in the 10th apartment scene"
+
     call screen alleyNav
+
+    
 
     menu:
         "Go down first alley":

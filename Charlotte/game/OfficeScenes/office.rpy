@@ -1,12 +1,14 @@
-define x = Character("Austin")
+define x = Character("Dunno")
+default timesTalkedtoAster = 0
 
 label eleventh_apartment_scene:
     scene bg officeone
-    call screen firstOffice
+    show chara6a at left
+if timesTalkedtoAster == 0:
+    
+    $ timesTalkedtoAster += 1
 
-    "You are at the office"
-    show charaoffice at left
-    if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead" or lydia_facts['status']== "Dead":
+    if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead":
         p "Um, hello?"
         x "Jane, is that you?"
         p "No, it's not."
@@ -38,8 +40,9 @@ label eleventh_apartment_scene:
         x "It seems you've lost your way, Jane."
         p "Yeah."
         p "Guess so."
+        hide chara6a
 
-    #else 
+    else:
         p "Um, hello?"
         x "Jane? Is that you?"
         p "No, I'm not Jane. I'm agent Walker."
@@ -58,6 +61,31 @@ label eleventh_apartment_scene:
         p "I was barely told anything."
         x "..."
         x "Liar."
+        hide chara6a
+#$ aster_facts['portrait'] = "aster portrait"
+    #$ aster_facts ['name'] = "Aster Carroll"
+    #if aster_facts['status']= "undiscovered":
+        #$ aster_facts['fact1'] == "These people really are sick..."
+    #if aster_facts['status']= "Dead":
+        #$ aster_facts ['fact1']== "Just because they're sick doesn't mean they deserve to die. This is insane."
+
+    if timesTalkedtoAster == 1:
+        show chara6a at left
+        x "You don't have anything to say that I want to hear."
+        menu:
+            "Kill Her":
+                #$ aster_facts['status'] = "Dead"
+                hide chara6a
+                show chara6monoa at left
+                pause 3.0
+                hide chara6monoa
+                $ trust +=10
+
+
+
+    call screen firstOffice
+
+ 
 
 
 
