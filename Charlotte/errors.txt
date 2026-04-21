@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/RoadScene.rpy", line 167: frame expects a non-empty block.
-    frame:
-          ^
+File "game/LogBook.rpy", line 76: expecting name after dot.
+    yalign 0.2.5
+               ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Apr 16 07:47:24 2026
+Tue Apr 21 10:07:00 2026

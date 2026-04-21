@@ -66,20 +66,27 @@ screen notebook_screen():
                 padding (0,0)
 
                 # Show a different portrait depending on the current page
-                if notebook_page == 3:
+                if notebook_page == 2:
                     add anna_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
+                    if anna_facts['status'] == "Dead":
+                        add "notebookdead":
+                            xalign 0.17
+                            yalign 0.25
+                            
+                            
+                            
               
-                elif notebook_page == 2:
+                elif notebook_page == 1:
                     add sarah_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                elif notebook_page == 4:
+                elif notebook_page == 3:
                     add rick_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                elif notebook_page == 5:
+                elif notebook_page == 4:
                     add lydia_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
@@ -106,7 +113,7 @@ screen notebook_screen():
 
                     # Show different notes depending on the current page
                     
-                    if notebook_page == 0:
+                    if notebook_page == 5:
 
                         text anna_facts['name'] size 42
                         text "Notes:" size 30
@@ -115,16 +122,16 @@ screen notebook_screen():
                         text "* [anna_facts['fact2']]"
                         text "* [anna_facts['fact3']]"
                     
-                    elif notebook_page == 3:
+                    elif notebook_page == 2:
 
                         text anna_facts['name'] size 42
                         text "Notes:" size 30
 
                         text "* [anna_facts['fact1']]"
-                        text "* [anna_facts['fact2']]"
-                        text "* [anna_facts['fact3']]"
+                        
+                        
 
-                    elif notebook_page == 2:
+                    elif notebook_page == 1:
 
                         text sarah_facts['name'] size 42
                         text "Notes:" size 30
@@ -132,7 +139,7 @@ screen notebook_screen():
                         text "* [sarah_facts['fact1']]"
                         text "* [sarah_facts['fact2']]"
                         text "* [sarah_facts['fact3']]"
-                    elif notebook_page == 4:
+                    elif notebook_page == 3:
 
                         text rick_facts['name'] size 42
                         text "Notes:" size 30
@@ -140,7 +147,7 @@ screen notebook_screen():
                         text "* [rick_facts['fact1']]"
                         text "* [rick_facts['fact2']]"
                         text "* [rick_facts['fact3']]"
-                    elif notebook_page == 5:
+                    elif notebook_page == 4:
 
                         text lydia_facts['name'] size 42
                         text "Notes:" size 30
@@ -148,7 +155,7 @@ screen notebook_screen():
                         text "* [lydia_facts['fact1']]"
                         text "* [lydia_facts['fact2']]"
                         text "* [lydia_facts['fact3']]"
-                    elif notebook_page == 1:
+                    elif notebook_page == 0:
 
                         text "Player Stats" size 42
                         text "Current Status" size 30
