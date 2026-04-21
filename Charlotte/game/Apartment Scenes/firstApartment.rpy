@@ -62,17 +62,17 @@ screen firstApartmentNavigation():
 
         # to the fifth apartment scene
     frame:
-        xpos 1320
-        ypos 130
-        xsize 1580 - 1320
-        ysize 415 - 130
+        xpos 1540
+        ypos 60
+        xsize 1915 - 1540
+        ysize 425 - 60
         background None
 
     button:
-        xpos 1320
-        ypos 130
-        xsize 1580 - 1320
-        ysize 415 - 130
+        xpos 1540
+        ypos 60
+        xsize 1915 - 1540
+        ysize 425 - 60
         background None
         hover_background None
 

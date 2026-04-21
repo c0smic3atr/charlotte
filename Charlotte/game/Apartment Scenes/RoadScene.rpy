@@ -100,17 +100,17 @@ screen sixthApartmentNav():
     #back to 5th apartment scene
 
     frame:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background "#6527F5"
+        xpos 580
+        ypos 830
+        xsize 1470 - 580
+        ysize 1060 - 830
+        background None
 
     button:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
+        xpos 580
+        ypos 830
+        xsize 1470 - 580
+        ysize 1060 - 830
         background None
         hover_background None
 
