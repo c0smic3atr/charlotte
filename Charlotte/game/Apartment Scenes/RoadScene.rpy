@@ -73,6 +73,7 @@ label seventh_apartment_scene:
                 $ timesTalkedtoLydia +=1
 
             elif timesTalkedtoLydia == 1:
+                show character1apt
                 l "Look, I can't say anything for anybody else, but I've come to accept things as they are."
                 l "Your involvement doesn't effect anything for us, so get out of here before they start effecting things for you."
 
@@ -82,12 +83,16 @@ label seventh_apartment_scene:
                         hide character1apt
                         show character4mono at left
                         pause 3.0
-                        hide character4mono 
+                        hide character4mono
                         $ trust += 10
 
                     "Do nothing":
                         #$ lydia_facts ['status']= "Spared"
                         $ trust -= 5
+                $ timesTalkedtoLydia += 1
+
+            else: 
+                thought "I need to get out of here..."
 
                 
 

@@ -103,7 +103,7 @@ label third_apartment_scene:
                             $ rick_facts['status'] = "Spared"   
                             jump third_apartment_scene
                 else:
-                    thought "he's not gonna answer"
+                    thought "He's not gonna answer."
                     menu:
                         "Return":
                             jump first_apartment_scene

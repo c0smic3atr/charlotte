@@ -1,4 +1,4 @@
-define x = Character("Dunno")
+define x = Character("Aster")
 default timesTalkedtoAster = 0
 
 label eleventh_apartment_scene:
