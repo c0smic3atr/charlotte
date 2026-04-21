@@ -1,4 +1,9 @@
 label twentyeigth_apartment_scene:
+    $ oxygen_loss = 8
+    call use_oxygen
+    if oxygen <= 0:
+        jump out_of_oxygen
+    
     scene bg enter end scene
     "Fence before end scene"
     menu:

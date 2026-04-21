@@ -2,6 +2,10 @@ define l = Character ("Lydia")
 default timesTalkedtoLydia =0
 
 label sixth_apartment_scene:
+    call use_oxygen
+    if oxygen <= 0:
+        jump out_of_oxygen
+   
     scene bg parking lot
     call screen sixthApartmentNav
 
@@ -96,6 +100,10 @@ label seventh_apartment_scene:
 
                 
 
+
+    #Discovered Lydia!!
+    $ lydia_facts['portrait'] = "lydia portrait"
+    $ lydia_facts['name'] = "Lydia"
 
     jump seventh_apartment_scene
 

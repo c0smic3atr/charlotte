@@ -10,7 +10,7 @@ default notebook_page = 0
 
 # Total number of pages minus 1
 # If there are 2 pages, the max page index is 1.
-default notebook_max_page = 3
+default notebook_max_page = 5
 
 
 # =========================================================
@@ -66,20 +66,23 @@ screen notebook_screen():
                 padding (0,0)
 
                 # Show a different portrait depending on the current page
-                if notebook_page == 0:
+                if notebook_page == 3:
                     add anna_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
               
-                elif notebook_page == 1:
+                elif notebook_page == 2:
                     add sarah_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                elif notebook_page == 2:
+                elif notebook_page == 4:
                     add rick_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-
+                elif notebook_page == 5:
+                    add lydia_facts['portrait']:
+                        xalign 0.5
+                        yalign 0.5
 
             # =================================================
             # RIGHT SIDE: CHARACTER NOTES
@@ -102,6 +105,7 @@ screen notebook_screen():
                     ypos 30
 
                     # Show different notes depending on the current page
+                    
                     if notebook_page == 0:
 
                         text anna_facts['name'] size 42
@@ -110,8 +114,17 @@ screen notebook_screen():
                         text "* [anna_facts['fact1']]"
                         text "* [anna_facts['fact2']]"
                         text "* [anna_facts['fact3']]"
+                    
+                    elif notebook_page == 3:
 
-                    elif notebook_page == 1:
+                        text anna_facts['name'] size 42
+                        text "Notes:" size 30
+
+                        text "* [anna_facts['fact1']]"
+                        text "* [anna_facts['fact2']]"
+                        text "* [anna_facts['fact3']]"
+
+                    elif notebook_page == 2:
 
                         text sarah_facts['name'] size 42
                         text "Notes:" size 30
@@ -119,7 +132,7 @@ screen notebook_screen():
                         text "* [sarah_facts['fact1']]"
                         text "* [sarah_facts['fact2']]"
                         text "* [sarah_facts['fact3']]"
-                    elif notebook_page == 2:
+                    elif notebook_page == 4:
 
                         text rick_facts['name'] size 42
                         text "Notes:" size 30
@@ -127,8 +140,15 @@ screen notebook_screen():
                         text "* [rick_facts['fact1']]"
                         text "* [rick_facts['fact2']]"
                         text "* [rick_facts['fact3']]"
+                    elif notebook_page == 5:
 
-                    elif notebook_page == 3:
+                        text lydia_facts['name'] size 42
+                        text "Notes:" size 30
+
+                        text "* [lydia_facts['fact1']]"
+                        text "* [lydia_facts['fact2']]"
+                        text "* [lydia_facts['fact3']]"
+                    elif notebook_page == 1:
 
                         text "Player Stats" size 42
                         text "Current Status" size 30
@@ -168,6 +188,8 @@ screen notebook_screen():
             textbutton "Previous":
                 xpos 60
                 ypos 730
+                text_idle_color "#9DA9C2" # Color when not hovered
+                text_hover_color "#404752" # Color when hovered
                 action SetVariable("notebook_page", notebook_page - 1)
 
         # -------------------------------------------------
@@ -177,6 +199,8 @@ screen notebook_screen():
             textbutton "Next":
                 xpos 1240
                 ypos 730
+                text_idle_color "#9DA9C2" # Color when not hovered
+                text_hover_color "#404752" # Color when hovered
                 action SetVariable("notebook_page", notebook_page + 1)
 
     # Press N to close notebook

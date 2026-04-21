@@ -1,4 +1,9 @@
 label tenth_apartment_scene:
+    $ oxygen_loss = 5
+    call use_oxygen
+    if oxygen <= 0:
+        jump out_of_oxygen
+    
     scene bg alley one
 
     "I am in the 10th apartment scene"
