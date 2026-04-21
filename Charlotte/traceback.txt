@@ -1,26 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/OfficeScenes/office.rpy", line 77, in script
-    $ aster_facts['status'] = "Dead"
-  File "game/OfficeScenes/office.rpy", line 77, in <module>
-    $ aster_facts['status'] = "Dead"
-NameError: name 'aster_facts' is not defined
+  File "game/Apartment Scenes/RoadScene.rpy", line 103, in script
+    if lydia_facts['status']== "Dead" and anna_facts['status']=="Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
+SyntaxError: invalid syntax (game/Apartment Scenes/RoadScene.rpy, line 106)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/OfficeScenes/office.rpy", line 77, in script
-    $ aster_facts['status'] = "Dead"
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/OfficeScenes/office.rpy", line 77, in <module>
-    $ aster_facts['status'] = "Dead"
-NameError: name 'aster_facts' is not defined
+  File "game/Apartment Scenes/RoadScene.rpy", line 103, in script
+    if lydia_facts['status']== "Dead" and anna_facts['status']=="Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
+    raise e
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
+    raise orig_e
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/Apartment Scenes/RoadScene.rpy, line 106)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Mon Apr 20 10:31:37 2026
+Tue Apr 21 08:52:45 2026

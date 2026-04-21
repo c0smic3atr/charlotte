@@ -83,20 +83,30 @@ label seventh_apartment_scene:
 
                 menu: 
                     "Kill her":
-                        #$ lydia_facts ['status'] = "Dead"
+                        $ lydia_facts ['status'] = "Dead"
                         hide character1apt
                         show character4mono at left
                         pause 3.0
                         hide character4mono
                         $ trust += 10
 
+                        
+
                     "Do nothing":
-                        #$ lydia_facts ['status']= "Spared"
+                        $ lydia_facts ['status']= "Spared"
                         $ trust -= 5
                 $ timesTalkedtoLydia += 1
 
             else: 
                 thought "I need to get out of here..."
+
+        if lydia_facts['status']== "Dead" and anna_facts['status']=="Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
+            $ lydia_facts['fact1']= "She looked young. How old was she? Did she even fit the profile?"
+
+        elif lydia_facts['status']= "Dead":
+            $ lydia_facts['fact1']= "Wouldn't say much. Do unhelpful people deserve to die? Is that the profile?"
+
+
 
                 
 
