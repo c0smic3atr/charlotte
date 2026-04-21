@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/OfficeScenes/office.rpy", line 42: expected ':' not found.
-    else 
-         ^
+File "game/OfficeScenes/office.rpy", line 86: expected python_expression
+    elif:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Apr 20 09:41:40 2026
+Tue Apr 21 08:06:07 2026

@@ -1,5 +1,5 @@
 define l = Character ("Lydia")
-
+default timesTalkedtoLydia =0
 
 label sixth_apartment_scene:
     scene bg parking lot
@@ -13,69 +13,88 @@ label sixth_apartment_scene:
 label seventh_apartment_scene:
     scene bg aptdoors
     call screen seventhApartmentNav
+    if timesTalkedtoLydia == 0:
 
-    #"At apartments2"
-    #menu: 
-        #"Talk":
-            #show chara4colorr at left
-            #p "Hello, I'm agent Walker, I'm here to-"
-            #l "What's with the gas mask?"
-            #p "Huh? Why?"
-            #l "Just makes you look a little weird 's all."
-            #p "Thanks for the note."
-            #l "So what's with it?"
-            #thought "What's with your persistence?"
-            #Choice - tell her the truth
-            #p "We're, uh, worried. About the disease."
-            #p "Spreading further, that is."
-            #l "Oh, you're one of them."
-            #l "You should do yourself, and all of us, a favor and get lost."
-            #l "We haven't been fooled by your bullshit."
-            #p "..."
-            #p "Are you alright?"
-            #l "What?"
-            #p "You look pretty roughed up."
-            #l "..."
-            #l "'S nothing..."
-            #l "But I'm being serious when I tell 'ya"
-            #l "Get out of here."
+        #"At apartments2"
+        #menu: 
+            #"Talk":
+                #show chara4colorr at left
+                #p "Hello, I'm agent Walker, I'm here to-"
+                #l "What's with the gas mask?"
+                #p "Huh? Why?"
+                #l "Just makes you look a little weird 's all."
+                #p "Thanks for the note."
+                #l "So what's with it?"
+                #thought "What's with your persistence?"
+                #Choice - tell her the truth
+                #p "We're, uh, worried. About the disease."
+                #p "Spreading further, that is."
+                #l "Oh, you're one of them."
+                #l "You should do yourself, and all of us, a favor and get lost."
+                #l "We haven't been fooled by your bullshit."
+                #p "..."
+                #p "Are you alright?"
+                #l "What?"
+                #p "You look pretty roughed up."
+                #l "..."
+                #l "'S nothing..."
+                #l "But I'm being serious when I tell 'ya"
+                #l "Get out of here."
 
-    #menu:
-        #"Go back":
-            #jump fifth_apartment_scene
+        #menu:
+            #"Go back":
+                #jump fifth_apartment_scene
+        label Door3Conversation:
 
-label Door3Conversation:
+            if timesTalkedtoLydia == 0:
+                # Door 3 stuff
+                show character1apt at left
+                p "Hello, I'm agent Walker, I'm here to-"
+                l "What's with the gas mask?"
+                p "Huh? Why?"
+                l "Just makes you look a little weird 's all."
+                p "Thanks for the note."
+                l "So what's with it?"
+                thought "What's with your persistence?"
+                #Choice - tell her the truth
+                p "We're, uh, worried. About the disease."
+                p "Spreading further, that is."
+                l "Oh, you're one of them."
+                l "You should do yourself, and all of us, a favor and get lost."
+                l "We haven't been fooled by your bullshit."
+                p "..."
+                p "Are you alright?"
+                l "What?"
+                p "You look pretty roughed up."
+                l "..."
+                l "'S nothing..."
+                l "But I'm being serious when I tell 'ya"
+                l "Get out of here."
+                $ timesTalkedtoLydia +=1
 
-    # Door 3 stuff!
+            elif timesTalkedtoLydia == 1:
+                l "Look, I can't say anything for anybody else, but I've come to accept things as they are."
+                l "Your involvement doesn't effect anything for us, so get out of here before they start effecting things for you."
 
-    show chara4colorr at left
-    p "Hello, I'm agent Walker, I'm here to-"
-    l "What's with the gas mask?"
-    p "Huh? Why?"
-    l "Just makes you look a little weird 's all."
-    p "Thanks for the note."
-    l "So what's with it?"
-    thought "What's with your persistence?"
-    #Choice - tell her the truth
-    p "We're, uh, worried. About the disease."
-    p "Spreading further, that is."
-    l "Oh, you're one of them."
-    l "You should do yourself, and all of us, a favor and get lost."
-    l "We haven't been fooled by your bullshit."
-    p "..."
-    p "Are you alright?"
-    l "What?"
-    p "You look pretty roughed up."
-    l "..."
-    l "'S nothing..."
-    l "But I'm being serious when I tell 'ya"
-    l "Get out of here."
+                menu: 
+                    "Kill her":
+                        #$ lydia_facts ['status'] = "Dead"
+                        hide character1apt
+                        show character4mono at left
+                        pause 3.0
+                        hide character4mono 
+                        $ trust += 10
+
+                    "Do nothing":
+                        #$ lydia_facts ['status']= "Spared"
+                        $ trust -= 5
+
+                
+
 
     jump seventh_apartment_scene
 
-label Door4Conversation:
 
-    show chara5color at center
 
 label eigth_apartment_scene:
     scene bg park

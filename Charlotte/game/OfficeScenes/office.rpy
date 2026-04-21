@@ -61,6 +61,7 @@ if timesTalkedtoAster == 0:
         p "I was barely told anything."
         x "..."
         x "Liar."
+        $ timesTalkedtoAster +=1
         hide chara6a
 #$ aster_facts['portrait'] = "aster portrait"
     #$ aster_facts ['name'] = "Aster Carroll"
@@ -72,14 +73,29 @@ if timesTalkedtoAster == 0:
     if timesTalkedtoAster == 1:
         show chara6a at left
         x "You don't have anything to say that I want to hear."
-        menu:
-            "Kill Her":
-                #$ aster_facts['status'] = "Dead"
-                hide chara6a
-                show chara6monoa at left
-                pause 3.0
-                hide chara6monoa
-                $ trust +=10
+        if anna_facts ['status']== "Spared" and sarah_facts ['status']== "Spared" and rick_facts ['status']== "Spared":
+            menu:
+                "Kill Her":
+                    #$ aster_facts['status'] = "Dead"
+                    hide chara6a
+                    show chara6monoa at left
+                    pause 3.0
+                    hide chara6monoa
+                    $ trust +=10
+                "Keep Doing Nothing":
+                    $ trust -=10
+        else:
+            menu:
+                "Kill Her":
+                    #$ aster_facts['status'] = "Dead"
+                    hide chara6a
+                    show chara6monoa at left
+                    pause 3.0
+                    hide chara6monoa
+                    $ trust +=10 
+                "Do Nothing":
+                    $ trust -=5  
+
 
 
 

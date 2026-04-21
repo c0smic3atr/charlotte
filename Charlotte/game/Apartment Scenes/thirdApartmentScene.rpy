@@ -87,7 +87,7 @@ label third_apartment_scene:
                             show character3mono at left
                             pause 3.0
                             # increase trust
-                            $ trust += 5
+                            $ trust += 10
                         
 
                             if sarah_facts['status']== "Dead" or anna_facts ['status']== "Dead":
@@ -121,6 +121,7 @@ label third_apartment_scene:
                     show character4four at left
                     r "I'm just tryna keep myself fed here, girl. Quit buggin me."
                     jump third_apartment_scene
+                
 
                 if rick_facts['status']== "Spared" and (sarah_facts['status']== "Dead" or anna_facts['status']== "Dead"):
                     show character4four at left
