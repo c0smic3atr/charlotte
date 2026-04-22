@@ -10,6 +10,7 @@ default rick_facts = {
  "hasBeenDiscovered": False,
   "status" : "undiscovered",
   "marked" : False,
+  "resolved" : False,
  "portrait": "unknown portrait",
  "name":"Undiscovered",
  "fact1":"Undiscovered",

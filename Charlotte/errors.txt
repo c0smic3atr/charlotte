@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/RoadScene.rpy", line 214: Indentation mismatch.
+File "game/Apartment Scenes/secondApartmentScene.rpy", line 323: expected statement.
+    elif sarah_facts['resolved']== True:
+                    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Apr 21 10:35:13 2026
+Wed Apr 22 10:28:46 2026

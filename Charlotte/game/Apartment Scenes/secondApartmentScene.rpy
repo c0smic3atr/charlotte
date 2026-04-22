@@ -142,37 +142,40 @@ label DoorOneConversation:
 
 
 label anna_menu:
-    menu:
-            "Kill Her" if anna_facts['status']!="Dead":
-                a "I told you to leave-"
+
+    if anna_facts['resolved'] == False:
+        menu:
+                "Kill Her" if anna_facts['status']!="Dead":
+                    a "I told you to leave-"
+                    
+                    hide character1one
+                    show character1mono
+                    pause 3.0
+                    hide character1mono
+                    $ anna_facts['status'] = "Dead"
+                    # increase trust
+                    
                 
-                hide character1one
-                show character1mono
-                pause 3.0
-                hide character1mono
-                $ anna_facts['status'] = "Dead"
-                # increase trust
+                    $ anna_facts['fact1'] = "What do I write? Can't feel my fingers. Her body sounded heavy when it hit the floor. She didn't say much. Guess the people here are pretty hopeless. Can't say I blame them."   
+
+                "Do nothing" if anna_facts['resolved'] == False:
+                    if anna_facts['status'] != "Dead":
+                        $ anna_facts['status'] = "Spared"
+                    $ anna_facts['resolved']= True
+                    p "..."
+                    $ trust-=5
+                    $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
+        
                 
-               
-                $ anna_facts['fact1'] = "What do I write? Can't feel my fingers. Her body sounded heavy when it hit the floor. She didn't say much. Guess the people here are pretty hopeless. Can't say I blame them."   
+                "Mark as Dead" if anna_facts['marked'] == False:
+                    $ anna_facts['marked']= True
+                    $ trust += 10
 
-            "Do nothing" if anna_facts['status'] != "Dead":
-                if anna_facts['status'] != "Dead":
-                    $ anna_facts['status'] = "Spared"
-                p "..."
-                $ trust-=5
+    elif anna_facts['resolved']== True:
+        thought "She's not gonna answer..."
+        jump second_apartment_scene
 
-           
-
-
-                $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
-            
-            
-            "Mark as Dead" if anna_facts['marked'] == False:
-                $ anna_facts['marked']= True
-                $ trust += 10
-        #if anna_facts['status']= "Dead":
-            #jump 
+      
     jump second_apartment_scene
 
 
@@ -284,6 +287,15 @@ label DoorTwoConversation:
 
     
 label sarah_menu:
+
+    default somethingToDo = True
+    if sarah_facts['status'] != "Dead" or sarah_facts['marked'] == False:
+        $ somethingToDo = True
+    else:
+        $ somethingToDo = False
+
+if sarah_facts['resolved']== False:
+
     menu:
             "Kill Her" if sarah_facts['status'] !="Dead":
                 s "Um... is there something wrong?"
@@ -296,17 +308,22 @@ label sarah_menu:
                 jump bossConversation
                 $ trust-=10
             
-            "Do nothing" if sarah_facts['status']!="Dead":
+            "Do nothing" if somethingToDo == True and sarah_facts['resolved']== False:
                 if sarah_facts['status']!="Dead":
                     $ sarah_facts['status'] = "Spared"
+                    $ sarah_facts['resolved']= True
                 p "Um... no. Never mind."
                 $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
                 jump bossConversation
                 $ trust-=10
 
             "Mark as Dead" if sarah_facts['marked']== False:
-                $ sarah_facts['marked']
+                $ sarah_facts['marked']= True
                 $ trust +=10
+elif sarah_facts['resolved']== True:
+    thought "What am I doing?"
+    jump second_apartment_scene
+   
     jump second_apartment_scene
 
 

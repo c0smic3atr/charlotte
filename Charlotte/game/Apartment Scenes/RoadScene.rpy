@@ -82,22 +82,9 @@ label seventh_apartment_scene:
                 show character1apt
                 l "Look, I can't say anything for anybody else, but I've come to accept things as they are."
                 l "Your involvement doesn't effect anything for us, so get out of here before they start effecting things for you."
+                jump lydia_menu
 
-                menu: 
-                    "Kill her":
-                        $ lydia_facts ['status'] = "Dead"
-                        hide character1apt
-                        show character4mono at left
-                        pause 3.0
-                        hide character4mono
-                        $ trust += 10
-
-                        
-
-                    "Do nothing":
-                        $ lydia_facts ['status']= "Spared"
-                        $ trust -= 5
-                $ timesTalkedtoLydia += 1
+                
 
             else: 
                 thought "I need to get out of here..."
@@ -121,6 +108,31 @@ label seventh_apartment_scene:
     $ lydia_facts['name'] = "Lydia"
 
     jump seventh_apartment_scene
+
+    label lydia_menu:
+        menu: 
+                    "Kill her" if lydia_facts['status']!="Dead":
+                        $ lydia_facts ['status'] = "Dead"
+                        hide character1apt
+                        show character4mono at left
+                        pause 3.0
+                        hide character4mono
+                        $ trust += 10
+
+                    "Do nothing" if lydia_facts['status']!="Dead":
+                        if lydia_facts['status']!="Dead":
+                            $ lydia_facts ['status']= "Spared"
+                        $ trust -= 5
+
+                    "Mark as Dead" if lydia_facts['marked']== False:
+                        $ lydia_facts['marked']= True
+                        $ trust +=10
+    $ timesTalkedtoLydia += 1
+
+                    
+    jump seventh_apartment_scene
+
+        
 
 
 
