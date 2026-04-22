@@ -9,6 +9,7 @@ image anna  = "characters/anna/chara 1 colorr.png"
 default anna_facts = {
  "hasBeenDiscovered": False,
  "status" : "Undiscovered",
+ "marked" : False,
  "portrait": "unknown portrait",
  "name":"Undiscovered",
  "fact1":"Undiscovered",

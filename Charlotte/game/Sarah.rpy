@@ -7,6 +7,7 @@ image sarah = "characters/sarah/chara 2 colorr.png"
 default sarah_facts = {
  "hasBeenDiscovered": False,
  "status": "Undiscovered",
+ "marked" : False,
  "portrait": "unknown portrait",
  "name":"Undiscovered",
  "fact1":"Undiscovered",

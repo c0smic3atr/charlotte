@@ -9,6 +9,7 @@ image rick  = "characters/rick/chara 3 colorr.png"
 default rick_facts = {
  "hasBeenDiscovered": False,
   "status" : "undiscovered",
+  "marked" : False,
  "portrait": "unknown portrait",
  "name":"Undiscovered",
  "fact1":"Undiscovered",

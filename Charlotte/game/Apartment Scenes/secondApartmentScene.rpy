@@ -118,31 +118,10 @@ label DoorOneConversation:
 
         a "Come on, lady."
         a "Might not look it, but I'm a busy person."
+
+        jump anna_menu
         
-        menu:
-            "Kill Her" if anna_facts['status']!="Dead":
-                a "I told you to leave-"
-                
-                hide character1one
-                show character1mono
-                pause 3.0
-                hide character1mono
-                # increase trust
-                
-               
-                $ anna_facts['fact1'] = "What do I write? Can't feel my fingers. Her body sounded heavy when it hit the floor. She didn't say much. Guess the people here are pretty hopeless. Can't say I blame them."   
-
-            "Do nothing":
-                $ anna_facts['status'] = "Spared"
-                p "..."
-                $ trust-=5
-
-                $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
-            "Mark as Dead":
-                $ anna_facts['status']= "Dead"
-                $ trust += 10
-        #if anna_facts['status']= "Dead":
-            #jump 
+        
 
             
 
@@ -153,11 +132,48 @@ label DoorOneConversation:
 
     else:
 
+        jump anna_menu
+
         thought "She's not gonna answer..."
         jump second_apartment_scene
 #if
     #$ anna_facts ['status']= "Dead"
         #$ anna_facts['fact2']= "Blabla2ndfacts"
+
+
+label anna_menu:
+    menu:
+            "Kill Her" if anna_facts['status']!="Dead":
+                a "I told you to leave-"
+                
+                hide character1one
+                show character1mono
+                pause 3.0
+                hide character1mono
+                $ anna_facts['status'] = "Dead"
+                # increase trust
+                
+               
+                $ anna_facts['fact1'] = "What do I write? Can't feel my fingers. Her body sounded heavy when it hit the floor. She didn't say much. Guess the people here are pretty hopeless. Can't say I blame them."   
+
+            "Do nothing" if anna_facts['status'] != "Dead":
+                if anna_facts['status'] != "Dead":
+                    $ anna_facts['status'] = "Spared"
+                p "..."
+                $ trust-=5
+
+           
+
+
+                $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
+            
+            
+            "Mark as Dead" if anna_facts['marked'] == False:
+                $ anna_facts['marked']= True
+                $ trust += 10
+        #if anna_facts['status']= "Dead":
+            #jump 
+    jump second_apartment_scene
 
 
 
@@ -252,9 +268,26 @@ label DoorTwoConversation:
         show character2two at center
         s "Oh, hey! You're back!"
         s "Do you need something?"
-        menu:
-            "Kill Her":
+        jump sarah_menu
+        
+
+                
+    elif sarah_facts['status'] != "Dead" or sarah_facts['marked'] != True:
+
+        
+        jump sarah_menu
+        
+    else:
+        
+        thought "What am I doing?"
+        jump second_apartment_scene
+
+    
+label sarah_menu:
+    menu:
+            "Kill Her" if sarah_facts['status'] !="Dead":
                 s "Um... is there something wrong?"
+
                 $ sarah_facts ['status'] = "Dead"
                 hide character2two
                 show character2mono at center
@@ -263,23 +296,19 @@ label DoorTwoConversation:
                 jump bossConversation
                 $ trust-=10
             
-            "Do nothing":
-                $ sarah_facts['status'] = "Spared"
+            "Do nothing" if sarah_facts['status']!="Dead":
+                if sarah_facts['status']!="Dead":
+                    $ sarah_facts['status'] = "Spared"
                 p "Um... no. Never mind."
                 $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
                 jump bossConversation
                 $ trust-=10
 
-            "Mark as Dead":
+            "Mark as Dead" if sarah_facts['marked']== False:
+                $ sarah_facts['marked']
                 $ trust +=10
+    jump second_apartment_scene
 
-                
-   
-        jump second_apartment_scene
-    else:
-        
-        thought "What am I doing?"
-        jump second_apartment_scene
 
 
 label bossConversation:

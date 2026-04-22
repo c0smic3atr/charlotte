@@ -1,26 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Apartment Scenes/RoadScene.rpy", line 201, in script
-    $ orion_facts['status']= "Dead"
-  File "game/Apartment Scenes/RoadScene.rpy", line 201, in <module>
-    $ orion_facts['status']= "Dead"
-NameError: name 'orion_facts' is not defined
+  File "game/Apartment Scenes/secondApartmentScene.rpy", line 284, in script
+    menu:
+SyntaxError: invalid syntax (game/Apartment Scenes/secondApartmentScene.rpy, line 296)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/Apartment Scenes/RoadScene.rpy", line 201, in script
-    $ orion_facts['status']= "Dead"
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/Apartment Scenes/RoadScene.rpy", line 201, in <module>
-    $ orion_facts['status']= "Dead"
-NameError: name 'orion_facts' is not defined
+  File "game/Apartment Scenes/secondApartmentScene.rpy", line 284, in script
+    menu:
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1632, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\exports\menuexports.py", line 100, in menu
+    condition = renpy.python.py_eval(condition)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
+    raise e
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
+    raise orig_e
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/Apartment Scenes/secondApartmentScene.rpy, line 296)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Tue Apr 21 10:34:27 2026
+Wed Apr 22 08:45:50 2026
