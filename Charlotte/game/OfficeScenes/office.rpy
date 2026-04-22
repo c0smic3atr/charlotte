@@ -71,7 +71,7 @@ if timesTalkedtoAster == 0:
         #$ aster_facts ['fact1']== "Just because they're sick doesn't mean they deserve to die. This is insane."
 
     if timesTalkedtoAster == 1:
-        show chara6a at left
+        show character1office at left
         x "You don't have anything to say that I want to hear."
         if anna_facts ['status']== "Spared" and sarah_facts ['status']== "Spared" and rick_facts ['status']== "Spared":
             menu:
