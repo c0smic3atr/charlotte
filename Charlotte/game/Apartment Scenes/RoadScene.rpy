@@ -84,6 +84,14 @@ label Door3Conversation:
 label Door4Conversation:
 
     show chara5color at center
+   
+    
+    
+    
+    
+    #Discovered Orion!!
+    $ orion_facts['portrait'] = "orion portrait"
+    $ orion_facts['name'] = "Orion"
 
 label eigth_apartment_scene:
     scene bg park

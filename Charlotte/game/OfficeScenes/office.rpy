@@ -1,4 +1,4 @@
-define x = Character("Austin")
+define x = Character("Aster")
 
 label eleventh_apartment_scene:
     $ oxygen_loss = 3
@@ -64,6 +64,9 @@ label eleventh_apartment_scene:
         x "..."
         x "Liar."
 
+        #Discovered aster!!
+    $ aster_facts['portrait'] = "aster portrait"
+    $ aster_facts['name'] = "Aster"
 
 
     menu:

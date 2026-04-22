@@ -1,10 +1,8 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Apartment Scenes/secondApartmentScene.rpy", line 14, in script
-    call screen secondApartmentNavigation
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/script.rpy", line 31, in script
+    e "I know this isn't your typical line of work"
   File "game/LogBook.rpy", line 19, in execute
     screen notebook_screen():
   File "game/LogBook.rpy", line 19, in execute
@@ -13,33 +11,35 @@ While running game code:
     frame:
   File "game/LogBook.rpy", line 48, in execute
     hbox:
-  File "game/LogBook.rpy", line 56, in execute
+  File "game/LogBook.rpy", line 128, in execute
     frame:
-  File "game/LogBook.rpy", line 69, in execute
-    if notebook_page == 2:
-  File "game/LogBook.rpy", line 73, in execute
-    if anna_facts['status'] == "Dead":
-  File "game/LogBook.rpy", line 74, in execute
-    add notebookdead
-  File "game/LogBook.rpy", line 74, in <module>
-    add notebookdead
-NameError: name 'notebookdead' is not defined
+  File "game/LogBook.rpy", line 140, in execute
+    vbox:
+  File "game/LogBook.rpy", line 147, in execute
+    if notebook_page == 7:
+  File "game/LogBook.rpy", line 149, in execute
+    text anna_facts['Information Station'] size 42
+  File "game/LogBook.rpy", line 149, in <module>
+    text anna_facts['Information Station'] size 42
+KeyError: 'Information Station'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/Apartment Scenes/secondApartmentScene.rpy", line 14, in script
-    call screen secondApartmentNavigation
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "game/script.rpy", line 31, in script
+    e "I know this isn't your typical line of work"
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\character.py", line 1471, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\character.py", line 1117, in do_display
+    display_say(who,
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\character.py", line 814, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
   File "C:\RenPy\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\RenPy\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
@@ -68,19 +68,19 @@ Full traceback:
     frame:
   File "game/LogBook.rpy", line 48, in execute
     hbox:
-  File "game/LogBook.rpy", line 56, in execute
+  File "game/LogBook.rpy", line 128, in execute
     frame:
-  File "game/LogBook.rpy", line 69, in execute
-    if notebook_page == 2:
-  File "game/LogBook.rpy", line 73, in execute
-    if anna_facts['status'] == "Dead":
-  File "game/LogBook.rpy", line 74, in execute
-    add notebookdead
-  File "game/LogBook.rpy", line 74, in <module>
-    add notebookdead
-NameError: name 'notebookdead' is not defined
+  File "game/LogBook.rpy", line 140, in execute
+    vbox:
+  File "game/LogBook.rpy", line 147, in execute
+    if notebook_page == 7:
+  File "game/LogBook.rpy", line 149, in execute
+    text anna_facts['Information Station'] size 42
+  File "game/LogBook.rpy", line 149, in <module>
+    text anna_facts['Information Station'] size 42
+KeyError: 'Information Station'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Tue Apr 21 09:58:45 2026
+Wed Apr 22 09:39:10 2026
