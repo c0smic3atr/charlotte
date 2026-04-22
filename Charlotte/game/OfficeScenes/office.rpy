@@ -3,7 +3,7 @@ default timesTalkedtoAster = 0
 
 label eleventh_apartment_scene:
     scene bg officeone
-    show chara6a at left
+    show character1office
 if timesTalkedtoAster == 0:
     
     $ timesTalkedtoAster += 1
@@ -40,7 +40,7 @@ if timesTalkedtoAster == 0:
         x "It seems you've lost your way, Jane."
         p "Yeah."
         p "Guess so."
-        hide chara6a
+        hide character1office
 
     else:
         p "Um, hello?"
@@ -62,7 +62,7 @@ if timesTalkedtoAster == 0:
         x "..."
         x "Liar."
         $ timesTalkedtoAster +=1
-        hide chara6a
+        hide character1office
 #$ aster_facts['portrait'] = "aster portrait"
     #$ aster_facts ['name'] = "Aster Carroll"
     #if aster_facts['status']= "undiscovered":
@@ -77,10 +77,10 @@ if timesTalkedtoAster == 0:
             menu:
                 "Kill Her":
                     #$ aster_facts['status'] = "Dead"
-                    hide chara6a
-                    show chara6monoa at left
+                    hide character1office
+                    show character6mono
                     pause 3.0
-                    hide chara6monoa
+                    hide character6mono
                     $ trust +=10
                 "Keep Doing Nothing":
                     $ trust -=10
@@ -88,10 +88,10 @@ if timesTalkedtoAster == 0:
             menu:
                 "Kill Her":
                     #$ aster_facts['status'] = "Dead"
-                    hide chara6a
-                    show chara6monoa at left
+                    hide character1office
+                    show character6mono
                     pause 3.0
-                    hide chara6monoa
+                    hide character6mono
                     $ trust +=10 
                 "Do Nothing":
                     $ trust -=5  

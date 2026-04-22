@@ -12,7 +12,7 @@ label third_apartment_scene:
     scene bg dumpster
     if timesTalkedtoRick == 0:
 
-        t "You are at the fence"
+        
 
         menu:
             "Return":

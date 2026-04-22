@@ -6,7 +6,7 @@ label second_apartment_scene:
     $ oxygen_loss = 2
     call use_oxygen
     if oxygen <= 0:
-     jump out_of_oxygen
+        jump out_of_oxygen
     
     scene bg doors
 
@@ -118,24 +118,36 @@ label DoorOneConversation:
 
         a "Come on, lady."
         a "Might not look it, but I'm a busy person."
+        
         menu:
-            "Kill Her":
+            "Kill Her" if anna_facts['status']!="Dead":
                 a "I told you to leave-"
-                $ anna_facts ['status'] = "Dead"
+                
                 hide character1one
                 show character1mono
                 pause 3.0
                 hide character1mono
                 # increase trust
-                $ trust += 5
+                
                
                 $ anna_facts['fact1'] = "What do I write? Can't feel my fingers. Her body sounded heavy when it hit the floor. She didn't say much. Guess the people here are pretty hopeless. Can't say I blame them."   
 
             "Do nothing":
                 $ anna_facts['status'] = "Spared"
                 p "..."
+                $ trust-=5
 
                 $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
+            "Mark as Dead":
+                $ anna_facts['status']= "Dead"
+                $ trust += 10
+        #if anna_facts['status']= "Dead":
+            #jump 
+
+            
+
+
+
                 
         jump second_apartment_scene
 
@@ -249,12 +261,18 @@ label DoorTwoConversation:
                 pause 3.0
                 $ sarah_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her. My head hurts."
                 jump bossConversation
+                $ trust-=10
             
             "Do nothing":
                 $ sarah_facts['status'] = "Spared"
                 p "Um... no. Never mind."
                 $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
                 jump bossConversation
+                $ trust-=10
+
+            "Mark as Dead":
+                $ trust +=10
+
                 
    
         jump second_apartment_scene

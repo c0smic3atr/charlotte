@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/OfficeScenes/office.rpy", line 86: expected python_expression
-    elif:
-        ^
+File "game/Apartment Scenes/RoadScene.rpy", line 214: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Apr 21 08:06:07 2026
+Tue Apr 21 10:35:13 2026

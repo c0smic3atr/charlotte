@@ -1,5 +1,7 @@
 define l = Character ("Lydia")
 default timesTalkedtoLydia =0
+default timesTalkedtoOrion = 0
+define o = Character ("Orion")
 
 label sixth_apartment_scene:
     call use_oxygen
@@ -103,8 +105,11 @@ label seventh_apartment_scene:
         if lydia_facts['status']== "Dead" and anna_facts['status']=="Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
             $ lydia_facts['fact1']= "She looked young. How old was she? Did she even fit the profile?"
 
-        elif lydia_facts['status']= "Dead":
+        elif lydia_facts['status']== "Dead":
             $ lydia_facts['fact1']= "Wouldn't say much. Do unhelpful people deserve to die? Is that the profile?"
+
+        if lydia_facts['status']== "Spared":
+            $ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything, total waste of time... is everybody gonna be like this? All cryptic and shit?"
 
 
 
@@ -116,6 +121,106 @@ label seventh_apartment_scene:
     $ lydia_facts['name'] = "Lydia"
 
     jump seventh_apartment_scene
+
+
+
+label Door4Conversation:
+    
+    if timesTalkedtoOrion == 0:
+        show character2apt
+        o "What's up?"
+        thought "There's kids here... of course there are."
+        p "I'm, um, agent Walker and -"
+        o "Agent! Woah!"
+        p "Hah, yeah"
+        p "I'm here to see if you're doing alright?"
+        o "Wait, so do you, like, work for the government or something?"
+        p "Uh, or something."
+        o "So have you ever killed someone?"
+        if anna_facts['status']== "Dead" or sarah_facts['status']=="Dead" or rick_facts['status']=="Dead" or lydia_facts['status']=="Dead":
+            thought "I'm gonna be sick"
+        else:
+            p "..."
+            o "It's ok, my dad used to have a total secret job too. Couldn't tell me anything about it"
+            p "Your dad?"
+            o "Yeah, but he's gone now though..."
+            o "Most people are."
+            p "Where'd they go?"
+            o "Dunno..."
+            p "..."
+            p "Um"
+            p "Cool shirt."
+            p "Crabs."
+            thought "What am I doing?"
+            o "Thanks... Wait, so you're here to make sure everybody's okay?"
+            p "Yes."
+            o "Even my mom?"
+            p "Of course."
+            o "Well, she's not okay, she's in the hospital."
+            p "Hospital's a good place to be, all things considering."
+            o "Maybe, but she's been there for so long, I can't even remember..."
+            p "Wuh- what happened?"
+          
+            o "She's all sick... couldn't stay at home. Are you going to save her?"
+            thought "Christ, kid."
+            p "If I see her, I'll help her somehow. What's her name?"
+            o "She's Violet- oh, I'm Orion! What's your name?"
+            p "It's agent Walker, I already-"
+            o "No no no, you're real name."
+            p "Um..."
+            p "Wait, if both your parents- are you all alone?"
+            o "Oh, nah. Lydia next door takes care of me. Of everyone in the apartments, really."
+            o "Whenever she can..."
+            o "She's really nice."
+            if lydia_facts['status']=="Dead":
+                thought "Oh my God"
+                thought "I'm gonna throw up"
+                thought "Ugh"
+            else:
+                p "I see, thanks for telling me, kid."
+                o "Yeah, sure."
+                p "Stay safe."
+                o "Oh, yeah, you too."
+
+                $ timesTalkedtoOrion +=1
+
+    elif timesTalkedtoOrion==1:
+                show character2apt
+                o "Hmm? You're back?"
+                p "Yeah... I was wondering... about Lydia?"
+                o "Well, my mom used to babysit her when she was a teenager, and they kinda became friends"
+                o "So when Lydia had her baby, my mom and I were around a lot, to help out"
+                o "Then my mom got sick..."
+                o "I want to keep helping her, but usually her boyfriend's got it covered"
+                o "I guess..."
+                o "I don't think he's very good at it, though."
+                p "Right... thanks kid."
+
+                menu:
+                    "Kill Him":
+                        $ orion_facts['status']= "Dead"
+                        hide character2apt
+                        show character5mono
+                        pause 3.0
+                        hide character5mono
+                        $ trust +=10
+
+                    "Do Nothing":
+                        $ orion_facts['status']= "Spared"
+                        $ trust -=10
+
+
+
+    else :
+        thought "..."
+
+
+            
+    
+    jump seventh_apartment_scene
+
+
+
 
 
 
@@ -218,7 +323,7 @@ screen seventhApartmentNav():
         background None
 
     button:
-        xpos 1220
+        xpos 1220 
         ypos 220
         xsize 1660 - 1220
         ysize 800 - 220
@@ -227,7 +332,7 @@ screen seventhApartmentNav():
 
         mouse "move"
 
-        action Jump("fifth_apartment_scene")
+        action Jump("Door4Conversation")
 
 
 screen eigthApartmentNav():
