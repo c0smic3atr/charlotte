@@ -226,7 +226,8 @@ label Door4Conversation:
     else :
         thought "..."
 
-
+    $ orion_facts['portrait'] = "orion portrait"
+    $ orion_facts['name'] = "Orion"
             
     
     jump seventh_apartment_scene

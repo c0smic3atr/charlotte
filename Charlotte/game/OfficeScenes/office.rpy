@@ -76,7 +76,7 @@ if timesTalkedtoAster == 0:
         if anna_facts ['status']== "Spared" and sarah_facts ['status']== "Spared" and rick_facts ['status']== "Spared":
             menu:
                 "Kill Her":
-                    #$ aster_facts['status'] = "Dead"
+                    $ aster_facts['status'] = "Dead"
                     hide character1office
                     show character6mono
                     pause 3.0
@@ -87,7 +87,7 @@ if timesTalkedtoAster == 0:
         else:
             menu:
                 "Kill Her":
-                    #$ aster_facts['status'] = "Dead"
+                    $ aster_facts['status'] = "Dead"
                     hide character1office
                     show character6mono
                     pause 3.0
@@ -97,7 +97,8 @@ if timesTalkedtoAster == 0:
                     $ trust -=5  
 
 
-
+    $ aster_facts['portrait'] = "aster portrait"
+    $ aster_facts['name'] = "Aster"
 
     call screen firstOffice
 

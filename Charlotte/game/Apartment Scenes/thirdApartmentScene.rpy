@@ -131,6 +131,8 @@ label third_apartment_scene:
                 else:
                     thought "He's not gonna answer..."   
                     jump third_apartment_scene
+
+    
     
 
          
