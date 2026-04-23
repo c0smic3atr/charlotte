@@ -73,28 +73,9 @@ if timesTalkedtoAster == 0:
     if timesTalkedtoAster == 1:
         show character1office at left
         x "You don't have anything to say that I want to hear."
-        if anna_facts ['status']== "Spared" and sarah_facts ['status']== "Spared" and rick_facts ['status']== "Spared":
-            menu:
-                "Kill Her":
-                    $ aster_facts['status'] = "Dead"
-                    hide character1office
-                    show character6mono
-                    pause 3.0
-                    hide character6mono
-                    $ trust +=10
-                "Keep Doing Nothing":
-                    $ trust -=10
-        else:
-            menu:
-                "Kill Her":
-                    $ aster_facts['status'] = "Dead"
-                    hide character1office
-                    show character6mono
-                    pause 3.0
-                    hide character6mono
-                    $ trust +=10 
-                "Do Nothing":
-                    $ trust -=5  
+        jump aster_menu
+        
+            
 
 
     $ aster_facts['portrait'] = "aster portrait"
@@ -102,7 +83,44 @@ if timesTalkedtoAster == 0:
 
     call screen firstOffice
 
- 
+label aster_menu:
+if aster_facts['resolved']== False:
+
+    menu:
+                "Kill Her" if aster_facts['status'] != "Dead":
+                    $ aster_facts['status'] = "Dead"
+                    hide character1office
+                    show character6mono
+                    pause 3.0
+                    hide character6mono
+                    $ trust -=10
+                "Keep Doing Nothing" if aster_facts['resolved']== False:
+                    if aster_facts['status']!= "Dead":
+                        $ aster_facts['status'] = "Spared"
+                    $ aster_facts['resolved']= True
+
+                    $ trust -=10
+
+                "Mark as Dead" if aster_facts['marked']== False:
+                    $ aster_facts['marked']= True
+                    $ trust +=10
+
+else:
+    menu:
+                "Kill Her" if aster_facts['status']!= "Dead":
+                    $ aster_facts['status'] = "Dead"
+                    hide character1office
+                    show character6mono
+                    pause 3.0
+                    hide character6mono
+                    $ trust +=10 
+                "Do Nothing" if aster_facts['resolved']== False:
+                    if aster_facts['status']!="Dead":
+                        $ aster_facts['status']= "Spared"
+                    $ trust -=5  
+
+    if aster_facts['status']== "Dead" and aster_facts['marked']== True:
+        $ aster_facts['resolved']= True
 
 
 

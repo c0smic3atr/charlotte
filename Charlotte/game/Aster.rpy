@@ -8,6 +8,8 @@ image aster  = "characters/aster/character1office.png"
 #Notebook facts about anna
 default aster_facts = {
  "hasBeenDiscovered": False,
+ "resolved" : False,
+ "marked" : False,
  "status" : "Undiscovered",
  "portrait": "unknown portrait",
  "name":"Undiscovered",
