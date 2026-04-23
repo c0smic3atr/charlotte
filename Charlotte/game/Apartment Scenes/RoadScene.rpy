@@ -213,6 +213,8 @@ label Door4Conversation:
                 o "Yeah, sure."
                 p "Stay safe."
                 o "Oh, yeah, you too."
+                $ orion_facts['fact1'] = "Little kid, both is parents are gone. Doesn't deserve to live like this. His mom's sick, I'm gonna go to the hospital to find her and hopefully get some answers."
+
 
                 $ timesTalkedtoOrion +=1
                 jump seventh_apartment_scene
@@ -235,8 +237,8 @@ label Door4Conversation:
 
 
 
-    else :
-        thought "..."
+    #else :
+        #thought "..."
 
     $ orion_facts['portrait'] = "orion portrait"
     $ orion_facts['name'] = "Orion"
@@ -245,6 +247,7 @@ label orion_menu:
     if orion_facts['resolved']== False:
         menu:
                     "Kill Him" if orion_facts['status']!="Dead":
+                        o "Aren't you gonna go look for my mom?"
                         $ orion_facts['status']= "Dead"
                         hide character2apt
                         show character5mono
@@ -267,12 +270,18 @@ label orion_menu:
                     "Mark as Dead" if orion_facts['marked']== False:
                         $ orion_facts['marked']= True
                         $ trust += 10
-        
+    
+    elif orion_facts['resolved']== True:
+        "..."
         jump seventh_apartment_scene
+    if orion_facts['status']== "Dead" and orion_facts['marked']== True:
+            $ orion_facts['resolved']= True
 
     elif orion_facts['resolved']== True:
-        thought "..."
+        "..."
         jump seventh_apartment_scene
+
+    jump seventh_apartment_scene
 
     
 

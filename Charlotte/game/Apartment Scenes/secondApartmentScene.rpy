@@ -262,7 +262,7 @@ label DoorTwoConversation:
             e "And for the love of God, remember to mark it in your logbook."
 
             
-            t "Press N for Logbook"
+            thought "Press N to Access the Logbook"
                 
                
             #Goes to front doors again, in which you can click on Sarah again and now have the option to execute

@@ -1,4 +1,4 @@
-2026-04-23 17:32:51 UTC
+2026-04-23 17:49:00 UTC
 Windows-10-10.0.19045
 Ren'Py 8.3.7.25031702
 
@@ -40,6 +40,10 @@ Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA T1000/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 595.79'
 Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1017) drawable=(1920, 1017)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1017) drawable=(1920, 1017)
+Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1017) drawable=(1920, 1017)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1017) drawable=(1920, 1017)

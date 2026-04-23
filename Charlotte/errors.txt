@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/RoadScene.rpy", line 94: end of line expected.
-    if lydia_facts['status']== "Dead": and anna_facts['status']=="Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
-                                       ^
-
-File "game/Apartment Scenes/RoadScene.rpy", line 97: expected statement.
-    elif lydia_facts['status']== "Dead":
+File "game/Apartment Scenes/RoadScene.rpy", line 276: expected statement.
+    elif orion_facts['resolved']== True:
                     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Apr 23 10:27:25 2026
+Thu Apr 23 10:39:18 2026
