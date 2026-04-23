@@ -4,7 +4,7 @@ label tenth_apartment_scene:
     if oxygen <= 0:
         jump out_of_oxygen
     
-    scene bg alley one
+    scene bg mainalley
 
     "I am in the 10th apartment scene"
 

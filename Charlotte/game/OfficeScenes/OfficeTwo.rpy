@@ -4,7 +4,7 @@ label fourteenth_apartment_scene:
     if oxygen <= 0:
         jump out_of_oxygen
     
-    scene bg alley window
+    scene bg window2alley
     call screen throughWindow
 
     menu:
@@ -14,7 +14,7 @@ label fourteenth_apartment_scene:
             jump tenth_apartment_scene
 
 label fifteenth_apartment_scene:
-    scene bg officeagain
+    scene bg mainoffice
     call screen officeTwoNav
 
     "You're in the second office"
@@ -29,18 +29,18 @@ label fifteenth_apartment_scene:
             jump fourteenth_apartment_scene
 
 label sixteenth_apartment_scene:
-    scene bg desk
+    scene bg officetable
     "Youre at the table"
     menu:
-        "Interact with papers"
+        
         "Go back":
             jump fifteenth_apartment_scene
 
 label seventeenth_apartment_scene:
-    scene bg office desk
+    scene bg officedesk
     "You're at the desk"
     menu: 
-        "Pick up the phone"
+        
         "Go back":
             jump fifteenth_apartment_scene
 
