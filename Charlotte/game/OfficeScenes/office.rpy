@@ -3,72 +3,188 @@ default timesTalkedtoAster = 0
 
 label eleventh_apartment_scene:
     scene bg officeone
-    show character1office
-if timesTalkedtoAster == 0:
+    call screen firstOffice
+    #show character1office
     
-    $ timesTalkedtoAster += 1
+#if timesTalkedtoAster == 0:
+    
+    #$ timesTalkedtoAster += 1
 
-    if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead":
-        p "Um, hello?"
-        x "Jane, is that you?"
-        p "No, it's not."
-        x "I figured as much"
-        x "Been waitin' a while for you."
-        p "Waiting for what?"
-        x "Don't kid yourself, Jane."
-        x "You started all this..."
-        x "Guess it's ben so long, you've forgotten as well."
-        p "..."
-        p "You know what?"
-        p "I'm getting pretty sick of you people wasting my time."
-        p "Can I- can I be blunt?"
-        p "It's like every time I turn a corner in this godforsaken place"
-        p "Things change, I don't even know how to explain it."
-        p "Either my watch is broken or- or something is going on here that's just beyond me."
-        p "I used to work security, I don't know what I'm doing here"
-        p "So just..."
-        p "Tell me"
-        p "Something"
-        p "Something concrete."
-        x "..."
-        x "I'm used to you telling me what's what, not the other way around."
-        x "You people are always so bossy..."
-        x "Liars and..."
-        x "Liars."
-        x "But I know what you do when you decide we're too far gone."
-        x "Never thought I'd see the day, but"
-        x "It seems you've lost your way, Jane."
-        p "Yeah."
-        p "Guess so."
-        hide character1office
+    #if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead":
+        #p "Um, hello?"
+        #x "Jane, is that you?"
+        #p "No, it's not."
+        #x "I figured as much"
+        #x "Been waitin' a while for you."
+        #p "Waiting for what?"
+        #x "Don't kid yourself, Jane."
+        #x "You started all this..."
+        #x "Guess it's ben so long, you've forgotten as well."
+        #p "..."
+        #p "You know what?"
+        #p "I'm getting pretty sick of you people wasting my time."
+        #p "Can I- can I be blunt?"
+        #p "It's like every time I turn a corner in this godforsaken place"
+        #p "Things change, I don't even know how to explain it."
+        #p "Either my watch is broken or- or something is going on here that's just beyond me."
+        #p "I used to work security, I don't know what I'm doing here"
+        #p "So just..."
+        #p "Tell me"
+        #p "Something"
+        #p "Something concrete."
+        #x "..."
+        #x "I'm used to you telling me what's what, not the other way around."
+        #x "You people are always so bossy..."
+        #x "Liars and..."
+        #x "Liars."
+        #x "But I know what you do when you decide we're too far gone."
+        #x "Never thought I'd see the day, but"
+        #x "It seems you've lost your way, Jane."
+        #p "Yeah."
+        #p "Guess so."
+        #hide character1office
 
-    else:
-        p "Um, hello?"
-        x "Jane? Is that you?"
-        p "No, I'm not Jane. I'm agent Walker."
-        x "Hmm, I figured."
-        x "You people were always liars, weren't you Jane?"
-        x "Can't keep your story straight."
-        p "I told you, I'm not Jane."
-        p "You seem- do you need help? Are you ok?"
-        x "Hmph, first time you've cared to ask"
-        x "You're a bit late."
-        p "Yeah, I can see that..."
-        p "Do you know what's going on around here?"
-        x "You're kidding. Jane, this is your doing. You tell me"
-        p "I'm sorry, I can't... I don't-"
-        p "I'm not even-"
-        p "I was barely told anything."
-        x "..."
-        x "Liar."
-        $ timesTalkedtoAster +=1
-        hide character1office
-#$ aster_facts['portrait'] = "aster portrait"
+    #else:
+        #p "Um, hello?"
+        #x "Jane? Is that you?"
+        #p "No, I'm not Jane. I'm agent Walker."
+        #x "Hmm, I figured."
+        #x "You people were always liars, weren't you Jane?"
+        #x "Can't keep your story straight."
+        #p "I told you, I'm not Jane."
+        #p "You seem- do you need help? Are you ok?"
+        #x "Hmph, first time you've cared to ask"
+        #x "You're a bit late."
+        #p "Yeah, I can see that..."
+        #p "Do you know what's going on around here?"
+        #x "You're kidding. Jane, this is your doing. You tell me"
+        #p "I'm sorry, I can't... I don't-"
+        #p "I'm not even-"
+        #p "I was barely told anything."
+        #x "..."
+        #x "Liar."
+        #$ timesTalkedtoAster +=1
+        #hide character1office
+
+    #$ aster_facts['portrait'] = "aster portrait"
     #$ aster_facts ['name'] = "Aster Carroll"
     #if aster_facts['status']= "undiscovered":
         #$ aster_facts['fact1'] == "These people really are sick..."
     #if aster_facts['status']= "Dead":
         #$ aster_facts ['fact1']== "Just because they're sick doesn't mean they deserve to die. This is insane."
+
+    #if timesTalkedtoAster == 1:
+        #show character1office at left
+        #x "You don't have anything to say that I want to hear."
+        #if anna_facts ['status']== "Spared" and sarah_facts ['status']== "Spared" and rick_facts ['status']== "Spared":
+            #menu:
+                #"Kill Her":
+                    #$ aster_facts['status'] = "Dead"
+                    #hide character1office
+                    #show character6mono
+                    #pause 3.0
+                    #hide character6mono
+                    #$ trust +=10
+                #"Keep Doing Nothing":
+                    #$ trust -=10
+        #else:
+            #menu:
+                #"Kill Her":
+                    #$ aster_facts['status'] = "Dead"
+                    #hide character1office
+                    #show character6mono
+                    #pause 3.0
+                    #hide character6mono
+                    #$ trust +=10 
+                #"Do Nothing":
+                    #$ trust -=5  
+
+
+    #$ aster_facts['portrait'] = "aster portrait"
+    #$ aster_facts['name'] = "Aster"
+
+    
+
+ 
+
+
+
+    #menu:
+        #"Go inside office":
+            #jump twelvth_apartment_scene
+        #"Go back":
+            #jump tenth_apartment_scene
+
+
+label OfficeConversation:
+    show character1office
+
+    if timesTalkedtoAster == 0:
+    
+        $ timesTalkedtoAster += 1
+
+        if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead":
+            p "Um, hello?"
+            x "Jane, is that you?"
+            p "No, it's not."
+            x "I figured as much"
+            x "Been waitin' a while for you."
+            p "Waiting for what?"
+            x "Don't kid yourself, Jane."
+            x "You started all this..."
+            x "Guess it's ben so long, you've forgotten as well."
+            p "..."
+            p "You know what?"
+            p "I'm getting pretty sick of you people wasting my time."
+            p "Can I- can I be blunt?"
+            p "It's like every time I turn a corner in this godforsaken place"
+            p "Things change, I don't even know how to explain it."
+            p "Either my watch is broken or- or something is going on here that's just beyond me."
+            p "I used to work security, I don't know what I'm doing here"
+            p "So just..."
+            p "Tell me"
+            p "Something"
+            p "Something concrete."
+            x "..."
+            x "I'm used to you telling me what's what, not the other way around."
+            x "You people are always so bossy..."
+            x "Liars and..."
+            x "Liars."
+            x "But I know what you do when you decide we're too far gone."
+            x "Never thought I'd see the day, but"
+            x "It seems you've lost your way, Jane."
+            p "Yeah."
+            p "Guess so."
+            hide character1office
+
+        else:
+            p "Um, hello?"
+            x "Jane? Is that you?"
+            p "No, I'm not Jane. I'm agent Walker."
+            x "Hmm, I figured."
+            x "You people were always liars, weren't you Jane?"
+            x "Can't keep your story straight."
+            p "I told you, I'm not Jane."
+            p "You seem- do you need help? Are you ok?"
+            x "Hmph, first time you've cared to ask"
+            x "You're a bit late."
+            p "Yeah, I can see that..."
+            p "Do you know what's going on around here?"
+            x "You're kidding. Jane, this is your doing. You tell me"
+            p "I'm sorry, I can't... I don't-"
+            p "I'm not even-"
+            p "I was barely told anything."
+            x "..."
+            x "Liar."
+            $ timesTalkedtoAster +=1
+            hide character1office
+
+    $ aster_facts['portrait'] = "aster portrait"
+    $ aster_facts ['name'] = "Aster Carroll"
+    if aster_facts['status']== "undiscovered":
+        $ aster_facts['fact1'] == "These people really are sick..."
+    if aster_facts['status']== "Dead":
+        $ aster_facts ['fact1']== "Just because they're sick doesn't mean they deserve to die. This is insane."
 
     if timesTalkedtoAster == 1:
         show character1office at left
@@ -100,17 +216,7 @@ if timesTalkedtoAster == 0:
     $ aster_facts['portrait'] = "aster portrait"
     $ aster_facts['name'] = "Aster"
 
-    call screen firstOffice
-
- 
-
-
-
-    menu:
-        "Go inside office":
-            jump twelvth_apartment_scene
-        "Go back":
-            jump tenth_apartment_scene
+    jump eleventh_apartment_scene
 
 label twelvth_apartment_scene:
     scene bg officeone
@@ -120,23 +226,44 @@ label twelvth_apartment_scene:
             jump tenth_apartment_scene
 
 screen firstOffice():
-    # into the office
+    # Talk to Aster
 
     frame:
-        xpos 515
-        ypos 850
-        xsize 720 - 515
-        ysize 1075 - 850
+        xpos 345
+        ypos 50
+        xsize 735 - 345
+        ysize 335 - 50
         background "#6527F5"
 
     button:
-        xpos 515
-        ypos 850
-        xsize 720 - 515
-        ysize 1075 - 850
+        xpos 345
+        ypos 50
+        xsize 735 - 345
+        ysize 335 - 50
         background None
         hover_background None
 
         mouse "move"
 
-        action Jump("twelvth_apartment_scene")
+        action Jump("OfficeConversation")
+
+    # Back to alleyway
+
+    frame:
+        xpos 590
+        ypos 835
+        xsize 1310 - 590
+        ysize 1055 - 835
+        background "#6527F5"
+
+    button:
+        xpos 590
+        ypos 835
+        xsize 1310 - 590
+        ysize 1055 - 835
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("tenth_apartment_scene")
