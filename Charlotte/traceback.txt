@@ -1,26 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Apartment Scenes/RoadScene.rpy", line 229, in script
-    $ orion_facts_facts['portrait'] = "orion portrait"
-  File "game/Apartment Scenes/RoadScene.rpy", line 229, in <module>
-    $ orion_facts_facts['portrait'] = "orion portrait"
-NameError: name 'orion_facts_facts' is not defined
+  File "game/Apartment Scenes/RoadScene.rpy", line 122, in script
+    if anna_facts['status']!== "Dead" and sarah_facts['status']!=="Dead" and rick_facts['status']!=="Dead":
+SyntaxError: invalid syntax (game/Apartment Scenes/RoadScene.rpy, line 122)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/Apartment Scenes/RoadScene.rpy", line 229, in script
-    $ orion_facts_facts['portrait'] = "orion portrait"
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/Apartment Scenes/RoadScene.rpy", line 229, in <module>
-    $ orion_facts_facts['portrait'] = "orion portrait"
-NameError: name 'orion_facts_facts' is not defined
+  File "game/Apartment Scenes/RoadScene.rpy", line 122, in script
+    if anna_facts['status']!== "Dead" and sarah_facts['status']!=="Dead" and rick_facts['status']!=="Dead":
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
+    raise e
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
+    raise orig_e
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/Apartment Scenes/RoadScene.rpy, line 122)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Thu Apr 23 08:13:17 2026
+Thu Apr 23 10:12:37 2026

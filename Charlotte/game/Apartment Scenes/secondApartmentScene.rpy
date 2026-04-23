@@ -146,6 +146,7 @@ label anna_menu:
     if anna_facts['resolved'] == False:
         menu:
                 "Kill Her" if anna_facts['status']!="Dead":
+                    show character1one
                     a "I told you to leave-"
                     
                     hide character1one
@@ -170,6 +171,13 @@ label anna_menu:
                 "Mark as Dead" if anna_facts['marked'] == False:
                     $ anna_facts['marked']= True
                     $ trust += 10
+
+        if anna_facts['status']== "Dead" and anna_facts['marked']== True:
+            $ anna_facts['resolved']= True
+    
+    #if  anna_facts['status']== "Dead" and anna_facts['marked']== False:
+        #$ anna_facts['resolved']= True
+
 
     elif anna_facts['resolved']== True:
         thought "She's not gonna answer..."
@@ -275,7 +283,7 @@ label DoorTwoConversation:
         
 
                 
-    elif sarah_facts['status'] != "Dead" or sarah_facts['marked'] != True:
+    elif sarah_facts['resolved'] == False:
 
         
         jump sarah_menu
@@ -288,48 +296,62 @@ label DoorTwoConversation:
     
 label sarah_menu:
 
-    default somethingToDo = True
-    if sarah_facts['status'] != "Dead" or sarah_facts['marked'] == False:
-        $ somethingToDo = True
-    else:
-        $ somethingToDo = False
+#  default somethingToDo = True
+# if sarah_facts['status'] != "Dead" or sarah_facts['marked'] == False:
+    #    $ somethingToDo = True
+    #else:
+    #   $ somethingToDo = False
 
 if sarah_facts['resolved']== False:
 
     menu:
             "Kill Her" if sarah_facts['status'] !="Dead":
-                s "Um... is there something wrong?"
+                s "Um... is there something wrong??"
 
                 $ sarah_facts ['status'] = "Dead"
                 hide character2two
                 show character2mono at center
                 pause 3.0
                 $ sarah_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her. My head hurts."
-                jump bossConversation
+                
                 $ trust-=10
+
+                #jump bossConversation
             
-            "Do nothing" if somethingToDo == True and sarah_facts['resolved']== False:
+            "Do Nothing" if sarah_facts['resolved']== False:
                 if sarah_facts['status']!="Dead":
                     $ sarah_facts['status'] = "Spared"
-                    $ sarah_facts['resolved']= True
-                p "Um... no. Never mind."
-                $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
-                jump bossConversation
+                $ sarah_facts['resolved'] = True
+                if sarah_facts['status']!= "Dead":
+                    p "Um... no. Never mind."
+                
+                if sarah_facts['status']!="Dead":
+                    $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
+                
                 $ trust-=10
+
+                #jump bossConversation
 
             "Mark as Dead" if sarah_facts['marked']== False:
                 $ sarah_facts['marked']= True
                 $ trust +=10
+
+    if sarah_facts['status']== "Dead" and sarah_facts['marked']== True:
+            $ sarah_facts['resolved']= True
+    
+    
 elif sarah_facts['resolved']== True:
     thought "What am I doing?"
     jump second_apartment_scene
    
-    jump second_apartment_scene
+    
+
 
 
 
 label bossConversation:
-    scene black
+    #scene black
+    #"boss"
     if sarah_facts['status'] == "Dead":
         
         # increase trust
