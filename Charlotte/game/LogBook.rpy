@@ -70,7 +70,7 @@ screen notebook_screen():
                     add anna_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                    if anna_facts['status'] == "Dead":
+                    if anna_facts['marked'] == True:
                         add "notebookdead":
                             xalign 0.17
                             yalign 0.25
@@ -168,24 +168,21 @@ screen notebook_screen():
                         text "Notes:" size 30
 
                         text "* [sarah_facts['fact1']]"
-                        text "* [sarah_facts['fact2']]"
-                        text "* [sarah_facts['fact3']]"
+                        
                     elif notebook_page == 3:
 
                         text rick_facts['name'] size 42
                         text "Notes:" size 30
 
                         text "* [rick_facts['fact1']]"
-                        text "* [rick_facts['fact2']]"
-                        text "* [rick_facts['fact3']]"
+                        
                     elif notebook_page == 4:
 
                         text lydia_facts['name'] size 42
                         text "Notes:" size 30
 
                         text "* [lydia_facts['fact1']]"
-                        text "* [lydia_facts['fact2']]"
-                        text "* [lydia_facts['fact3']]"
+                       
 
                     elif notebook_page == 5:
 
@@ -193,8 +190,7 @@ screen notebook_screen():
                         text "Notes:" size 30
 
                         text "* [orion_facts['fact1']]"
-                        text "* [orion_facts['fact2']]"
-                        text "* [orion_facts['fact3']]"
+                      
 
                     elif notebook_page == 6:
 
@@ -202,8 +198,7 @@ screen notebook_screen():
                         text "Notes:" size 30
 
                         text "* [aster_facts['fact1']]"
-                        text "* [aster_facts['fact2']]"
-                        text "* [aster_facts['fact3']]"
+                       
                     elif notebook_page == 0:
 
                         text "Player Stats" size 42
