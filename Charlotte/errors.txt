@@ -2,21 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/OfficeScenes/office.rpy", line 88: menu statement expects a non-empty block.
-    menu:
-        ^
-
-File "game/OfficeScenes/office.rpy", line 90: expected statement.
-    "Kill Her" if aster_facts['status'] != "Dead":
+File "game/OfficeScenes/office.rpy", line 154: expected a keyword argument or end of line.
+    ysize 335  50
                ^
 
-File "game/OfficeScenes/office.rpy", line 97: expected statement.
-    "Keep Doing Nothing" if aster_facts['resolved']== False:
-                         ^
-
-File "game/OfficeScenes/office.rpy", line 104: expected statement.
-    "Mark as Dead" if aster_facts['marked']== False:
-                   ^
-
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Apr 23 11:00:10 2026
+Fri Apr 24 08:43:56 2026

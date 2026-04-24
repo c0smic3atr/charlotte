@@ -1,28 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Apartment Scenes/RoadScene.rpy", line 122, in script
-    if anna_facts['status']!== "Dead" and sarah_facts['status']!=="Dead" and rick_facts['status']!=="Dead":
-SyntaxError: invalid syntax (game/Apartment Scenes/RoadScene.rpy, line 122)
+  File "game/OfficeScenes/AlleyNavigation.rpy", line 11, in script
+    call screen alleyNav
+ScriptError: could not find label 'eleventh_apartment_scene'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/Apartment Scenes/RoadScene.rpy", line 122, in script
-    if anna_facts['status']!== "Dead" and sarah_facts['status']!=="Dead" and rick_facts['status']!=="Dead":
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
-    raise e
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
-    raise orig_e
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/Apartment Scenes/RoadScene.rpy, line 122)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "game/OfficeScenes/AlleyNavigation.rpy", line 11, in script
+    call screen alleyNav
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'eleventh_apartment_scene'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Thu Apr 23 10:12:37 2026
+Fri Apr 24 09:59:27 2026
