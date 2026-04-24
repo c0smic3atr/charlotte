@@ -153,6 +153,7 @@ label anna_menu:
                     pause 3.0
                     hide character1mono
                     $ anna_facts['status'] = "Dead"
+                    $ anna_facts['portrait'] = "anna dead"
                     # increase trust
                     
                 
@@ -301,6 +302,7 @@ if sarah_facts['resolved']== False:
                 s "Um... is there something wrong?"
 
                 $ sarah_facts ['status'] = "Dead"
+                $ sarah_facts['portrait'] = "sarah dead"
                 hide character2two
                 show character2mono at center
                 pause 3.0

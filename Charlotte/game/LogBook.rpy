@@ -10,7 +10,7 @@ default notebook_page = 0
 
 # Total number of pages minus 1
 # If there are 2 pages, the max page index is 1.
-default notebook_max_page = 7
+default notebook_max_page = 6
 
 
 # =========================================================
@@ -143,17 +143,9 @@ screen notebook_screen():
                     ypos 30
 
                     # Show different notes depending on the current page
+                   
                     
-                    if notebook_page == 7:
-
-                        text anna_facts['name'] size 42
-                        text "Notes:" size 30
-
-                        text "* [anna_facts['fact1']]"
-                        text "* [anna_facts['fact2']]"
-                        text "* [anna_facts['fact3']]"
-                    
-                    elif notebook_page == 2:
+                    if notebook_page == 2:
 
                         text anna_facts['name'] size 42
                         text "Notes:" size 30
@@ -211,6 +203,8 @@ screen notebook_screen():
                             range max_trust
                             xmaximum 500
                             ymaximum 30
+                        
+                        
 
                         text "[trust] / [max_trust]" size 22
 

@@ -83,6 +83,7 @@ label third_apartment_scene:
                         "Kill Him":
                         
                             $ rick_facts ['status'] = "Dead"
+                            $ rick_facts['portrait'] = "rick dead"
                             hide character4four
                             show character3mono at left
                             pause 3.0

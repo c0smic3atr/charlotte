@@ -77,6 +77,7 @@ if timesTalkedtoAster == 0:
             menu:
                 "Kill Her":
                     $ aster_facts['status'] = "Dead"
+                    $ aster_facts['portrait'] = "aster dead"
                     hide character1office
                     show character6mono
                     pause 3.0
@@ -88,6 +89,7 @@ if timesTalkedtoAster == 0:
             menu:
                 "Kill Her":
                     $ aster_facts['status'] = "Dead"
+                    $ aster_facts['portrait'] = "aster dead"
                     hide character1office
                     show character6mono
                     pause 3.0
