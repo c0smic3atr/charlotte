@@ -77,6 +77,7 @@ label seventh_apartment_scene:
                 l "But I'm being serious when I tell 'ya"
                 l "Get out of here."
                 $ timesTalkedtoLydia +=1
+                $ lydia_facts['fact1'] = "I was kinda condescending, but she deserved it. Wouldn't tell me anything, total waste of time... is everybody gonna be like this? All cryptic and shit?"
 
             elif timesTalkedtoLydia == 1:
                 show character1apt
@@ -84,19 +85,20 @@ label seventh_apartment_scene:
                 l "Your involvement doesn't effect anything for us, so get out of here before they start effecting things for you."
                 jump lydia_menu
 
-                
+            elif lydia_facts['resolved'] == False:
+                jump lydia_menu     
 
             else: 
                 thought "I need to get out of here..."
 
-        if lydia_facts['status']== "Dead" and anna_facts['status']=="Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
-            $ lydia_facts['fact1']= "She looked young. How old was she? Did she even fit the profile?"
+        #if lydia_facts['status']== "Dead": and anna_facts['status']=="Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
+            #$ lydia_facts['fact1']= "She looked young. How old was she? Did she even fit the profile?"
 
-        elif lydia_facts['status']== "Dead":
-            $ lydia_facts['fact1']= "Wouldn't say much. Do unhelpful people deserve to die? Is that the profile?"
+        #if lydia_facts['status']== "Dead":
+            #$ lydia_facts['fact1']= "She looked young. How old was she? Did she even fit the profile?"
 
-        if lydia_facts['status']== "Spared":
-            $ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything, total waste of time... is everybody gonna be like this? All cryptic and shit?"
+        #if lydia_facts['status']== "Spared":
+            #$ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything, total waste of time... is everybody gonna be like this? All cryptic and shit?"
 
 
 
@@ -110,6 +112,8 @@ label seventh_apartment_scene:
     jump seventh_apartment_scene
 
     label lydia_menu:
+    if lydia_facts['resolved']== False:
+
         menu: 
                     "Kill her" if lydia_facts['status']!="Dead":
                         $ lydia_facts ['status'] = "Dead"
@@ -118,17 +122,33 @@ label seventh_apartment_scene:
                         show character4mono at left
                         pause 3.0
                         hide character4mono
+                        if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']== "Dead":
+                            $ lydia_facts['fact1'] = "Wouldn't say much. So, what, do unhelpful people deserve to die? That your profile?"
+                        else:
+                            $ lydia_facts['fact1'] = "She looked young. How old was she? Did she even fit the profile?"
+                        
+                        
+                        
+                        #if anna_facts['status']== "Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
+                            #$ lydia_facts['fact1']= "Oh my God, she looked young. How old was she? Did she even fit the profile?"
+                        #else:
+                            #$ lydia_facts['fact1'] = "Wouldn't say much. Do unhelpful people deserve to die? Is that the profile?"
                         $ trust += 10
 
-                    "Do nothing" if lydia_facts['status']!="Dead":
+                    "Do nothing" if lydia_facts['resolved']== False:
                         if lydia_facts['status']!="Dead":
                             $ lydia_facts ['status']= "Spared"
+                        $ lydia_facts['resolved'] = True
                         $ trust -= 5
+                        $ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything, total waste of time. Is everybody gonna be like this? All cryptic and shit?"
 
                     "Mark as Dead" if lydia_facts['marked']== False:
                         $ lydia_facts['marked']= True
                         $ trust +=10
+    if lydia_facts['status']== "Dead" and lydia_facts['marked']== True:
+            $ lydia_facts['resolved']= True
     $ timesTalkedtoLydia += 1
+        
 
                     
     jump seventh_apartment_scene
@@ -150,55 +170,62 @@ label Door4Conversation:
         o "Wait, so do you, like, work for the government or something?"
         p "Uh, or something."
         o "So have you ever killed someone?"
+        
         if anna_facts['status']== "Dead" or sarah_facts['status']=="Dead" or rick_facts['status']=="Dead" or lydia_facts['status']=="Dead":
             thought "I'm gonna be sick"
-        else:
-            p "..."
-            o "It's ok, my dad used to have a total secret job too. Couldn't tell me anything about it"
-            p "Your dad?"
-            o "Yeah, but he's gone now though..."
-            o "Most people are."
-            p "Where'd they go?"
-            o "Dunno..."
-            p "..."
-            p "Um"
-            p "Cool shirt."
-            p "Crabs."
-            thought "What am I doing?"
-            o "Thanks... Wait, so you're here to make sure everybody's okay?"
-            p "Yes."
-            o "Even my mom?"
-            p "Of course."
-            o "Well, she's not okay, she's in the hospital."
-            p "Hospital's a good place to be, all things considering."
-            o "Maybe, but she's been there for so long, I can't even remember..."
-            p "Wuh- what happened?"
+        
+        p "..."
+        o "It's ok, my dad used to have a total secret job too. Couldn't tell me anything about it"
+        p "Your dad?"
+        o "Yeah, but he's gone now though..."
+        o "Most people are."
+        p "Where'd they go?"
+        o "Dunno..."
+        p "..."
+        p "Um"
+        p "Cool shirt."
+        p "Crabs."
+        thought "What am I doing?"
+        o "Thanks... Wait, so you're here to make sure everybody's okay?"
+        p "Yes."
+        o "Even my mom?"
+        p "Of course."
+        o "Well, she's not okay, she's in the hospital."
+        p "Hospital's a good place to be, all things considering."
+        o "Maybe, but she's been there for so long, I can't even remember..."
+        p "Wuh- what happened?"
           
-            o "She's all sick... couldn't stay at home. Are you going to save her?"
-            thought "Christ, kid."
-            p "If I see her, I'll help her somehow. What's her name?"
-            o "She's Violet- oh, I'm Orion! What's your name?"
-            p "It's agent Walker, I already-"
-            o "No no no, you're real name."
-            p "Um..."
-            p "Wait, if both your parents- are you all alone?"
-            o "Oh, nah. Lydia next door takes care of me. Of everyone in the apartments, really."
-            o "Whenever she can..."
-            o "She's really nice."
-            if lydia_facts['status']=="Dead":
-                thought "Oh my God"
-                thought "I'm gonna throw up"
-                thought "Ugh"
-            else:
-                p "I see, thanks for telling me, kid."
-                o "Yeah, sure."
-                p "Stay safe."
-                o "Oh, yeah, you too."
+        o "She's all sick... couldn't stay at home. Are you going to save her?"
+        thought "Christ, kid."
+        p "If I see her, I'll help her somehow. What's her name?"
+        o "She's Violet- oh, I'm Orion! What's your name?"
+        p "It's agent Walker, I already-"
+        o "No no no, you're real name."
+        p "Um..."
+        p "Wait, if both your parents- are you all alone?"
+        o "Oh, nah. Lydia next door takes care of me. Of everyone in the apartments, really."
+        o "Whenever she can..."
+        o "She's really nice."
+        if lydia_facts['status']=="Dead":
+            thought "Oh my God"
+            thought "I'm gonna throw up"
+            thought "Ugh"
+        
+        p "I see, thanks for telling me, kid."
+        o "Yeah, sure."
+        p "Stay safe."
+        o "Oh, yeah, you too."
+        $ orion_facts['portrait'] = "orion portrait"
+        $ orion_facts['name'] = "Orion"  
+        $ orion_facts['fact1'] = "Little kid, both is parents are gone. Doesn't deserve to live like this. His mom's sick, I'm gonna go to the hospital to find her and hopefully get some answers."
 
-                $ timesTalkedtoOrion +=1
+
+        $ timesTalkedtoOrion +=1
+        jump seventh_apartment_scene
 
     elif timesTalkedtoOrion==1:
                 show character2apt
+                $ timesTalkedtoOrion +=1
                 o "Hmm? You're back?"
                 p "Yeah... I was wondering... about Lydia?"
                 o "Well, my mom used to babysit her when she was a teenager, and they kinda became friends"
@@ -208,31 +235,60 @@ label Door4Conversation:
                 o "I guess..."
                 o "I don't think he's very good at it, though."
                 p "Right... thanks kid."
+                jump orion_menu
 
-                menu:
-                    "Kill Him":
+                
+
+
+
+    #else :
+        #thought "..."
+
+    
+            
+label orion_menu:
+    if orion_facts['resolved']== False:
+        menu:
+                    "Kill Him" if orion_facts['status']!="Dead":
+                        o "Aren't you gonna go look for my mom?"
                         $ orion_facts['status']= "Dead"
                         $ orion_facts['portrait'] = "orion dead"
                         hide character2apt
                         show character5mono
                         pause 3.0
                         hide character5mono
-                        $ trust +=10
-
-                    "Do Nothing":
-                        $ orion_facts['status']= "Spared"
                         $ trust -=10
+                        if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']== "Dead" or lydia_facts['status']== "Dead":
+                            $ orion_facts['fact1']= "I used to want kids. Knew I'd never find the time. Don't any more."
+                        else:
+                            $ orion_facts['fact1'] = "Guess he fit the profile."
 
+                    "Do Nothing" if orion_facts['resolved']== False:
+                        if orion_facts['status']!="Dead":
+                            $ orion_facts['status']= "Spared"
+                        $ orion_facts['resolved']= True
+                        $ trust -=10
+                        if orion_facts['status']!="Dead":
+                            $ orion_facts['fact1'] = "Little kid, both is parents are gone. Doesn't deserve to live like this. His mom's sick, I'm gonna go to the hospital to find her and hopefully get some answers."
 
-
-    else :
-        thought "..."
-
-    $ orion_facts['portrait'] = "orion portrait"
-    $ orion_facts['name'] = "Orion"
-            
+                    "Mark as Dead" if orion_facts['marked']== False:
+                        $ orion_facts['marked']= True
+                        $ trust += 10
     
+    elif orion_facts['resolved']== True:
+        "..."
+        jump seventh_apartment_scene
+    if orion_facts['status']== "Dead" and orion_facts['marked']== True:
+            $ orion_facts['resolved']= True
+
+    elif orion_facts['resolved']== True:
+        "..."
+        jump seventh_apartment_scene
+
     jump seventh_apartment_scene
+
+    
+
 
 
 

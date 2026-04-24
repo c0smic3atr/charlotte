@@ -75,8 +75,9 @@ label twentyfourth_apartment_scene:
             jump twentyfirst_apartment_scene
 
 label twentyfifth_apartment_scene:
-    scene bg hospital room one
+    scene bg hos2hos
     "Youre in the first hospital room"
+    show character1onehospital
     menu:
         "Go back":
             jump twentyfourth_apartment_scene
