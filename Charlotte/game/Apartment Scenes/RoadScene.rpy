@@ -169,55 +169,58 @@ label Door4Conversation:
         o "Wait, so do you, like, work for the government or something?"
         p "Uh, or something."
         o "So have you ever killed someone?"
+        
         if anna_facts['status']== "Dead" or sarah_facts['status']=="Dead" or rick_facts['status']=="Dead" or lydia_facts['status']=="Dead":
             thought "I'm gonna be sick"
-        else:
-            p "..."
-            o "It's ok, my dad used to have a total secret job too. Couldn't tell me anything about it"
-            p "Your dad?"
-            o "Yeah, but he's gone now though..."
-            o "Most people are."
-            p "Where'd they go?"
-            o "Dunno..."
-            p "..."
-            p "Um"
-            p "Cool shirt."
-            p "Crabs."
-            thought "What am I doing?"
-            o "Thanks... Wait, so you're here to make sure everybody's okay?"
-            p "Yes."
-            o "Even my mom?"
-            p "Of course."
-            o "Well, she's not okay, she's in the hospital."
-            p "Hospital's a good place to be, all things considering."
-            o "Maybe, but she's been there for so long, I can't even remember..."
-            p "Wuh- what happened?"
+        
+        p "..."
+        o "It's ok, my dad used to have a total secret job too. Couldn't tell me anything about it"
+        p "Your dad?"
+        o "Yeah, but he's gone now though..."
+        o "Most people are."
+        p "Where'd they go?"
+        o "Dunno..."
+        p "..."
+        p "Um"
+        p "Cool shirt."
+        p "Crabs."
+        thought "What am I doing?"
+        o "Thanks... Wait, so you're here to make sure everybody's okay?"
+        p "Yes."
+        o "Even my mom?"
+        p "Of course."
+        o "Well, she's not okay, she's in the hospital."
+        p "Hospital's a good place to be, all things considering."
+        o "Maybe, but she's been there for so long, I can't even remember..."
+        p "Wuh- what happened?"
           
-            o "She's all sick... couldn't stay at home. Are you going to save her?"
-            thought "Christ, kid."
-            p "If I see her, I'll help her somehow. What's her name?"
-            o "She's Violet- oh, I'm Orion! What's your name?"
-            p "It's agent Walker, I already-"
-            o "No no no, you're real name."
-            p "Um..."
-            p "Wait, if both your parents- are you all alone?"
-            o "Oh, nah. Lydia next door takes care of me. Of everyone in the apartments, really."
-            o "Whenever she can..."
-            o "She's really nice."
-            if lydia_facts['status']=="Dead":
-                thought "Oh my God"
-                thought "I'm gonna throw up"
-                thought "Ugh"
-            else:
-                p "I see, thanks for telling me, kid."
-                o "Yeah, sure."
-                p "Stay safe."
-                o "Oh, yeah, you too."
-                $ orion_facts['fact1'] = "Little kid, both is parents are gone. Doesn't deserve to live like this. His mom's sick, I'm gonna go to the hospital to find her and hopefully get some answers."
+        o "She's all sick... couldn't stay at home. Are you going to save her?"
+        thought "Christ, kid."
+        p "If I see her, I'll help her somehow. What's her name?"
+        o "She's Violet- oh, I'm Orion! What's your name?"
+        p "It's agent Walker, I already-"
+        o "No no no, you're real name."
+        p "Um..."
+        p "Wait, if both your parents- are you all alone?"
+        o "Oh, nah. Lydia next door takes care of me. Of everyone in the apartments, really."
+        o "Whenever she can..."
+        o "She's really nice."
+        if lydia_facts['status']=="Dead":
+            thought "Oh my God"
+            thought "I'm gonna throw up"
+            thought "Ugh"
+        
+        p "I see, thanks for telling me, kid."
+        o "Yeah, sure."
+        p "Stay safe."
+        o "Oh, yeah, you too."
+        $ orion_facts['portrait'] = "orion portrait"
+        $ orion_facts['name'] = "Orion"  
+        $ orion_facts['fact1'] = "Little kid, both is parents are gone. Doesn't deserve to live like this. His mom's sick, I'm gonna go to the hospital to find her and hopefully get some answers."
 
 
-                $ timesTalkedtoOrion +=1
-                jump seventh_apartment_scene
+        $ timesTalkedtoOrion +=1
+        jump seventh_apartment_scene
 
     elif timesTalkedtoOrion==1:
                 show character2apt
@@ -240,8 +243,7 @@ label Door4Conversation:
     #else :
         #thought "..."
 
-    $ orion_facts['portrait'] = "orion portrait"
-    $ orion_facts['name'] = "Orion"
+    
             
 label orion_menu:
     if orion_facts['resolved']== False:
