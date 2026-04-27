@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/OfficeScenes/office.rpy", line 154: expected a keyword argument or end of line.
-    ysize 335  50
-               ^
+File "game/HospitalNavigation.rpy", line 108: reached end of line when expecting ':'.
+    if violet_facts['resolved']==  False
+                                        ^
+
+File "game/HospitalNavigation.rpy", line 128: expected statement.
+    elif violet_facts['resolved']== True:
+                     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Apr 24 08:43:56 2026
+Mon Apr 27 10:26:29 2026

@@ -64,10 +64,14 @@ label third_apartment_scene:
             if rick_facts ['status'] == "undiscovered":
                 $ rick_facts['fact1'] = "Just a hick searching the trash. Do the people here not have enough supplies?"
 
-        jump third_apartment_scene
+        
 
     elif timesTalkedtoRick == 1:
+        jump rick_menu
         
+        
+label rick_menu:
+    if rick_facts['resolved']== False:
         menu:
             "Return":
                 jump first_apartment_scene
@@ -79,34 +83,49 @@ label third_apartment_scene:
                     show character4four at left
                     show character4four at left
                     r "I told ya', I'm busy"
-                    menu:
-                        "Kill Him":
+                menu:
+                    "Kill Him" if rick_facts['status']!= "Dead":
                         
-                            $ rick_facts ['status'] = "Dead"
-                            hide character4four
-                            show character3mono at left
-                            pause 3.0
-                            # increase trust
-                            $ trust += 10
+                        $ rick_facts ['status'] = "Dead"
+                        hide character4four
+                        show character3mono at left
+                        pause 3.0
+                        # increase trust
+                        $ trust += 10
                         
 
-                            if sarah_facts['status']== "Dead" or anna_facts ['status']== "Dead":
-                                $ rick_facts['fact1']= "What's the profile? I don't get it. Helpfulness? Positivity? Do they even know... am I supposed to just kill everyone?"
+                        if sarah_facts['status']== "Dead" or anna_facts ['status']== "Dead":
+                            $ rick_facts['fact1']= "What's the profile? I don't get it. Helpfulness? Positivity? Do they even know... am I supposed to just kill everyone?"
 
-                            elif rick_facts['status']== "Dead": 
-                                $ rick_facts['fact1'] = "I forgot what it felt like to shoot a gun. I'd always been so nervous to hit a person by mistake, before... by mistake. This is a mistake. What am I doing?"
+                        elif rick_facts['status']== "Dead": 
+                            $ rick_facts['fact1'] = "I forgot what it felt like to shoot a gun. I'd always been so nervous to hit a person by mistake, before... by mistake. This is a mistake. What am I doing?"
                             
-                            jump third_apartment_scene
+                        jump third_apartment_scene
                             
 
-                        "Do nothing":
-                            $ rick_facts['status'] = "Spared"   
+                    "Do nothing" if rick_facts['resolved']== False:
+                            if rick_facts['status']!= "Dead":
+                                $ rick_facts['status'] = "Spared"   
+                            $ rick_facts['resolved']= True
                             jump third_apartment_scene
-                else:
+                        
+                    "Mark as Dead" if rick_facts['marked']== False:
+                            $ rick_facts['marked']= True
+                            $ trust+=10
+
+                if rick_facts['status']== "Dead" and rick_facts['marked']== True:
+                    $ rick_facts['resolved']= True
+
+                if rick_facts['resolved']==True:
                     thought "He's not gonna answer."
-                    menu:
-                        "Return":
-                            jump first_apartment_scene
+                
+                menu:
+                    "Return":
+                        jump first_apartment_scene
+
+
+
+
 
 
 

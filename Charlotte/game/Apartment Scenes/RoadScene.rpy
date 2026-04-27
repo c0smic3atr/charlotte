@@ -107,7 +107,7 @@ label seventh_apartment_scene:
 
     #Discovered Lydia!!
     $ lydia_facts['portrait'] = "lydia portrait"
-    $ lydia_facts['name'] = "Lydia"
+    $ lydia_facts['name'] = "Lydia Qualley"
 
     jump seventh_apartment_scene
 
@@ -215,7 +215,7 @@ label Door4Conversation:
         p "Stay safe."
         o "Oh, yeah, you too."
         $ orion_facts['portrait'] = "orion portrait"
-        $ orion_facts['name'] = "Orion"  
+        $ orion_facts['name'] = "Orion Carlton"  
         $ orion_facts['fact1'] = "Little kid, both is parents are gone. Doesn't deserve to live like this. His mom's sick, I'm gonna go to the hospital to find her and hopefully get some answers."
 
 

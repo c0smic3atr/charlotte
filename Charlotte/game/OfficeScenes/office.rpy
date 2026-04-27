@@ -15,7 +15,7 @@ label OfficeConversation:
     
         $ timesTalkedtoAster += 1
         $ aster_facts['portrait'] = "aster portrait"
-        $ aster_facts['name'] = "Aster"
+        $ aster_facts['name'] = "Aster Han"
 
         if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead":
             p "Um, hello?"
@@ -49,6 +49,7 @@ label OfficeConversation:
             x "It seems you've lost your way, Jane."
             p "Yeah."
             p "Guess so."
+            $ aster_facts['fact1']= "What's that saying about doing the same thing over and over and expecting a different result?"
             hide character1office
 
         else:
@@ -70,6 +71,7 @@ label OfficeConversation:
             p "I was barely told anything."
             x "..."
             x "Liar."
+            $ aster_facts['fact1'] = "She's confused... is this how people are when they're sick? Why aren't we helping them?"
             
             hide character1office
 #$ aster_facts['portrait'] = "aster portrait"
@@ -104,6 +106,7 @@ if aster_facts['resolved']== False:
                     pause 3.0
                     hide character6mono
                     $ trust -=10
+                    $ aster_facts['fact1'] = "These people really are sick... if you know they're in this state, why aren't we helping them? Can we help them?"
                 "Keep Doing Nothing" if aster_facts['resolved']== False:
                     if aster_facts['status']!= "Dead":
                         $ aster_facts['status'] = "Spared"
@@ -124,10 +127,12 @@ else:
                     pause 3.0
                     hide character6mono
                     $ trust +=10 
+                    $ aster_facts['fact1'] = "These people really are sick..."
                 "Do Nothing" if aster_facts['resolved']== False:
                     if aster_facts['status']!="Dead":
                         $ aster_facts['status']= "Spared"
                     $ trust -=5  
+                    $ aster_facts['fact1'] = "She's confused... thinks I'm someone she used to know. Guess that's one of the side-effects."
                 "Mark as Dead" if aster_facts['marked']== False:
                     $ aster_facts['marked']= True
                     $ trust+=10
