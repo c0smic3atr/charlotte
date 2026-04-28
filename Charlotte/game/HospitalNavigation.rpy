@@ -92,24 +92,30 @@ label twentyfifth_apartment_scene:
     $ martin_facts['portrait']= "martin portrait"
     #$ marin_facts['name'] "Martin Kelly"
     $ martin_facts['fact1']= "This is inhumane. I can't just... kill him, though. That's not how people handle this... people wouldn't have done this in the first place. Am I just your clean-up crew? Here to take out those who are left and tell you how far along everyone else is?"
+    jump martin_menu
 
 label martin_menu:
-    menu:
-        "Kill Him" if martin_facts['status']!= "Dead":
-            $ martin_facts['status']= "Dead"
-            $ martin_facts['portrait']= "martin dead"
-            hide char2hoss
-            pause 3.0
-            show hospital2charamono
-            $ trust-=10
+    if martin_facts['resolved']== False:
+        menu:
+                "Kill Him" if martin_facts['status']!= "Dead":
+                    $ martin_facts['status']= "Dead"
+                    $ martin_facts['portrait']= "martin dead"
+                    hide char2hoss
+                    show hospital2charamonooo
+                    pause 3.0
+                    hide hospital2charamonooo
+                    $ trust-=10
 
-        "Do Nothing" if martin_facts['resolved']== False:
-            if martin_facts['status']!= "Dead":
-                $ martin_facts['status']= "Spared"
-            $ trust -=5
+                "Do Nothing" if martin_facts['resolved']== False:
+                    if martin_facts['status']!= "Dead":
+                        $ martin_facts['status']= "Spared"
+                    $ trust -=5
 
-        "Mark as Dead" if martin_facts['marked']== False:
-            $ martin_facts['marked']= True
+                "Mark as Dead" if martin_facts['marked']== False:
+                    $ martin_facts['marked']= True
+        
+        if martin_facts['status']== "Dead" and martin_facts['marked']== True:
+            $ martin_facts['resolved']= True
 
 
 
@@ -168,6 +174,7 @@ label twentyseventh_apartment_scene:
                     pause 3.0
                     hide chara1hospitalmono
                     $ violet_facts['status']= "Dead"
+                    $ violet_facts['portrait']= "violet dead"
 
                 "Do nothing" if violet_facts ['resolved']== False:
                     if violet_facts['status']!= Dead:

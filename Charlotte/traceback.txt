@@ -1,26 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/HospitalNavigation.rpy", line 92, in script
-    $ martin_facts['portrait']= "martin portrait"
-  File "game/HospitalNavigation.rpy", line 92, in <module>
-    $ martin_facts['portrait']= "martin portrait"
-NameError: name 'martin_facts' is not defined
+  File "game/HospitalNavigation.rpy", line 98, in script
+    if marin_facts['resolved']== False:
+  File "game/HospitalNavigation.rpy", line 98, in <module>
+    if marin_facts['resolved']== False:
+NameError: name 'marin_facts' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/HospitalNavigation.rpy", line 92, in script
-    $ martin_facts['portrait']= "martin portrait"
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/HospitalNavigation.rpy", line 92, in <module>
-    $ martin_facts['portrait']= "martin portrait"
-NameError: name 'martin_facts' is not defined
+  File "game/HospitalNavigation.rpy", line 98, in script
+    if marin_facts['resolved']== False:
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/HospitalNavigation.rpy", line 98, in <module>
+    if marin_facts['resolved']== False:
+NameError: name 'marin_facts' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Tue Apr 28 10:03:00 2026
+Tue Apr 28 10:14:01 2026
