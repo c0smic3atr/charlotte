@@ -164,7 +164,7 @@ label anna_menu:
                         $ anna_facts['status'] = "Spared"
                     $ anna_facts['resolved']= True
                     p "..."
-                    $ trust-=5
+                    $ trust-=10 
                     $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
         
                 
