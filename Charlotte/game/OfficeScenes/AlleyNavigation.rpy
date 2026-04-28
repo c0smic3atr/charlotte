@@ -1,5 +1,5 @@
 label tenth_apartment_scene:
-    $ oxygen_loss = 5
+    $ contamination_level = 3
     call use_oxygen
     if oxygen <= 0:
         jump out_of_oxygen

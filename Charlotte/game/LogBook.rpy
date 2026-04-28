@@ -66,11 +66,11 @@ screen notebook_screen():
                 padding (0,0)
 
                 # Show a different portrait depending on the current page
-                if notebook_page == 2:
+                if notebook_page == 3:
                     add anna_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                    if anna_facts['status'] == "Dead":
+                    if anna_facts['marked'] == True:
                         add "notebookdead":
                             xalign 0.17
                             yalign 0.25
@@ -78,7 +78,7 @@ screen notebook_screen():
                             
                             
               
-                elif notebook_page == 1:
+                elif notebook_page == 2:
                     add sarah_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
@@ -87,7 +87,7 @@ screen notebook_screen():
                             xalign 0.17
                             yalign 0.25
                 
-                elif notebook_page == 3:
+                elif notebook_page == 4:
                     add rick_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
@@ -96,7 +96,7 @@ screen notebook_screen():
                             xalign 0.17
                             yalign 0.25
                 
-                elif notebook_page == 4:
+                elif notebook_page == 5:
                     add lydia_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
@@ -105,7 +105,7 @@ screen notebook_screen():
                             xalign 0.17
                             yalign 0.25
 
-                elif notebook_page == 5:
+                elif notebook_page == 6:
                     add orion_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
@@ -114,7 +114,7 @@ screen notebook_screen():
                             xalign 0.17
                             yalign 0.25
 
-                elif notebook_page == 6:
+                elif notebook_page == 7:
                     add aster_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
@@ -143,67 +143,54 @@ screen notebook_screen():
                     ypos 30
 
                     # Show different notes depending on the current page
+                   
                     
-                    if notebook_page == 7:
+                    if notebook_page == 3:
 
                         text anna_facts['name'] size 42
                         text "Notes:" size 30
 
                         text "* [anna_facts['fact1']]"
-                        text "* [anna_facts['fact2']]"
-                        text "* [anna_facts['fact3']]"
-                    
+                        
+                        
+
                     elif notebook_page == 2:
-
-                        text anna_facts['name'] size 42
-                        text "Notes:" size 30
-
-                        text "* [anna_facts['fact1']]"
-                        
-                        
-
-                    elif notebook_page == 1:
 
                         text sarah_facts['name'] size 42
                         text "Notes:" size 30
 
                         text "* [sarah_facts['fact1']]"
-                        text "* [sarah_facts['fact2']]"
-                        text "* [sarah_facts['fact3']]"
-                    elif notebook_page == 3:
+                        
+                    elif notebook_page == 4:
 
                         text rick_facts['name'] size 42
                         text "Notes:" size 30
 
                         text "* [rick_facts['fact1']]"
-                        text "* [rick_facts['fact2']]"
-                        text "* [rick_facts['fact3']]"
-                    elif notebook_page == 4:
+                        
+                    elif notebook_page == 5:
 
                         text lydia_facts['name'] size 42
                         text "Notes:" size 30
 
                         text "* [lydia_facts['fact1']]"
-                        text "* [lydia_facts['fact2']]"
-                        text "* [lydia_facts['fact3']]"
+                       
 
-                    elif notebook_page == 5:
+                    elif notebook_page == 6:
 
                         text orion_facts['name'] size 42
                         text "Notes:" size 30
 
                         text "* [orion_facts['fact1']]"
-                        text "* [orion_facts['fact2']]"
-                        text "* [orion_facts['fact3']]"
+                      
 
-                    elif notebook_page == 6:
+                    elif notebook_page == 7:
 
                         text aster_facts['name'] size 42
                         text "Notes:" size 30
 
                         text "* [aster_facts['fact1']]"
-                        text "* [aster_facts['fact2']]"
-                        text "* [aster_facts['fact3']]"
+                       
                     elif notebook_page == 0:
 
                         text "Player Stats" size 42
@@ -216,6 +203,8 @@ screen notebook_screen():
                             range max_trust
                             xmaximum 500
                             ymaximum 30
+                        
+                        
 
                         text "[trust] / [max_trust]" size 22
 
@@ -230,6 +219,31 @@ screen notebook_screen():
                             ymaximum 30
 
                         text "[oxygen] / [max_oxygen]" size 22
+
+                    elif notebook_page == 1:
+                        text "Contamination Level" size 28
+
+                        bar: 
+                            value contamination_level
+                            range max_contamination_level
+                            xmaximum 500
+                            ymaximum 30
+
+                        text "Filter Level [filter_level]" size 28
+                            
+                        bar:
+                            value filter_level
+                            range max_filter_level
+                            xmaximum 500
+                            ymaximum 30
+
+                        hbox:
+                            spacing 20
+                            textbutton "-":
+                                action SetVariable("filter_level", max(1, filter_level - 1))
+
+                            textbutton "+":
+                                action SetVariable("filter_level", min(max_filter_level, filter_level +1))
         # -------------------------------------------------
         # PAGE NUMBER
         # -------------------------------------------------

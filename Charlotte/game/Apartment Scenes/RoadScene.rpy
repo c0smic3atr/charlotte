@@ -4,6 +4,7 @@ default timesTalkedtoOrion = 0
 define o = Character ("Orion")
 
 label sixth_apartment_scene:
+    $ contamination_level = 1
     call use_oxygen
     if oxygen <= 0:
         jump out_of_oxygen
@@ -122,6 +123,7 @@ label seventh_apartment_scene:
         menu: 
                     "Kill her" if lydia_facts['status']!="Dead":
                         $ lydia_facts ['status'] = "Dead"
+                        $ lydia_facts['portrait'] = "lydia dead"
                         hide character1apt
                         show character4mono at left
                         pause 3.0
@@ -256,6 +258,7 @@ label orion_menu:
                     "Kill Him" if orion_facts['status']!="Dead":
                         o "Aren't you gonna go look for my mom?"
                         $ orion_facts['status']= "Dead"
+                        $ orion_facts['portrait'] = "orion dead"
                         hide character2apt
                         show character5mono
                         pause 3.0

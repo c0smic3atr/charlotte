@@ -101,6 +101,7 @@ if aster_facts['resolved']== False:
     menu:
                 "Kill Her" if aster_facts['status'] != "Dead":
                     $ aster_facts['status'] = "Dead"
+                    $ aster_facts['portrait'] = "aster dead"
                     hide character1office
                     show character6mono
                     pause 3.0
@@ -122,6 +123,7 @@ else:
     menu:
                 "Kill Her" if aster_facts['status']!= "Dead":
                     $ aster_facts['status'] = "Dead"
+                    $ aster_facts['portrait'] = "aster dead"
                     hide character1office
                     show character6mono
                     pause 3.0
