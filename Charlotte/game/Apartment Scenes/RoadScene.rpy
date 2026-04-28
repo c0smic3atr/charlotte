@@ -4,6 +4,7 @@ default timesTalkedtoOrion = 0
 define o = Character ("Orion")
 
 label sixth_apartment_scene:
+    $ contamination_level = 1
     call use_oxygen
     if oxygen <= 0:
         jump out_of_oxygen

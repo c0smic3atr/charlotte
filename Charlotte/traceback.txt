@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/OfficeScenes/AlleyNavigation.rpy", line 11, in script
-    call screen alleyNav
-ScriptError: could not find label 'eleventh_apartment_scene'.
+  File "game/Apartment Scenes/secondApartmentScene.rpy", line 7, in script call
+    call use_oxygen
+  File "game/playerStats.rpy", line 19, in script
+    $ oxygen -= oxygen_loss_rate + (abs(filter_level - contamination_level) * oxygen_loss_rate)
+  File "game/playerStats.rpy", line 19, in <module>
+    $ oxygen -= oxygen_loss_rate + (abs(filter_level - contamination_level) * oxygen_loss_rate)
+NameError: name 'oxygen_loss_rate' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "game/OfficeScenes/AlleyNavigation.rpy", line 11, in script
-    call screen alleyNav
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'eleventh_apartment_scene'.
+  File "game/Apartment Scenes/secondApartmentScene.rpy", line 7, in script call
+    call use_oxygen
+  File "game/playerStats.rpy", line 19, in script
+    $ oxygen -= oxygen_loss_rate + (abs(filter_level - contamination_level) * oxygen_loss_rate)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/playerStats.rpy", line 19, in <module>
+    $ oxygen -= oxygen_loss_rate + (abs(filter_level - contamination_level) * oxygen_loss_rate)
+NameError: name 'oxygen_loss_rate' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Fri Apr 24 09:59:27 2026
+Mon Apr 27 09:50:26 2026

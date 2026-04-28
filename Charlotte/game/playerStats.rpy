@@ -5,12 +5,18 @@ default oxygen = 100
 default max_trust = 100
 default max_oxygen = 100
 
-default oxygen_loss = 1
+default oxygen_loss_rate = 1
+
+default filter_level = 1
+default contamination_level = 1
+
+default max_filter_level = 5
+default max_contamination_level = 5
 
 
 
 label use_oxygen:
-    $ oxygen -= oxygen_loss
+    $ oxygen -= oxygen_loss_rate + (abs(filter_level - contamination_level) * oxygen_loss_rate)
     
     
     return
