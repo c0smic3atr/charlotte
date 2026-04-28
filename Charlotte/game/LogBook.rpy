@@ -10,7 +10,7 @@ default notebook_page = 0
 
 # Total number of pages minus 1
 # If there are 2 pages, the max page index is 1.
-default notebook_max_page = 8
+default notebook_max_page = 9
 
 
 # =========================================================
@@ -127,7 +127,16 @@ screen notebook_screen():
                     add violet_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                    if aster_facts['marked'] == True:
+                    if violet_facts['marked'] == True:
+                        add "notebookdead":
+                            xalign 0.17
+                            yalign 0.25
+
+                elif notebook_page == 9:
+                    add martin_facts['portrait']:
+                        xalign 0.5
+                        yalign 0.5
+                    if martin_facts['marked'] == True:
                         add "notebookdead":
                             xalign 0.17
                             yalign 0.25
@@ -206,6 +215,13 @@ screen notebook_screen():
                         text "Notes:" size 30
 
                         text "* [violet_facts['fact1']]"
+
+                    elif notebook_page == 9:
+
+                        text martin_facts['name'] size 42
+                        text "Notes:" size 30
+
+                        text "* [martin_facts['fact1']]"
                        
                     elif notebook_page == 0:
 
