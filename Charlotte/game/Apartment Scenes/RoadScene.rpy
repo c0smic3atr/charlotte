@@ -71,7 +71,7 @@ label seventh_apartment_scene:
                 p "Yeah, there was the whole quarentine thing put in place so-"
                 l "You should do us all a favor and get lost. Probably doing yourself a favor in the process."
                 l "We haven't been fooled by your bullshit."
-                if anna_facts['status']== "Spared" amd sarah_facts['status']== "Spared" and rick_facts['status']== "Spared":
+                if anna_facts['status']== "Spared" and sarah_facts['status']== "Spared" and rick_facts['status']== "Spared":
                     thought "What's her problem? I haven't pulled anything."
                 p "..."
                 p "Are you alright?"

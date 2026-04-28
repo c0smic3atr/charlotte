@@ -1,4 +1,5 @@
 define v = Character("Violet")
+define m = Character("Martin")
 label eigteenth_apartment_scene:
     $ oxygen_loss = 6
     call use_oxygen
@@ -80,6 +81,57 @@ label twentyfourth_apartment_scene:
 label twentyfifth_apartment_scene:
     scene bg hospital room two
     "Youre in the first hospital room"
+    show char2hoss
+    p "Woah! Uh, I'm sorry, you scared me..."
+    m "UhhH- aGH..."
+    thought "He looks dead already..."
+    p "I wish you could tell me more about what's happening here. I guess I wasn't the first person to come check on you, was I?"
+    m "..."
+    p "Guess you won't solve a probelm if you're the one who created it, huh..."
+    p "Mullan should be sorry."
+    $ martin_facts['portrait']= "martin portrait"
+    #$ marin_facts['name'] "Martin Kelly"
+    $ martin_facts['fact1']= "This is inhumane. I can't just... kill him, though. That's not how people handle this... people wouldn't have done this in the first place. Am I just your clean-up crew? Here to take out those who are left and tell you how far along everyone else is?"
+
+label martin_menu:
+    menu:
+        "Kill Him" if martin_facts['status']!= "Dead":
+            $ martin_facts['status']= "Dead"
+            $ martin_facts['portrait']= "martin dead"
+            hide char2hoss
+            pause 3.0
+            show hospital2charamono
+            $ trust-=10
+
+        "Do Nothing" if martin_facts['resolved']== False:
+            if martin_facts['status']!= "Dead":
+                $ martin_facts['status']= "Spared"
+            $ trust -=5
+
+        "Mark as Dead" if martin_facts['marked']== False:
+            $ martin_facts['marked']= True
+
+
+
+
+
+    #pause 3.0
+    #show hospital2charamono
+    
+    menu:
+        "Go back":
+            jump twentyfourth_apartment_scene
+
+label twentysixth_apartment_scene:
+    scene bg hos2hos
+    "You're in the second hospital room"
+    menu:
+        "Go back":
+            jump twentyfourth_apartment_scene
+
+label twentyseventh_apartment_scene:
+    scene bg back room hospital
+    "You're in the back room"
     show character1onehospital
     p "Hey, are you awake?"
     v "..."
@@ -130,24 +182,6 @@ label twentyfifth_apartment_scene:
         thought "I can't do this any more."
 
 
-    
-    menu:
-        "Go back":
-            jump twentyfourth_apartment_scene
-
-label twentysixth_apartment_scene:
-    scene bg hos2hos
-    "You're in the second hospital room"
-    menu:
-        "Go back":
-            jump twentyfourth_apartment_scene
-
-label twentyseventh_apartment_scene:
-    scene bg back room hospital
-    "You're in the back room"
-    show char2hos
-    pause 3.0
-    show hospital2charamono
     menu:
         "Exit the hospital":
             jump twentyeigth_apartment_scene

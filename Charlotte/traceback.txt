@@ -1,16 +1,16 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/HospitalNavigation.rpy", line 109, in script
+  File "game/HospitalNavigation.rpy", line 125, in script
     if violet_facts['resolved']==  False:
-  File "game/HospitalNavigation.rpy", line 109, in <module>
+  File "game/HospitalNavigation.rpy", line 125, in <module>
     if violet_facts['resolved']==  False:
 NameError: name 'violet_facts' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/HospitalNavigation.rpy", line 109, in script
+  File "game/HospitalNavigation.rpy", line 125, in script
     if violet_facts['resolved']==  False:
   File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
     if renpy.python.py_eval(condition):
@@ -18,11 +18,11 @@ Full traceback:
     return py_eval_bytecode(code, globals, locals)
   File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/HospitalNavigation.rpy", line 109, in <module>
+  File "game/HospitalNavigation.rpy", line 125, in <module>
     if violet_facts['resolved']==  False:
 NameError: name 'violet_facts' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Mon Apr 27 10:54:51 2026
+Tue Apr 28 09:09:09 2026

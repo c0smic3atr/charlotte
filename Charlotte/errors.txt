@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/HospitalNavigation.rpy", line 108: reached end of line when expecting ':'.
-    if violet_facts['resolved']==  False
-                                        ^
-
-File "game/HospitalNavigation.rpy", line 128: expected statement.
-    elif violet_facts['resolved']== True:
-                     ^
+File "game/HospitalNavigation.rpy", line 93: invalid syntax
+    marin_facts['name'] "Martin Kelly"
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Apr 27 10:26:29 2026
+Tue Apr 28 09:40:32 2026
