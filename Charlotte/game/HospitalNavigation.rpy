@@ -154,27 +154,30 @@ label twentyseventh_apartment_scene:
     p "Put you out fo your misery..."
     p "Isn't that what you've been saying this whole time?"
     p "Like a dog."
+    $ violet_facts['portriat'] = "violet portrait"
+    $ violet_facts['name'] = "Violet Carlton"
     jump violet_menu
 
-#no violet script yet so it crashes here!!
+
     label violet_menu:
     if violet_facts['resolved']==  False:
         menu:
-            "Do What Needs to Be Done" if violet_facts['status']!= "Dead":
-                hide character1onehospital
-                show chara1hospitalmono
-                pause 3.0
-                hide chara1hospitalmono
-                $ violet_facts['status']= "Dead"
+                "Do What Needs to Be Done" if violet_facts['status']!= "Dead":
+                    hide character1onehospital
+                    show chara1hospitalmono
+                    pause 3.0
+                    hide chara1hospitalmono
+                    $ violet_facts['status']= "Dead"
 
-            "Do nothing" if violet_facts ['resolved']== False:
-                if violet_facts['status']!= Dead:
-                    $ violet_facts['status']= "Spared"
-                $ violet_facts['resolved']= True
-                $ trust-=10
-            "Mark as Dead" if violet_facts['marked']= False:
-                $ violet_facts['marked']= True
-                $ trust += 10
+                "Do nothing" if violet_facts ['resolved']== False:
+                    if violet_facts['status']!= Dead:
+                        $ violet_facts['status']= "Spared"
+                    $ violet_facts['resolved']= True
+                    $ trust-=10
+                "Mark as Dead" if violet_facts['marked']== False:
+                    $ violet_facts['marked']= True
+                    $ trust += 10
+
         if violet_facts['status']== "Dead" and violet_facts['marked']== True:
             $ violet_facts['resolved']= True
     
