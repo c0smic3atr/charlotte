@@ -58,38 +58,43 @@ label seventh_apartment_scene:
                 p "Hello, I'm agent Walker, I'm here to-"
                 l "What's with the gas mask?"
                 p "Huh? Why?"
-                l "Just makes you look a little weird 's all."
-                p "Thanks for the note."
+                l "Just makes you look a little weird's all."
+                p "Thanks for the note..."
                 l "So what's with it?"
                 thought "What's with your persistence?"
-                #Choice - tell her the truth
+                
+                p "I was sent to check up on you residents, because, you know..."
                 p "We're, uh, worried. About the disease."
                 p "Spreading further, that is."
-                l "Oh, you're one of them."
-                l "You should do yourself, and all of us, a favor and get lost."
+                l "Oh, you're here for that?"
+                p "Yeah, there was the whole quarentine thing put in place so-"
+                l "You should do us all a favor and get lost. Probably doing yourself a favor in the process."
                 l "We haven't been fooled by your bullshit."
+                if anna_facts['status']== "Spared" amd sarah_facts['status']== "Spared" and rick_facts['status']== "Spared":
+                    thought "What's her problem? I haven't pulled anything."
                 p "..."
                 p "Are you alright?"
-                l "What?"
                 p "You look pretty roughed up."
                 l "..."
                 l "'S nothing..."
                 l "But I'm being serious when I tell 'ya"
                 l "Get out of here."
+                l "I know what you being here means, and it's not goin' end well for anybody."
                 $ timesTalkedtoLydia +=1
                 $ lydia_facts['fact1'] = "I was kinda condescending, but she deserved it. Wouldn't tell me anything, total waste of time... is everybody gonna be like this? All cryptic and shit?"
 
             elif timesTalkedtoLydia == 1:
                 show character1apt
                 l "Look, I can't say anything for anybody else, but I've come to accept things as they are."
-                l "Your involvement doesn't effect anything for us, so get out of here before they start effecting things for you."
+                l "Your involvement is going to do nothing but cause us problems. So get out."
+
                 jump lydia_menu
 
             elif lydia_facts['resolved'] == False:
                 jump lydia_menu     
 
             else: 
-                thought "I need to get out of here..."
+                thought "I need to leave..."
 
         #if lydia_facts['status']== "Dead": and anna_facts['status']=="Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
             #$ lydia_facts['fact1']= "She looked young. How old was she? Did she even fit the profile?"
@@ -139,7 +144,7 @@ label seventh_apartment_scene:
                             $ lydia_facts ['status']= "Spared"
                         $ lydia_facts['resolved'] = True
                         $ trust -= 5
-                        $ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything, total waste of time. Is everybody gonna be like this? All cryptic and shit?"
+                        $ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything... total waste of time. Is everybody gonna be like this? All cryptic and shit?"
 
                     "Mark as Dead" if lydia_facts['marked']== False:
                         $ lydia_facts['marked']= True
@@ -162,61 +167,60 @@ label Door4Conversation:
         show character2apt
         o "What's up?"
         thought "There's kids here... of course there are."
-        p "I'm, um, agent Walker and -"
-        o "Agent! Woah!"
-        p "Hah, yeah"
-        p "I'm here to see if you're doing alright?"
-        o "Wait, so do you, like, work for the government or something?"
-        p "Uh, or something."
-        o "So have you ever killed someone?"
+        o "Woah, cool gas mask!"
+        p "Uh, I'm, um, agent Walker and -"
+        o "Agent! No way!"
+        p "Hah, yeah. I'm here to-"
+        o "Are you, like, some kind of spy?"
+        o "Do you work for the government or something?"
+        p "Or something..."
+        o "Woah... So have you ever killed someone?"
         
         if anna_facts['status']== "Dead" or sarah_facts['status']=="Dead" or rick_facts['status']=="Dead" or lydia_facts['status']=="Dead":
-            thought "I'm gonna be sick"
+            thought "I'm gonna be sick..."
         
         p "..."
-        o "It's ok, my dad used to have a total secret job too. Couldn't tell me anything about it"
+        o "It's okay, I get it. My dad used to have a suprt secret job too, couldn't tell me anything about it."
         p "Your dad?"
-        o "Yeah, but he's gone now though..."
+        o "Yeah, he was awesome, but he's gone now..."
         o "Most people are."
         p "Where'd they go?"
-        o "Dunno..."
+        o "Dunno... different places."
+        o "Like Heaven, I guess. Or they were taken, or just ran away."
         p "..."
+        thought "Taken away? What's he mean by that? I kind of doubt even he knows."
+        thought "Poor kid's whole mood changed..."
         p "Um"
         p "Cool shirt."
         p "Crabs."
         thought "What am I doing?"
-        o "Thanks... Wait, so you're here to make sure everybody's okay?"
-        p "Yes."
-        o "Even my mom?"
-        p "Of course."
-        o "Well, she's not okay, she's in the hospital."
+        o "Thanks... Wait, actually I know where one person went. My mom."
+        o "She's in the hospital."
         p "Hospital's a good place to be, all things considering."
-        o "Maybe, but she's been there for so long, I can't even remember..."
-        p "Wuh- what happened?"
-          
-        o "She's all sick... couldn't stay at home. Are you going to save her?"
-        thought "Christ, kid."
-        p "If I see her, I'll help her somehow. What's her name?"
-        o "She's Violet- oh, I'm Orion! What's your name?"
-        p "It's agent Walker, I already-"
-        o "No no no, you're real name."
+        p "Oh. What happened?"
+        o "She got all sick... long time ago. Couldn't stay home."
+        o "Are you gonna go save her?"
+        thought "Christ, kid. Didn't come here to be Superman."
+        p "If I see her, I'll try to help."
+        o "Really? Her name's Violet Carlton- Oh, I'm Orion! What's your name?"
+        p "I told you, I'm agent Walker-"
+        o "Yeah, yeah, I know that. I mean your real name!"
         p "Um..."
-        p "Wait, if both your parents- are you all alone?"
+        p "Wait, if both your parents- are you all alone here?"
         o "Oh, nah. Lydia next door takes care of me. Of everyone in the apartments, really."
         o "Whenever she can..."
         o "She's really nice."
         if lydia_facts['status']=="Dead":
-            thought "Oh my God"
-            thought "I'm gonna throw up"
-            thought "Ugh"
+            thought "Nice... wouldn't call her nice..."
+            thought "What do I know?"
+            thought "Never got the chance to really find out."
         
-        p "I see, thanks for telling me, kid."
-        o "Yeah, sure."
-        p "Stay safe."
-        o "Oh, yeah, you too."
+        p "I see... thanks for telling me, kid."
+        o "Yeah!"
+        p "Uh. stay safe."
         $ orion_facts['portrait'] = "orion portrait"
         $ orion_facts['name'] = "Orion Carlton"  
-        $ orion_facts['fact1'] = "Little kid, both is parents are gone. Doesn't deserve to live like this. His mom's sick, I'm gonna go to the hospital to find her and hopefully get some answers."
+        $ orion_facts['fact1'] = "Little kid, all alone. Said some people have run away, which means it could be spreading already. Gonna look for his mom, I guess. I feel like an errand boy."
 
 
         $ timesTalkedtoOrion +=1
@@ -226,12 +230,13 @@ label Door4Conversation:
                 show character2apt
                 $ timesTalkedtoOrion +=1
                 o "Hmm? You're back?"
-                p "Yeah... I was wondering... about Lydia?"
-                o "Well, my mom used to babysit her when she was a teenager, and they kinda became friends"
-                o "So when Lydia had her baby, my mom and I were around a lot, to help out"
+                p "Yeah, I was wondering... about Lydia?"
+                o "Oh, well my mom used to babysit her when she was young, and they kinda became friends."
+                o "So when Lydia had her baby when I was little, my mom and I were around a lot, to help."
                 o "Then my mom got sick..."
-                o "I want to keep helping her, but usually her boyfriend's got it covered"
+                o "So I wanted to help her, but her boyfriend's got it covered"
                 o "I guess..."
+                o "That's what he tells me anyway."
                 o "I don't think he's very good at it, though."
                 p "Right... thanks kid."
                 jump orion_menu
@@ -267,7 +272,7 @@ label orion_menu:
                         $ orion_facts['resolved']= True
                         $ trust -=10
                         if orion_facts['status']!="Dead":
-                            $ orion_facts['fact1'] = "Little kid, both is parents are gone. Doesn't deserve to live like this. His mom's sick, I'm gonna go to the hospital to find her and hopefully get some answers."
+                            $ orion_facts['fact1'] = "Little kid, all alone. Said some people have run away, which means it could be spreading already. Gonna look for his mom, I guess. I feel like an errand boy."
 
                     "Mark as Dead" if orion_facts['marked']== False:
                         $ orion_facts['marked']= True
