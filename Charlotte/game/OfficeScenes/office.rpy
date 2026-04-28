@@ -26,7 +26,7 @@ label OfficeConversation:
             p "Waiting for what?"
             x "Don't kid yourself, Jane."
             x "You started all this..."
-            x "Guess it's ben so long, you've forgotten as well."
+            x "Guess it's been so long, you've forgotten as well."
             p "..."
             p "You know what?"
             p "I'm getting pretty sick of you people wasting my time."

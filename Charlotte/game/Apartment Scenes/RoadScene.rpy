@@ -182,7 +182,7 @@ label Door4Conversation:
             thought "I'm gonna be sick..."
         
         p "..."
-        o "It's okay, I get it. My dad used to have a suprt secret job too, couldn't tell me anything about it."
+        o "It's okay, I get it. My dad used to have a super secret job too, couldn't tell me anything about it."
         p "Your dad?"
         o "Yeah, he was awesome, but he's gone now..."
         o "Most people are."
@@ -199,7 +199,7 @@ label Door4Conversation:
         o "Thanks... Wait, actually I know where one person went. My mom."
         o "She's in the hospital."
         p "Hospital's a good place to be, all things considering."
-        p "Oh. What happened?"
+        p "What happened?"
         o "She got all sick... long time ago. Couldn't stay home."
         o "Are you gonna go save her?"
         thought "Christ, kid. Didn't come here to be Superman."

@@ -261,7 +261,7 @@ label DoorTwoConversation:
             e "That's people like her."
             p "Like her? What do you mean?"
             p "She seems-"
-            e "I trust you'llbfigure it out."
+            e "I trust you'll figure it out."
             e "You're a lot of things, but incompetent ain't one of them."
             e "You know what to do."
             e "And for the love of God, remember to mark it in your logbook. That's the only way we'll know if you're actually doing your job."

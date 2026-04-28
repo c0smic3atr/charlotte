@@ -79,7 +79,7 @@ label twentyfourth_apartment_scene:
             jump twentyfirst_apartment_scene
 
 label twentyfifth_apartment_scene:
-    scene bg hospital room two
+    scene bg hos2room
     "Youre in the first hospital room"
     show char2hoss
     p "Woah! Uh, I'm sorry, you scared me..."
@@ -90,7 +90,7 @@ label twentyfifth_apartment_scene:
     p "Guess you won't solve a probelm if you're the one who created it, huh..."
     p "Mullan should be sorry."
     $ martin_facts['portrait']= "martin portrait"
-    #$ marin_facts['name'] "Martin Kelly"
+    #$ martin_facts['name'] "Martin Kelly"
     $ martin_facts['fact1']= "This is inhumane. I can't just... kill him, though. That's not how people handle this... people wouldn't have done this in the first place. Am I just your clean-up crew? Here to take out those who are left and tell you how far along everyone else is?"
     jump martin_menu
 
@@ -116,6 +116,10 @@ label martin_menu:
         
         if martin_facts['status']== "Dead" and martin_facts['marked']== True:
             $ martin_facts['resolved']= True
+
+    else:
+        p "I can't..."
+        jump twentyfourth_apartment_scene
 
 
 

@@ -3,8 +3,8 @@ errors listed below, and try again.
 
 
 File "game/HospitalNavigation.rpy", line 93: invalid syntax
-    marin_facts['name'] "Martin Kelly"
-                         ^
+    martin_facts['name'] "Martin Kelly"
+                          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Apr 28 09:40:32 2026
+Tue Apr 28 10:46:39 2026

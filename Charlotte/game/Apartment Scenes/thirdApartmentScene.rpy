@@ -27,7 +27,7 @@ label third_apartment_scene:
             p "What'cha doin'?"
             thought "The hell's he digging around in the trash for?"
             p "..."
-            p "Don't thank you're gonna find anything useful in a trash can."
+            p "Don't think you're gonna find anything useful in a trash can."
             r "Might."
             p "What are you looking for?"
             p "..."
