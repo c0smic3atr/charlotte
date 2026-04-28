@@ -10,7 +10,7 @@ default notebook_page = 0
 
 # Total number of pages minus 1
 # If there are 2 pages, the max page index is 1.
-default notebook_max_page = 7
+default notebook_max_page = 8
 
 
 # =========================================================
@@ -82,7 +82,7 @@ screen notebook_screen():
                     add sarah_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                    if sarah_facts['status'] == "Dead":
+                    if sarah_facts['marked'] == True:
                         add "notebookdead":
                             xalign 0.17
                             yalign 0.25
@@ -91,7 +91,7 @@ screen notebook_screen():
                     add rick_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                    if rick_facts['status'] == "Dead":
+                    if rick_facts['marked'] == True:
                         add "notebookdead":
                             xalign 0.17
                             yalign 0.25
@@ -100,7 +100,7 @@ screen notebook_screen():
                     add lydia_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                    if lydia_facts['status'] == "Dead":
+                    if lydia_facts['marked'] == True:
                         add "notebookdead":
                             xalign 0.17
                             yalign 0.25
@@ -109,7 +109,7 @@ screen notebook_screen():
                     add orion_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                    if orion_facts['status'] == "Dead":
+                    if orion_facts['marked'] == True:
                         add "notebookdead":
                             xalign 0.17
                             yalign 0.25
@@ -118,7 +118,16 @@ screen notebook_screen():
                     add aster_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                    if aster_facts['status'] == "Dead":
+                    if aster_facts['marked'] == True:
+                        add "notebookdead":
+                            xalign 0.17
+                            yalign 0.25
+
+                elif notebook_page == 8:
+                    add violet_facts['portrait']:
+                        xalign 0.5
+                        yalign 0.5
+                    if aster_facts['marked'] == True:
                         add "notebookdead":
                             xalign 0.17
                             yalign 0.25
@@ -190,6 +199,13 @@ screen notebook_screen():
                         text "Notes:" size 30
 
                         text "* [aster_facts['fact1']]"
+
+                    elif notebook_page == 8:
+
+                        text violet_facts['name'] size 42
+                        text "Notes:" size 30
+
+                        text "* [violet_facts['fact1']]"
                        
                     elif notebook_page == 0:
 

@@ -11,4 +11,7 @@ image orion portrait = "images/characters/portraits/orion portrait.png"
 image orion dead = "images/characters/portraits/orion dead portrait.png"
 image aster portrait = "images/characters/portraits/aster portrait.png"
 image aster dead = "images/characters/portraits/aster dead portrait.png"
+
+image violet portrait = "images/characters/portraits/violet portrait.png"
+image violet dead = "images/characters/portraits/violet portrait.png"
 image unknown portrait = "images/characters/portraits/unknown portrait.png"
