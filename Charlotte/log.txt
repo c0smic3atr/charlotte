@@ -1,10 +1,10 @@
-2026-04-29 16:59:11 UTC
+2026-04-29 17:04:12 UTC
 Windows-10-10.0.19045
 Ren'Py 8.3.7.25031702
 
 Early init took 0.06s
 Loading error handling took 0.03s
-Loading script took 0.15s
+Loading script took 0.22s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
 Running init code took 0.04s
@@ -13,14 +13,14 @@ Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\27kennherron\\AppData\\Roaming/RenPy/backups\\Charlotte':
-Dump and make backups took 0.04s
+Dump and make backups took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.03s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.24s
+Creating interface object took 0.26s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
@@ -43,3 +43,23 @@ Version: b'4.6.0 NVIDIA 595.79'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1808, 1017) drawable=(1808, 1017)
 Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/HospitalNavigation.rpy", line 201, in script
+    if violet_facts['status']!= Dead:
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/HospitalNavigation.rpy", line 201, in <module>
+    if violet_facts['status']!= Dead:
+NameError: name 'Dead' is not defined
+
+While running game code:
+  File "game/HospitalNavigation.rpy", line 201, in script
+    if violet_facts['status']!= Dead:
+  File "game/HospitalNavigation.rpy", line 201, in <module>
+    if violet_facts['status']!= Dead:
+NameError: name 'Dead' is not defined
