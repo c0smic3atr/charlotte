@@ -265,7 +265,7 @@ screen eigteenthApartmentNav():
 
         mouse "move"
 
-        action Jump("eigteenth_apartment_scene")
+        action Jump("fifteenth_apartment_scene")
 
 screen enteringHospital():
     # enter the hospital
@@ -294,6 +294,50 @@ screen enteringHospital():
 
     frame:
         xpos 7
+        ypos 490
+        xsize 181 - 7
+        ysize 760 - 490
+        background "#6527F5"
+
+    button:
+        xpos 7
+        ypos 490
+        xsize 181 - 7
+        ysize 760 - 490
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("fifteenth_apartment_scene")
+
+screen hospitalMainRoom:
+
+    #Hallway
+
+    frame:
+        xpos 1
+        ypos 210
+        xsize 250 - 1
+        ysize 710 - 210
+        background "#6527F5"
+
+    button:
+        xpos 1
+        ypos 210
+        xsize 250 - 1
+        ysize 710 - 210
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("twentyfourth_apartment_scene")
+
+    #Storage room
+
+    frame:
+        xpos 1345
         ypos 490
         xsize 181 - 7
         ysize 760 - 490
