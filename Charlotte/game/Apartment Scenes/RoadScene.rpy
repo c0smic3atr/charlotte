@@ -4,6 +4,7 @@ default timesTalkedtoOrion = 0
 define o = Character ("Orion")
 
 label sixth_apartment_scene:
+    
     $ contamination_level = 1
     call use_oxygen
     if oxygen <= 0:
@@ -19,6 +20,9 @@ label sixth_apartment_scene:
 
 label seventh_apartment_scene:
     scene bg aptdoors
+    thought "The Hell? The sky's changed... and the weather. What time is it anyway?"
+    thought "It's getting dark out. Swear I got here at, like, noon?"
+    thought "Whatever, gotta stay focused."
     call screen seventhApartmentNav
     if timesTalkedtoLydia == 0:
 

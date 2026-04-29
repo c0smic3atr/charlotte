@@ -3,11 +3,11 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Employer")
+define e = Character("Mullan")
 define p = Character ("Walker")
 define thought = Character (None, what_prefix = "{i}", what_suffix="{/i}")
 define a = Character ("Anna")
-define s = Character ("Sarah")
+define s = Character ("Samantha")
 
 
 # The game starts here.

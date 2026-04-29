@@ -6,7 +6,9 @@ label tenth_apartment_scene:
     
     scene bg mainalley
 
-    "I am in the 10th apartment scene"
+    thought "Ugh, it's hard to breathe in this place. Do I keep passing out or something? Is my gas mask broken?"
+    thought "Why- why's it morning again?"
+    thought "I need to get this over with."
 
     call screen alleyNav
 

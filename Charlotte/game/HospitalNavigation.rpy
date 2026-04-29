@@ -11,7 +11,7 @@ label eigteenth_apartment_scene:
     scene bg road to hospital
     call screen eigteenthApartmentNav
 
-    "You've left the office building"
+   
     menu: 
         "Continue toward the road":
             jump ninteenth_apartment_scene
@@ -30,6 +30,7 @@ label twentieth_apartment_scene:
 label ninteenth_apartment_scene:
     scene bg hospitallook
     call screen enteringHospital
+    
 
     "You're approaching the hospital"
     menu:
@@ -40,7 +41,8 @@ label ninteenth_apartment_scene:
 
 label twentyfirst_apartment_scene:
     scene bg fronthos
-    "Youre in the hospital"
+    thought "I feel like I've been in this town for days..."
+    thought "Must be losing my mind too..."
     menu:
         "Enter storage room":
             jump twentysecond_apartment_scene
@@ -59,7 +61,7 @@ label twentysecond_apartment_scene:
             jump twentyfirst_apartment_scene
 
 label twentythird_apartment_scene:
-    scene bg operating room
+    scene bg hosor
     "You're in the operating room"
     menu: 
         "Go back":
@@ -174,9 +176,9 @@ label twentyseventh_apartment_scene:
         menu:
                 "Do What Needs to Be Done" if violet_facts['status']!= "Dead":
                     hide character1onehospital
-                    show chara1hospitalmono
+                    show hosonrchar
                     pause 3.0
-                    hide chara1hospitalmono
+                    hide hosonrchar
                     $ violet_facts['status']= "Dead"
                     $ violet_facts['portrait']= "violet dead"
 

@@ -1,5 +1,8 @@
 label fifth_apartment_scene:
     scene bg apttwo
+    thought "The Hell? The sky's changed... and the weather. What time is it anyway?"
+    thought "It's getting dark out. Swear I got here at, like, noon?"
+    thought "Whatever, gotta stay focused."
     call screen fifthApartmentNav
 
 
