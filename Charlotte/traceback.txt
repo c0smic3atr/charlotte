@@ -1,26 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/OfficeScenes/OfficeTwo.rpy", line 33, in script call
-    call officeTableButton
-  File "game/OfficeScenes/OfficeTwo.rpy", line 33, in script call
-    call officeTableButton
-ScriptError: could not find label 'officeTableButton'.
+  File "game/HospitalNavigation.rpy", line 184, in script
+    if violet_facts['status']!= Dead:
+  File "game/HospitalNavigation.rpy", line 184, in <module>
+    if violet_facts['status']!= Dead:
+NameError: name 'Dead' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/OfficeScenes/OfficeTwo.rpy", line 33, in script call
-    call officeTableButton
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1427, in execute
-    rv = renpy.game.context().call(label, return_site=self.next.name)
-  File "game/OfficeScenes/OfficeTwo.rpy", line 33, in script call
-    call officeTableButton
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'officeTableButton'.
+  File "game/HospitalNavigation.rpy", line 184, in script
+    if violet_facts['status']!= Dead:
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/HospitalNavigation.rpy", line 184, in <module>
+    if violet_facts['status']!= Dead:
+NameError: name 'Dead' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Wed Apr 29 08:39:11 2026
+Wed Apr 29 09:15:58 2026

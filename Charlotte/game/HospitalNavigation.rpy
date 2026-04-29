@@ -40,6 +40,7 @@ label ninteenth_apartment_scene:
 
 label twentyfirst_apartment_scene:
     scene bg fronthos
+    call screen hospitalMainRoom
     "Youre in the hospital"
     menu:
         "Enter storage room":
@@ -67,6 +68,7 @@ label twentythird_apartment_scene:
 
 label twentyfourth_apartment_scene:
     scene bg hall
+    call screen hallwayNav
     "You're in the hallway"
     menu:
         "Enter left door":
@@ -80,7 +82,22 @@ label twentyfourth_apartment_scene:
 
 label twentyfifth_apartment_scene:
     scene bg hos2room
+    call screen leftRoomNav
     "Youre in the first hospital room"
+    #show char2hoss
+    #p "Woah! Uh, I'm sorry, you scared me..."
+    #m "UhhH- aGH..."
+    #thought "He looks dead already..."
+    #p "I wish you could tell me more about what's happening here. I guess I wasn't the first person to come check on you, was I?"
+    #m "..."
+    #p "Guess you won't solve a probelm if you're the one who created it, huh..."
+    #p "Mullan should be sorry."
+    #$ martin_facts['portrait']= "martin portrait"
+    #$ martin_facts['name'] "Martin Kelly"
+    #$ martin_facts['fact1']= "This is inhumane. I can't just... kill him, though. That's not how people handle this... people wouldn't have done this in the first place. Am I just your clean-up crew? Here to take out those who are left and tell you how far along everyone else is?"
+    #jump martin_menu
+
+label martinConvo:
     show char2hoss
     p "Woah! Uh, I'm sorry, you scared me..."
     m "UhhH- aGH..."
@@ -311,22 +328,22 @@ screen enteringHospital():
 
         action Jump("fifteenth_apartment_scene")
 
-screen hospitalMainRoom:
+screen hospitalMainRoom():
 
     #Hallway
 
     frame:
-        xpos 1
-        ypos 210
-        xsize 250 - 1
-        ysize 710 - 210
+        xpos 5
+        ypos 180
+        xsize 195 - 5
+        ysize 660 - 180
         background "#6527F5"
 
     button:
-        xpos 1
-        ypos 210
-        xsize 250 - 1
-        ysize 710 - 210
+        xpos 5
+        ypos 180
+        xsize 195 - 5
+        ysize 660 - 180
         background None
         hover_background None
 
@@ -337,20 +354,169 @@ screen hospitalMainRoom:
     #Storage room
 
     frame:
-        xpos 1345
-        ypos 490
-        xsize 181 - 7
-        ysize 760 - 490
+        xpos 1425
+        ypos 150
+        xsize 1545 - 1425
+        ysize 450 - 150
         background "#6527F5"
 
     button:
-        xpos 7
-        ypos 490
-        xsize 181 - 7
-        ysize 760 - 490
+        xpos 1425
+        ypos 150
+        xsize 1545 - 1425
+        ysize 450 - 150
         background None
         hover_background None
 
         mouse "move"
 
-        action Jump("fifteenth_apartment_scene")
+        action Jump("twentysecond_apartment_scene")
+
+    #Operating room
+
+    frame:
+        xpos 1650
+        ypos 125
+        xsize 1915 - 1650
+        ysize 820 - 125
+        background "#6527F5"
+
+    button:
+        xpos 1650
+        ypos 125
+        xsize 1915 - 1650
+        ysize 820 - 125
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("twentythird_apartment_scene")
+
+screen hallwayNav():
+    #Left room
+
+    frame:
+        xpos 85
+        ypos 20
+        xsize 305 - 85
+        ysize 800 - 20
+        background "#6527F5"
+
+    button:
+        xpos 85
+        ypos 20
+        xsize 305 - 85
+        ysize 800 - 20
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("twentyfifth_apartment_scene")
+
+    #Right room
+
+    frame:
+        xpos 1495
+        ypos 20
+        xsize 1665 - 1495
+        ysize 765 - 20
+        background "#6527F5"
+
+    button:
+        xpos 1495
+        ypos 20
+        xsize 1665 - 1495
+        ysize 765 - 20
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("twentysixth_apartment_scene")
+
+    #Back room
+
+    frame:
+        xpos 700
+        ypos 10
+        xsize 1125 - 700
+        ysize 230 - 10
+        background "#6527F5"
+
+    button:
+        xpos 700
+        ypos 10
+        xsize 1125 - 700
+        ysize 230 - 10
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("twentyseventh_apartment_scene")
+
+    #Go back
+
+    frame:
+        xpos 210
+        ypos 900
+        xsize 1640 - 210
+        ysize 1060 - 900
+        background "#6527F5"
+
+    button:
+        xpos 210
+        ypos 900
+        xsize 1640 - 210
+        ysize 1060 - 900
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("twentyfirst_apartment_scene")
+
+screen leftRoomNav():
+    #Talk with Martin
+
+    frame:
+        xpos 95
+        ypos 340
+        xsize 530 - 95
+        ysize 1040 - 340
+        background "#6527F5"
+
+    button:
+        xpos 95
+        ypos 340
+        xsize 530 - 95
+        ysize 1040 - 340
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("martinConvo")
+
+    #Go back
+
+    frame:
+        xpos 1160
+        ypos 930
+        xsize 1885 - 1160
+        ysize 1060 - 930
+        background "#6527F5"
+
+    button:
+        xpos 1160
+        ypos 930
+        xsize 1885 - 1160
+        ysize 1060 - 930
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("twentyfourth_apartment_scene")

@@ -179,7 +179,7 @@ screen officeTwoNav():
         action Jump("fourteenth_apartment_scene")
 
 
-screen officeTableButtonNav:
+screen officeTableButtonNav():
     # go back
 
     frame:
@@ -223,7 +223,7 @@ screen officeTableButtonNav:
 
             #action Jump("fifth_apartment_scene")
 
-screen officeDeskButtonNav:
+screen officeDeskButtonNav():
     # go back
 
     frame:
