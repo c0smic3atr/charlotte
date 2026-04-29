@@ -50,6 +50,7 @@ label OfficeConversation:
             p "Yeah."
             p "Guess so."
             $ aster_facts['fact1']= "What's that saying about doing the same thing over and over and expecting a different result?"
+            
             hide character1office
 
         else:
@@ -79,7 +80,7 @@ label OfficeConversation:
             x "Liar."
             $ aster_facts['fact1'] = "These people really are sick. Really, really sick. We need some kind of medical team here, not me. Just scribbling away on this notepad isn't dong anything. Don't you people know that? She said some weird stuff about the disease, and the news, and... I don't know."
             
-            hide character1office
+        hide character1office
 #$ aster_facts['portrait'] = "aster portrait"
     #$ aster_facts ['name'] = "Aster Carroll"
     #if aster_facts['status']= "undiscovered":
@@ -87,14 +88,19 @@ label OfficeConversation:
     #if aster_facts['status']= "Dead":
         #$ aster_facts ['fact1']== "Just because they're sick doesn't mean they deserve to die. This is insane."
 
-    elif timesTalkedtoAster == 1:
+    elif timesTalkedtoAster == 1 and aster_facts['status']!= "Dead":
         show character1office at left
+        
         x "You don't have anything to say that I want to hear."
-        jump aster_menu
+        
+        
+        
+        
         
     else:
         thought "..."      
-
+    
+    jump aster_menu
 
     
 
@@ -160,7 +166,7 @@ else:
 
 label twelvth_apartment_scene:
     scene bg officeone
-    "You are in the office"
+    
     menu:
         "Leave office":
             jump tenth_apartment_scene

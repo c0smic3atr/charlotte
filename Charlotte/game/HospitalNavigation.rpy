@@ -39,7 +39,7 @@ label ninteenth_apartment_scene:
             jump eigteenth_apartment_scene
 
 label twentyfirst_apartment_scene:
-    scene bg front hospital
+    scene bg fronthos
     "Youre in the hospital"
     menu:
         "Enter storage room":
@@ -66,7 +66,7 @@ label twentythird_apartment_scene:
             jump twentyfirst_apartment_scene
 
 label twentyfourth_apartment_scene:
-    scene bg hospital hallway
+    scene bg hall
     "You're in the hallway"
     menu:
         "Enter left door":
