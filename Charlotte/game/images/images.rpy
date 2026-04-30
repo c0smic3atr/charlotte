@@ -1,5 +1,5 @@
 image bg carlayout = "Backgrounds/bg Barlayout.png"
 image bgnotebook = "UserInterface/Notebook.png"
 image notebookdead = "images/UserInterface/NotebookDead.png"
-image goodindicator = "images/UserInterface/BadIndicator.png"
-image badindicator = "images/UserInterface/GoodIndicator.png"
+image goodIndicator = "images/UserInterface/GoodIndicator.png"
+image badIndicator = "images/UserInterface/BadIndicator.png"

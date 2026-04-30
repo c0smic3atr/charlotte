@@ -88,18 +88,18 @@ label DoorOneConversation:
 
             show character1one at left
             a "..."
-            a "You don't look familiar."
-            a "There's so few people in town these days, we don't have the luxury of slipping through the cracks anymore."
-            a "What's your deal? If you're here to tell me to keep the noise down, you can get lost."
-            p "No... No I'm not. I've been sent- My name is officer Walker. I was sent to check up on the residents here. See how you're handling things."
-            a "I guess that checks out. We've been waiting a while."
+            a "You don't look familiar"
+            a "There's so few in town these days, people don't have the luxury of slipping through the cracks anymore."
+            a "What's your deal? If you're here to tell me to keep the noise down, you can get lost"
+            p "No... I've been sent to check up on the residents here. See how you're handling things"
+            a "I guess that checks out."
             a "Some of us will be pretty happy to see you here"
-            a "But most of us gave up on an intervention a long time ago."
+            a "But most of us gave up on an intervention a long time ago"
             p "Intervention?"
-            a "Yeah. I mean, you can't blame us for wanting out."
-            p "You have to know that's not gonna happen..."
-            a "Some of us know better than others."
-            a "Got a couple optimists around here, you should go talk to them."
+            a "Yeah. I mean, you can't blame us for wanting out"
+            p "You know that's not gonna happen..."
+            a "Some of us know better than others"
+            a "Got a couple of optimists around here, you should go talk to them."
             a "I'm not gonna tell you what you want to hear."
             p "And what's that?"
             a "That it all worked out, and you're forgiven."
@@ -109,7 +109,7 @@ label DoorOneConversation:
             $ anna_facts['name'] = "Anna Martina"
     
             if anna_facts ['status'] == "Undiscovered":
-                $ anna_facts['fact1'] = "Generally disinterested. Acting like she's alright here, but how could she be? Mentioned a low population."
+                $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
            
             jump second_apartment_scene
     elif secondAptDoor1NumberOfVisits == 2:
@@ -165,13 +165,15 @@ label anna_menu:
                         $ anna_facts['status'] = "Spared"
                     $ anna_facts['resolved']= True
                     p "..."
-                    $ trust-=10 
+                    $ trust-=5
+                    call BadChoice
                     $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
         
                 
                 "Mark as Dead" if anna_facts['marked'] == False:
                     $ anna_facts['marked']= True
                     $ trust += 10
+                    call GoodChoice
 
         if anna_facts['status']== "Dead" and anna_facts['marked']== True:
             $ anna_facts['resolved']= True
@@ -199,72 +201,68 @@ label DoorTwoConversation:
             show character2two at center
           
             p "Hello, my name is-"
-            s "No way..."
+            s "Oh my gosh"
             s "I knew it!"
-            thought "What?"
-            s "So many people have given up hope, but not me."
-            s "I knew you'd come back and save us."
-            p "I think you have the wrong idea..."
-            p "I'm just here for a, um, welfare check."
-            s "Oh. What, for me?"
-            p "For everyone in town. I'm sure you can guess why."
-            s "Oh, well..."
-            s "I was still right. That you still cared"
+            p "What?"
+            s "So many people have given up hope, but not me"
+            s "I knew you'd come and save us."
+            p "I think you have the wrong idea"
+            p "I'm just here for a... welfare check."
+            s "Oh. For me?"
+            p "For everyone here."
+            s "Oh, well"
+            s "I was still right. That you cared"
             s "Comin' back at all"
             s "It proves it."
             p "I'm sorry, do we know each other?"
             s "No, but I know you."
-            s "Uh, sorry, that sounded weird"
             s "I mean, I know who you are. Who you work for."
             thought "Were the people here given warning that I was coming?"
-            thought "Doesn't that defeat the purpose of a welfare check?"
             thought "Doesn't matter. I just need to get my notes and get out of here."
-            p "Right... so, how are you feeling?"
+            p "Right... so how are you feeling?"
             p "Any headaches, nausea"
             p "Uh, fatigue? Maybe?"
             s "Mmm, no."
             p "Wuh- what about your neighbors? Know about them?"
-            s "The only neighbor I really talk to is Anna, but she's a total stiff."
+            s "The only neighbor I really talk to is Anna, and she's a total stiff"
             s "We've lived next to each other for who-knows-how-long, and I still barely know anything about her!"
-            thought "Guess she's that tight-lipped with everyone..."
-            s "I think maybe she doen't like me... it was always hard to make friends around here."
+            thought "Guess she's that tight-lipped with everyone."
             p "Right, well, thank you for your time."
-            thought "She didn't tell me anything useful at all!"
             s "Wait!"
             s "Uh, how long are you planning to stay?"
             p "Why?"
             s "Well, I was wondering if you could do me a favor?"
-            s "Check up on my sister? I haven't seen her in forever, and she's just across town, it'd be no problem."
+            s "Check up on my mom? I haven't seen her in forever, she's just across town."
             p "How come you can't go yourself?"
             s "Well, we were told to stay inside. Quarentine, right?"
-            thought "Oh. Yeah."
-            p "Fine, sure."
-            s "Thank you! She should be somewhere in the office buildings, I think. Her name's Aster."
-            s "She's such a worrier, please tell her I'm okay."
-            p "Right, I will."
-            s "Thanks! Uh, good luck on your welfare checks!"
+            thought "Oh, yeah"
+            p "Fine."
+            s "Thank you! She should be somewhere in the offices, I think. Her name's Iris."
+            s "She's such a worrier, please tell her I'm ok."
+            p "Right. Thank you for your time."
+            s "Yeah! Thanks!"
 
             #Discovered Sarah!!
             $ sarah_facts['portrait'] = "sarah portrait"
             $ sarah_facts['name'] = "Sarah Han"
             if sarah_facts ['status'] == "Undiscovered":
-                $ sarah_facts['fact1'] = "Not much, again... gonna find her sister, see if she knows anything."
+                $ sarah_facts['fact1'] = "Not much, again... gonna find her mom, see if she knows anything."
 
             hide character2two
 
             # boolean (?) After first interaction with Sarah Employer will have conversation with player character which goes as follows
     if secondAptDoor2NumberOfVisits == 1:
             e "Walker." 
-            thought "Woah, didn't expect contact so soon..."
+            thought "I didn't expect contact so soon..."
             p "Yuh- yes?"
             e "Remember when we told you to watch out for people who 'fit the profile'?"
-            e "That's people like her."
-            p "Like her? What do you mean?"
+            e "It's people like her."
+            p "People like her? What do you mean?"
             p "She seems-"
-            e "I trust you'll figure it out."
+            e "You'll figure it out"
             e "You're a lot of things, but incompetent ain't one of them."
-            e "You know what to do."
-            e "And for the love of God, remember to mark it in your logbook. That's the only way we'll know if you're actually doing your job."
+            e "Dispose of her."
+            e "And for the love of God, remember to mark it in your logbook."
 
             
             thought "Press N to Access the Logbook"
@@ -282,7 +280,7 @@ label DoorTwoConversation:
 
     elif secondAptDoor2NumberOfVisits == 2:
         show character2two at center
-        s "Oh, hey, you're back!"
+        s "Oh, hey! You're back!"
         s "Do you need something?"
         jump sarah_menu
         
@@ -332,7 +330,7 @@ if sarah_facts['resolved']== False:
                     p "Um... no. Never mind."
                 
                 if sarah_facts['status']!="Dead":
-                    $ sarah_facts['fact1'] = "Sounded easier in my head... How do you look someone in the eye and just... She seemed fine. She's fine, and it's fine, and I'm gonna go look for her sister."
+                    $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
                 
                 $ trust-=10
 

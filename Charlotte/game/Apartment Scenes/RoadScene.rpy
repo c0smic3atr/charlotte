@@ -352,24 +352,24 @@ screen sixthApartmentNav():
 
     #grab the note (DOESNT WORK YET MAKE THE NOTE THING FIRST)
 
-    #frame:
-        #xpos 145
-        #ypos 685
-        #xsize 390 - 145
-        #ysize 780 - 685
-        #background "#77C7BA"
+    frame:
+        xpos 145
+        ypos 685
+        xsize 390 - 145
+        ysize 780 - 685
+        background "#77C7BA"
 
-    #button:
-        #xpos 145
-        #ypos 685
-        #xsize 390 - 145
-        #ysize 780 - 685
-        #background None
-        #hover_background None
+    button:
+        xpos 145
+        ypos 685
+        xsize 390 - 145
+        ysize 780 - 685
+        background None
+        hover_background None
 
-        #mouse "move"
+        mouse "move"
 
-        #action Jump("fifth_apartment_scene")
+        action Jump("fifth_apartment_scene")
 
 
 screen seventhApartmentNav():
