@@ -4,6 +4,7 @@ default timesTalkedtoOrion = 0
 define o = Character ("Orion")
 
 label sixth_apartment_scene:
+    
     $ contamination_level = 1
     call use_oxygen
     if oxygen <= 0:
@@ -19,6 +20,9 @@ label sixth_apartment_scene:
 
 label seventh_apartment_scene:
     scene bg aptdoors
+    thought "The Hell? The sky's changed... and the weather. What time is it anyway?"
+    thought "It's getting dark out. Swear I got here at, like, noon?"
+    thought "Whatever, gotta stay focused."
     call screen seventhApartmentNav
     if timesTalkedtoLydia == 0:
 
@@ -348,24 +352,24 @@ screen sixthApartmentNav():
 
     #grab the note (DOESNT WORK YET MAKE THE NOTE THING FIRST)
 
-    #frame:
-        #xpos 145
-        #ypos 685
-        #xsize 390 - 145
-        #ysize 780 - 685
-        #background "#77C7BA"
+    frame:
+        xpos 145
+        ypos 685
+        xsize 390 - 145
+        ysize 780 - 685
+        background "#77C7BA"
 
-    #button:
-        #xpos 145
-        #ypos 685
-        #xsize 390 - 145
-        #ysize 780 - 685
-        #background None
-        #hover_background None
+    button:
+        xpos 145
+        ypos 685
+        xsize 390 - 145
+        ysize 780 - 685
+        background None
+        hover_background None
 
-        #mouse "move"
+        mouse "move"
 
-        #action Jump("fifth_apartment_scene")
+        action Jump("fifth_apartment_scene")
 
 
 screen seventhApartmentNav():
