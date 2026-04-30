@@ -14,8 +14,9 @@ label twentyeigth_apartment_scene:
 
 
 label twentyninth_apartment_scene:
-    scene bg warehouse
+    scene bg end
     "You're outside the warehouse"
+    
     menu:
         "Investigate body bags":
             jump thirtieth_apartment_scene
