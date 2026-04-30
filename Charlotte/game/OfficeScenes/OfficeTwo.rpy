@@ -30,6 +30,7 @@ label fifteenth_apartment_scene:
 
 label sixteenth_apartment_scene:
     scene bg officetable
+    call screen officeTableButtonNav
     "Youre at the table"
     menu:
         
@@ -38,6 +39,7 @@ label sixteenth_apartment_scene:
 
 label seventeenth_apartment_scene:
     scene bg officedesk
+    call screen officeDeskButtonNav
     "You're at the desk"
     menu: 
         
@@ -175,3 +177,92 @@ screen officeTwoNav():
         mouse "move"
 
         action Jump("fourteenth_apartment_scene")
+
+
+screen officeTableButtonNav():
+    # go back
+
+    frame:
+        xpos 210
+        ypos 920
+        xsize 1730 - 210
+        ysize 1065 - 920
+        background "#6527F5"
+
+    button:
+        xpos 210
+        ypos 920
+        xsize 1730 - 210
+        ysize 1065 - 920
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("fifteenth_apartment_scene")
+
+
+    #grab the note (DOESNT WORK YET MAKE THE NOTE THING FIRST)
+
+        #frame:
+            #xpos 145
+            #ypos 685
+            #xsize 390 - 145
+            #ysize 780 - 685
+            #background "#77C7BA"
+
+        #button:
+            #xpos 145
+            #ypos 685
+            #xsize 390 - 145
+            #ysize 780 - 685
+            #background None
+            #hover_background None
+
+            #mouse "move"
+
+            #action Jump("fifth_apartment_scene")
+
+screen officeDeskButtonNav():
+    # go back
+
+    frame:
+        xpos 260
+        ypos 785
+        xsize 1260 - 260
+        ysize 1055 - 785
+        background "#6527F5"
+
+    button:
+        xpos 260
+        ypos 785
+        xsize 1260 - 260
+        ysize 1055 - 785
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("fifteenth_apartment_scene")
+
+
+    #grab the note (DOESNT WORK YET MAKE THE NOTE THING FIRST)
+
+        #frame:
+            #xpos 50
+            #ypos 25
+            #xsize 330 - 50
+            #ysize 325 - 25
+            #background "#77C7BA"
+
+        #button:
+            #xpos 50
+            #ypos 25
+            #xsize 330 - 50
+            #ysize 325 - 25
+            #background None
+            #hover_background None
+
+            #mouse "move"
+
+            #action Jump("fifth_apartment_scene")

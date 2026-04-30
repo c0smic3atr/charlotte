@@ -15,7 +15,7 @@ label OfficeConversation:
     
         $ timesTalkedtoAster += 1
         $ aster_facts['portrait'] = "aster portrait"
-        $ aster_facts['name'] = "Aster"
+        $ aster_facts['name'] = "Aster Han"
 
         if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead":
             p "Um, hello?"
@@ -26,7 +26,7 @@ label OfficeConversation:
             p "Waiting for what?"
             x "Don't kid yourself, Jane."
             x "You started all this..."
-            x "Guess it's ben so long, you've forgotten as well."
+            x "Guess it's been so long, you've forgotten as well."
             p "..."
             p "You know what?"
             p "I'm getting pretty sick of you people wasting my time."
@@ -49,18 +49,26 @@ label OfficeConversation:
             x "It seems you've lost your way, Jane."
             p "Yeah."
             p "Guess so."
+            $ aster_facts['fact1']= "What's that saying about doing the same thing over and over and expecting a different result?"
+            
             hide character1office
 
         else:
             p "Um, hello?"
             x "Jane? Is that you?"
-            p "No, I'm not Jane. I'm agent Walker."
+            p "No, I'm not Jane. I'm agent Walker..."
             x "Hmm, I figured."
             x "You people were always liars, weren't you Jane?"
             x "Can't keep your story straight."
-            p "I told you, I'm not Jane."
-            p "You seem- do you need help? Are you ok?"
+            p "I told you-"
+            x "First, it's a worldwide phenomenon. But then you cut off the news... Get all  quiet when I ask anything about it..."
+            x "Jane's never quiet. She used to be so..."
+            x "But then it's just here. Just in town."
+            x "How does that happen, Jane?"
+            p "Um, you seem- do you need help?"
+            p "Your face... are you okay?"
             x "Hmph, first time you've cared to ask"
+            x "Think a nurse'd be more helpful..."
             x "You're a bit late."
             p "Yeah, I can see that..."
             p "Do you know what's going on around here?"
@@ -70,8 +78,9 @@ label OfficeConversation:
             p "I was barely told anything."
             x "..."
             x "Liar."
+            $ aster_facts['fact1'] = "These people really are sick. Really, really sick. We need some kind of medical team here, not me. Just scribbling away on this notepad isn't dong anything. Don't you people know that? She said some weird stuff about the disease, and the news, and... I don't know."
             
-            hide character1office
+        hide character1office
 #$ aster_facts['portrait'] = "aster portrait"
     #$ aster_facts ['name'] = "Aster Carroll"
     #if aster_facts['status']= "undiscovered":
@@ -79,14 +88,19 @@ label OfficeConversation:
     #if aster_facts['status']= "Dead":
         #$ aster_facts ['fact1']== "Just because they're sick doesn't mean they deserve to die. This is insane."
 
-    elif timesTalkedtoAster == 1:
+    elif timesTalkedtoAster == 1 and aster_facts['status']!= "Dead":
         show character1office at left
+        
         x "You don't have anything to say that I want to hear."
-        jump aster_menu
+        
+        
+        
+        
         
     else:
         thought "..."      
-
+    
+    jump aster_menu
 
     
 
@@ -105,6 +119,7 @@ if aster_facts['resolved']== False:
                     pause 3.0
                     hide character6mono
                     $ trust -=10
+                    $ aster_facts['fact1'] = "These people really are sick... if you know they're in this state, why aren't we helping them? Can we help them?"
                 "Keep Doing Nothing" if aster_facts['resolved']== False:
                     if aster_facts['status']!= "Dead":
                         $ aster_facts['status'] = "Spared"
@@ -126,10 +141,12 @@ else:
                     pause 3.0
                     hide character6mono
                     $ trust +=10 
+                    $ aster_facts['fact1'] = "These people really are sick..."
                 "Do Nothing" if aster_facts['resolved']== False:
                     if aster_facts['status']!="Dead":
                         $ aster_facts['status']= "Spared"
                     $ trust -=5  
+                    $ aster_facts['fact1'] = "She's confused... thinks I'm someone she used to know. Guess that's one of the side-effects."
                 "Mark as Dead" if aster_facts['marked']== False:
                     $ aster_facts['marked']= True
                     $ trust+=10
@@ -149,7 +166,7 @@ else:
 
 label twelvth_apartment_scene:
     scene bg officeone
-    "You are in the office"
+    
     menu:
         "Leave office":
             jump tenth_apartment_scene
