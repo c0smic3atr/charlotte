@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/OfficeScenes/office.rpy", line 154: expected a keyword argument or end of line.
-    ysize 335  50
-               ^
+File "game/Apartment Scenes/secondApartmentScene.rpy", line 175: expected menuitem
+    jump goodIndicator
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Apr 24 08:43:56 2026
+Thu Apr 30 09:10:39 2026

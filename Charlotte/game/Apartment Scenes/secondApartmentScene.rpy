@@ -166,12 +166,14 @@ label anna_menu:
                     $ anna_facts['resolved']= True
                     p "..."
                     $ trust-=5
+                    call BadChoice
                     $ anna_facts['fact1'] = "Disinterested, I guess. Trying to convince herself she's alright here. Mentions a low population."
         
                 
                 "Mark as Dead" if anna_facts['marked'] == False:
                     $ anna_facts['marked']= True
                     $ trust += 10
+                    call GoodChoice
 
         if anna_facts['status']== "Dead" and anna_facts['marked']== True:
             $ anna_facts['resolved']= True
