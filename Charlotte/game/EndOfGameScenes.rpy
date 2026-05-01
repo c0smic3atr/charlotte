@@ -24,7 +24,7 @@ label twentyninth_apartment_scene:
             jump twentyeigth_apartment_scene
 
 label thirtieth_apartment_scene:
-    scene bg end scene fence
+    scene bg bodybag
     "You're looking at the bags"
     menu:
         "Go back":

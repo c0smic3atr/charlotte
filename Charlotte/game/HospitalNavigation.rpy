@@ -185,7 +185,7 @@ label twentysixth_apartment_scene:
             jump twentyfourth_apartment_scene
 
 label twentyseventh_apartment_scene:
-    scene bg back room hospital
+    scene bg hosend
     call screen backRoomNav
     "You're in the back room"
     #show character1onehospital
