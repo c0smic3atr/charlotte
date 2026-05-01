@@ -1,28 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/HospitalNavigation.rpy", line 204, in script
-    if violet_facts['status']!= Dead:
-  File "game/HospitalNavigation.rpy", line 204, in <module>
-    if violet_facts['status']!= Dead:
-NameError: name 'Dead' is not defined
+  File "game/Apartment Scenes/FifthApartmentScene.rpy", line 5, in script
+    if timesEnteredSecondApartmentScene = 0:
+SyntaxError: invalid syntax (game/Apartment Scenes/FifthApartmentScene.rpy, line 5)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/HospitalNavigation.rpy", line 204, in script
-    if violet_facts['status']!= Dead:
+  File "game/Apartment Scenes/FifthApartmentScene.rpy", line 5, in script
+    if timesEnteredSecondApartmentScene = 0:
   File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
     if renpy.python.py_eval(condition):
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/HospitalNavigation.rpy", line 204, in <module>
-    if violet_facts['status']!= Dead:
-NameError: name 'Dead' is not defined
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
+    raise e
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
+    raise orig_e
+  File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/Apartment Scenes/FifthApartmentScene.rpy, line 5)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Thu Apr 30 09:28:00 2026
+Fri May  1 08:14:06 2026

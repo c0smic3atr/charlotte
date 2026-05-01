@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/HospitalNavigation.rpy", line 132: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    $ martin_facts['fact1']= "This is inhumane. I can't just... kill him, though. That's not how people handle this... people wouldn't have done this in the first place. Am I just your clean-up crew? Here to take out those who are left and tell you how far along everyone else is?"
-    ^
+File "game/Apartment Scenes/RoadScene.rpy", line 123: if statement expects a non-empty block.
+    if lydia_facts['resolved']== False:
+                                       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Apr 30 09:47:32 2026
+Fri May  1 08:24:28 2026

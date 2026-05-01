@@ -20,17 +20,15 @@ label sixth_apartment_scene:
 
 label seventh_apartment_scene:
     scene bg aptdoors
-    thought "The Hell? The sky's changed... and the weather. What time is it anyway?"
-    thought "It's getting dark out. Swear I got here at, like, noon?"
-    thought "Whatever, gotta stay focused."
+    
     call screen seventhApartmentNav
     if timesTalkedtoLydia == 0:
-
+        p "Hello, I'm agent Walker, I'm here to-"
         #"At apartments2"
         #menu: 
             #"Talk":
                 #show chara4colorr at left
-                #p "Hello, I'm agent Walker, I'm here to-"
+                
                 #l "What's with the gas mask?"
                 #p "Huh? Why?"
                 #l "Just makes you look a little weird 's all."
@@ -55,7 +53,7 @@ label seventh_apartment_scene:
         #menu:
             #"Go back":
                 #jump fifth_apartment_scene
-        label Door3Conversation:
+label Door3Conversation:
 
             if timesTalkedtoLydia == 0:
                 # Door 3 stuff
@@ -116,52 +114,52 @@ label seventh_apartment_scene:
 
 
     #Discovered Lydia!!
-    $ lydia_facts['portrait'] = "lydia portrait"
-    $ lydia_facts['name'] = "Lydia Qualley"
+            $ lydia_facts['portrait'] = "lydia portrait"
+            $ lydia_facts['name'] = "Lydia Qualley"
 
-    jump seventh_apartment_scene
+            jump seventh_apartment_scene
 
-    label lydia_menu:
-    if lydia_facts['resolved']== False:
+            label lydia_menu:
+            if lydia_facts['resolved']== False:
 
-        menu: 
-                    "Kill her" if lydia_facts['status']!="Dead":
-                        $ lydia_facts ['status'] = "Dead"
-                        $ lydia_facts['portrait'] = "lydia dead"
-                        hide character1apt
-                        show character4mono at left
-                        pause 3.0
-                        hide character4mono
-                        if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']== "Dead":
-                            $ lydia_facts['fact1'] = "Wouldn't say much. So, what, do unhelpful people deserve to die? That your profile?"
-                        else:
-                            $ lydia_facts['fact1'] = "She looked young. How old was she? Did she even fit the profile?"
-                        
-                        
-                        
-                        #if anna_facts['status']== "Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
-                            #$ lydia_facts['fact1']= "Oh my God, she looked young. How old was she? Did she even fit the profile?"
-                        #else:
-                            #$ lydia_facts['fact1'] = "Wouldn't say much. Do unhelpful people deserve to die? Is that the profile?"
-                        $ trust += 10
+                menu: 
+                        "Kill her" if lydia_facts['status']!="Dead":
+                            $ lydia_facts ['status'] = "Dead"
+                            $ lydia_facts['portrait'] = "lydia dead"
+                            hide character1apt
+                            show character4mono at left
+                            pause 3.0
+                            hide character4mono
+                            if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']== "Dead":
+                                $ lydia_facts['fact1'] = "Wouldn't say much. So, what, do unhelpful people deserve to die? That your profile?"
+                            else:
+                                $ lydia_facts['fact1'] = "She looked young. How old was she? Did she even fit the profile?"
+                            
+                            
+                            
+                            #if anna_facts['status']== "Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
+                                #$ lydia_facts['fact1']= "Oh my God, she looked young. How old was she? Did she even fit the profile?"
+                            #else:
+                                #$ lydia_facts['fact1'] = "Wouldn't say much. Do unhelpful people deserve to die? Is that the profile?"
+                            $ trust += 10
 
-                    "Do nothing" if lydia_facts['resolved']== False:
-                        if lydia_facts['status']!="Dead":
-                            $ lydia_facts ['status']= "Spared"
-                        $ lydia_facts['resolved'] = True
-                        $ trust -= 5
-                        $ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything... total waste of time. Is everybody gonna be like this? All cryptic and shit?"
+                        "Do nothing" if lydia_facts['resolved']== False:
+                            if lydia_facts['status']!="Dead":
+                                $ lydia_facts ['status']= "Spared"
+                            $ lydia_facts['resolved'] = True
+                            $ trust -= 5
+                            $ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything... total waste of time. Is everybody gonna be like this? All cryptic and shit?"
 
-                    "Mark as Dead" if lydia_facts['marked']== False:
-                        $ lydia_facts['marked']= True
-                        $ trust +=10
-    if lydia_facts['status']== "Dead" and lydia_facts['marked']== True:
-            $ lydia_facts['resolved']= True
-    $ timesTalkedtoLydia += 1
+                        "Mark as Dead" if lydia_facts['marked']== False:
+                            $ lydia_facts['marked']= True
+                            $ trust +=10
+            if lydia_facts['status']== "Dead" and lydia_facts['marked']== True:
+                    $ lydia_facts['resolved']= True
+            $ timesTalkedtoLydia += 1
         
 
                     
-    jump seventh_apartment_scene
+            jump seventh_apartment_scene
 
         
 
@@ -343,27 +341,6 @@ screen sixthApartmentNav():
         ypos 830
         xsize 1470 - 580
         ysize 1060 - 830
-        background None
-        hover_background None
-
-        mouse "move"
-
-        action Jump("fifth_apartment_scene")
-
-    #grab the note (DOESNT WORK YET MAKE THE NOTE THING FIRST)
-
-    frame:
-        xpos 145
-        ypos 685
-        xsize 390 - 145
-        ysize 780 - 685
-        background "#77C7BA"
-
-    button:
-        xpos 145
-        ypos 685
-        xsize 390 - 145
-        ysize 780 - 685
         background None
         hover_background None
 

@@ -1,3 +1,4 @@
+default timesEnteredAlleyNavigation = 0
 label tenth_apartment_scene:
     $ contamination_level = 3
     call use_oxygen
@@ -5,11 +6,15 @@ label tenth_apartment_scene:
         jump out_of_oxygen
     
     scene bg mainalley
+if timesEnteredAlleyNavigation == 0:
 
     thought "Ugh, it's hard to breathe in this place. Do I keep passing out or something? Is my gas mask broken?"
     thought "Why- why's it morning again?"
     thought "I need to get this over with."
+    $ timesEnteredAlleyNavigation += 1
 
+    call screen alleyNav
+else: 
     call screen alleyNav
 
     

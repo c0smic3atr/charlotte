@@ -118,7 +118,7 @@ label rick_menu:
                     $ rick_facts['resolved']= True
 
                 if rick_facts['resolved']==True:
-                    thought "He's not gonna answer."
+                    thought "He's not gonna answer..."
                 
                 menu:
                     "Return":
@@ -148,7 +148,7 @@ label rick_menu:
                     r "What, you want me to do something about it?"
                     r "Assuage your guilt?"
                     r "Not gonna happen."
-                else:
+                if rick_facts['resolved']== True:
                     thought "He's not gonna answer..."   
                     jump third_apartment_scene
 
