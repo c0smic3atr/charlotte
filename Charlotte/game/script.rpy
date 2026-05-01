@@ -19,7 +19,7 @@ label start:
     # images directory to show it.
 
     scene bg car scenes
-
+    play music "Quiet-Contemplation" fadein 1.0
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
@@ -42,6 +42,6 @@ label start:
     e "I'm passing down the torch."
     e "Lucky you."
 
-
+    stop music fadeout 1.0
     jump first_apartment_scene
    
