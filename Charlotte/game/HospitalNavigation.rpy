@@ -1,6 +1,7 @@
 define v = Character("Violet")
 define m = Character("Martin")
 default timesTalkedtoMartin = 0
+default timesTalkedtoViolet = 0
 label eigteenth_apartment_scene:
     $ oxygen_loss = 6
     call use_oxygen
@@ -214,6 +215,7 @@ label twentyseventh_apartment_scene:
     #jump violet_menu
 
 label violetConvo:
+if timesTalkedtoViolet == 0:
     show character1onehospital
     if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead" and lydia_facts['status']!= "Dead" and orion_facts['status']!= "Dead" and martin_facts['status']!= "Dead":
         p "Hey, are you awake?"
@@ -235,10 +237,11 @@ label violetConvo:
         p "Or talk..."
         thought "Somebody should be talking care of her, not coming to-"
         p "Put you out fo your misery..."
-        p "Isn't that what you've been saying this whole time?"
+        p "Isn't that what they've been saying this whole time?"
         p "Like a dog."
         $ violet_facts['portriat'] = "violet portrait"
         $ violet_facts['name'] = "Violet Carlton"
+        $ timesTalkedtoViolet += 1
         jump violet_menu
     if orion_facts['status']== "Dead":
         p "Hey, are you awake?"
@@ -266,6 +269,10 @@ label violetConvo:
         p "I just... put him out of his misery..."
         p "Hah, isn't that what they've been telling me this whole time?"
         p "Like a dog."
+        $ violet_facts['portriat'] = "violet portrait"
+        $ violet_facts['name'] = "Violet Carlton"
+        $ timesTalkedtoViolet += 1
+        jump violet_menu
     else:
         p "Hey, are you awake?"
         v "..."
@@ -284,6 +291,12 @@ label violetConvo:
         p "All I can do is pull the trigger, I guess."
         p "Put you out of your misery"
         p "Like a dog."
+        $ violet_facts['portriat'] = "violet portrait"
+        $ violet_facts['name'] = "Violet Carlton"
+    $ timesTalkedtoViolet += 1       
+    $ violet_facts['fact1']= "I'm sick of writing in this thing." 
+    jump violet_menu
+
 
 
 label violet_menu:
@@ -296,13 +309,14 @@ label violet_menu:
                     hide hosonrchar
                     $ violet_facts['status']= "Dead"
                     $ violet_facts['portrait']= "violet dead"
-                    #$ violet_facts['fact1']= 
+                    $ violet_facts['fact1']= "Sometimes it's the moral thing to do, right? Was it ever a hard decision for you? Did you ever even think twice?"
 
                 "Do nothing" if violet_facts ['resolved']== False:
-                    if violet_facts['status']!= Dead:
+                    if violet_facts['status']!= "Dead":
                         $ violet_facts['status']= "Spared"
                     $ violet_facts['resolved']= True
                     $ trust-=10
+                    $ violet_facts['fact1']= "Feels like an execution. Unjust. I doubt it matters one way or another to you."
                 "Mark as Dead" if violet_facts['marked']== False:
                     $ violet_facts['marked']= True
                     $ trust += 10
@@ -312,14 +326,16 @@ label violet_menu:
     
     elif violet_facts['resolved']== True:
         thought "I can't do this any more."
+    
+    jump twentyseventh_apartment_scene
 
 
-    menu:
-        "Exit the hospital":
-            jump twentyeigth_apartment_scene
+    #menu:
+        #"Exit the hospital":
+            #jump twentyeigth_apartment_scene
 
-        "Go back":
-            jump twentyfourth_apartment_scene
+        #"Go back":
+            #jump twentyfourth_apartment_scene
 
 screen eigteenthApartmentNav():
     # to blockage
