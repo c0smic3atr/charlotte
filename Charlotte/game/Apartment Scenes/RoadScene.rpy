@@ -181,7 +181,7 @@ label Door4Conversation:
         o "Woah... So have you ever killed someone?"
         
         if anna_facts['status']== "Dead" or sarah_facts['status']=="Dead" or rick_facts['status']=="Dead" or lydia_facts['status']=="Dead":
-            thought "I'm gonna be sick..."
+            thought "My head hurts..."
         
         p "..."
         o "It's okay, I get it. My dad used to have a super secret job too, couldn't tell me anything about it."
@@ -267,7 +267,7 @@ label orion_menu:
                         hide character5mono
                         $ trust -=10
                         if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']== "Dead" or lydia_facts['status']== "Dead":
-                            $ orion_facts['fact1']= "I used to want kids. Knew I'd never find the time. Don't any more."
+                            $ orion_facts['fact1']= "I used to want kids. Knew I'd never find the time, thanks to you. Don't any more."
                         else:
                             $ orion_facts['fact1'] = "Guess he fit the profile."
 

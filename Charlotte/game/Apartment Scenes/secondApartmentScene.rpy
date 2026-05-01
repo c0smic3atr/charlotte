@@ -316,7 +316,7 @@ if sarah_facts['resolved']== False:
                 hide char2apt
                 show char22mono at center
                 pause 3.0
-                $ sarah_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her. My head hurts."
+                $ sarah_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her? My head hurts."
                 call GoodChoice
                 $ trust-=10
 
@@ -330,7 +330,7 @@ if sarah_facts['resolved']== False:
                     p "Um... no. Never mind."
                 
                 if sarah_facts['status']!="Dead":
-                    $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
+                    $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her sister, see if she knows anything."
                 call BadChoice
                 $ trust-=10
 

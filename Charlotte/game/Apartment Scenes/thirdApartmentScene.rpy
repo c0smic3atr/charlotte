@@ -97,7 +97,7 @@ label rick_menu:
                         
 
                         if sarah_facts['status']== "Dead" or anna_facts ['status']== "Dead":
-                            $ rick_facts['fact1']= "What's the profile? I don't get it. Helpfulness? Positivity? Do they even know... am I supposed to just kill everyone?"
+                            $ rick_facts['fact1']= "What's the profile? I don't get it. Helpfulness? Positivity? Do you even know... am I supposed to just kill everyone?"
 
                         elif rick_facts['status']== "Dead": 
                             $ rick_facts['fact1'] = "I forgot what it felt like to shoot a gun. I'd always been so nervous to hit a person by mistake, before... by mistake. This is a mistake. What am I doing?"
