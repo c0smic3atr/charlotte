@@ -156,7 +156,7 @@ label anna_menu:
                     $ anna_facts['status'] = "Dead"
                     $ anna_facts['portrait'] = "anna dead"
                     # increase trust
-                    
+                    call GoodChoice
                 
                     $ anna_facts['fact1'] = "What do I write? Can't feel my fingers. Her body sounded heavy when it hit the floor. She didn't say much. Guess the people here are pretty hopeless. Can't say I blame them."   
 
@@ -317,7 +317,7 @@ if sarah_facts['resolved']== False:
                 show character2mono at center
                 pause 3.0
                 $ sarah_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her. My head hurts."
-                
+                call GoodChoice
                 $ trust-=10
 
                 #jump bossConversation
@@ -331,7 +331,7 @@ if sarah_facts['resolved']== False:
                 
                 if sarah_facts['status']!="Dead":
                     $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her mom, see if she knows anything."
-                
+                call BadChoice
                 $ trust-=10
 
                 #jump bossConversation
@@ -339,6 +339,7 @@ if sarah_facts['resolved']== False:
             "Mark as Dead" if sarah_facts['marked']== False:
                 $ sarah_facts['marked']= True
                 $ trust +=10
+                call GoodChoice
 
     if sarah_facts['status']== "Dead" and sarah_facts['marked']== True:
             $ sarah_facts['resolved']= True

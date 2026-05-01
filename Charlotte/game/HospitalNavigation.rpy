@@ -122,14 +122,17 @@ label martin_menu:
                     pause 3.0
                     hide hospital2charamonooo
                     $ trust-=10
+                    call GoodChoice
 
                 "Do Nothing" if martin_facts['resolved']== False:
                     if martin_facts['status']!= "Dead":
                         $ martin_facts['status']= "Spared"
                     $ trust -=5
+                    call BadChoice
 
                 "Mark as Dead" if martin_facts['marked']== False:
                     $ martin_facts['marked']= True
+                    call GoodChoice
         
         if martin_facts['status']== "Dead" and martin_facts['marked']== True:
             $ martin_facts['resolved']= True
@@ -194,6 +197,7 @@ label twentyseventh_apartment_scene:
                     show chara1hospitalmono
                     pause 3.0
                     hide chara1hospitalmono
+                    call GoodChoice
                     $ violet_facts['status']= "Dead"
                     $ violet_facts['portrait']= "violet dead"
 
@@ -202,9 +206,11 @@ label twentyseventh_apartment_scene:
                         $ violet_facts['status']= "Spared"
                     $ violet_facts['resolved']= True
                     $ trust-=10
+                    call BadChoice
                 "Mark as Dead" if violet_facts['marked']== False:
                     $ violet_facts['marked']= True
                     $ trust += 10
+                    call GoodChoice
 
         if violet_facts['status']== "Dead" and violet_facts['marked']== True:
             $ violet_facts['resolved']= True

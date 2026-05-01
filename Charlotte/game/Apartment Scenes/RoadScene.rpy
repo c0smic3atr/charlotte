@@ -144,17 +144,20 @@ label seventh_apartment_scene:
                         #else:
                             #$ lydia_facts['fact1'] = "Wouldn't say much. Do unhelpful people deserve to die? Is that the profile?"
                         $ trust += 10
+                        call GoodChoice 
 
                     "Do nothing" if lydia_facts['resolved']== False:
                         if lydia_facts['status']!="Dead":
                             $ lydia_facts ['status']= "Spared"
                         $ lydia_facts['resolved'] = True
                         $ trust -= 5
+                        call BadChoice 
                         $ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything... total waste of time. Is everybody gonna be like this? All cryptic and shit?"
 
                     "Mark as Dead" if lydia_facts['marked']== False:
                         $ lydia_facts['marked']= True
                         $ trust +=10
+                        call GoodChoice
     if lydia_facts['status']== "Dead" and lydia_facts['marked']== True:
             $ lydia_facts['resolved']= True
     $ timesTalkedtoLydia += 1
@@ -268,6 +271,7 @@ label orion_menu:
                         pause 3.0
                         hide character5mono
                         $ trust -=10
+                        call GoodChoice
                         if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']== "Dead" or lydia_facts['status']== "Dead":
                             $ orion_facts['fact1']= "I used to want kids. Knew I'd never find the time. Don't any more."
                         else:
@@ -278,12 +282,14 @@ label orion_menu:
                             $ orion_facts['status']= "Spared"
                         $ orion_facts['resolved']= True
                         $ trust -=10
+                        call BadChoice
                         if orion_facts['status']!="Dead":
                             $ orion_facts['fact1'] = "Little kid, all alone. Said some people have run away, which means it could be spreading already. Gonna look for his mom, I guess. I feel like an errand boy."
 
                     "Mark as Dead" if orion_facts['marked']== False:
                         $ orion_facts['marked']= True
                         $ trust += 10
+                        call GoodChoice
     
     elif orion_facts['resolved']== True:
         "..."
