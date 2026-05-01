@@ -81,7 +81,7 @@ label OfficeConversation:
             $ aster_facts['fact1'] = "These people really are sick. Really, really sick. We need some kind of medical team here, not me. Just scribbling away on this notepad isn't dong anything. Don't you people know that? She said some weird stuff about the disease, and the news, and... I don't know."
             
         hide character1office
-#$ aster_facts['portrait'] = "aster portrait"
+    #$ aster_facts['portrait'] = "aster portrait"
     #$ aster_facts ['name'] = "Aster Carroll"
     #if aster_facts['status']= "undiscovered":
         #$ aster_facts['fact1'] == "These people really are sick..."
@@ -103,77 +103,76 @@ label OfficeConversation:
     jump aster_menu
 
     
-
-    call screen firstOffice
     jump eleventh_apartment_scene
 
 label aster_menu:
-if aster_facts['resolved']== False:
+    if aster_facts['resolved']== False:
 
-    menu:
-                "Kill Her" if aster_facts['status'] != "Dead":
-                    $ aster_facts['status'] = "Dead"
-                    $ aster_facts['portrait'] = "aster dead"
-                    hide character1office
-                    show character6mono
-                    pause 3.0
-                    hide character6mono
-                    $ trust -=10
-                    $ aster_facts['fact1'] = "These people really are sick... if you know they're in this state, why aren't we helping them? Can we help them?"
-                "Keep Doing Nothing" if aster_facts['resolved']== False:
-                    if aster_facts['status']!= "Dead":
-                        $ aster_facts['status'] = "Spared"
-                    $ aster_facts['resolved']= True
+        menu:
+                    "Kill Her" if aster_facts['status'] != "Dead":
+                        $ aster_facts['status'] = "Dead"
+                        $ aster_facts['portrait'] = "aster dead"
+                        hide character1office
+                        show character6mono
+                        pause 3.0
+                        hide character6mono
+                        $ trust -=10
+                        $ aster_facts['fact1'] = "These people really are sick... if you know they're in this state, why aren't we helping them? Can we help them?"
+                    "Keep Doing Nothing" if aster_facts['resolved']== False:
+                        if aster_facts['status']!= "Dead":
+                            $ aster_facts['status'] = "Spared"
+                        $ aster_facts['resolved']= True
 
-                    $ trust -=10
+                        $ trust -=10
 
-                "Mark as Dead" if aster_facts['marked']== False:
-                    $ aster_facts['marked']= True
-                    $ trust +=10
+                    "Mark as Dead" if aster_facts['marked']== False:
+                        $ aster_facts['marked']= True
+                        $ trust +=10
 
-else:
-    menu:
-                "Kill Her" if aster_facts['status']!= "Dead":
-                    $ aster_facts['status'] = "Dead"
-                    $ aster_facts['portrait'] = "aster dead"
-                    hide character1office
-                    show character6mono
-                    pause 3.0
-                    hide character6mono
-                    $ trust +=10 
-                    $ aster_facts['fact1'] = "These people really are sick..."
-                "Do Nothing" if aster_facts['resolved']== False:
-                    if aster_facts['status']!="Dead":
-                        $ aster_facts['status']= "Spared"
-                    $ trust -=5  
-                    $ aster_facts['fact1'] = "She's confused... thinks I'm someone she used to know. Guess that's one of the side-effects."
-                "Mark as Dead" if aster_facts['marked']== False:
-                    $ aster_facts['marked']= True
-                    $ trust+=10
+    else:
+        menu:
+                    "Kill Her" if aster_facts['status']!= "Dead":
+                        $ aster_facts['status'] = "Dead"
+                        $ aster_facts['portrait'] = "aster dead"
+                        hide character1office
+                        show character6mono
+                        pause 3.0
+                        hide character6mono
+                        $ trust +=10 
+                        $ aster_facts['fact1'] = "These people really are sick..."
+                    "Do Nothing" if aster_facts['resolved']== False:
+                        if aster_facts['status']!="Dead":
+                            $ aster_facts['status']= "Spared"
+                        $ trust -=5  
+                        $ aster_facts['fact1'] = "She's confused... thinks I'm someone she used to know. Guess that's one of the side-effects."
+                    "Mark as Dead" if aster_facts['marked']== False:
+                        $ aster_facts['marked']= True
+                        $ trust+=10
 
-                
+    #"Menu exit"          
 
     if aster_facts['status']== "Dead" and aster_facts['marked']== True:
         $ aster_facts['resolved']= True
 
-
+    #"Start next menu"
 
     menu:
-        "Go inside office":
-            jump twelvth_apartment_scene
         "Go back":
             jump tenth_apartment_scene
+        "this is a test":
+            jump eleventh_apartment_scene
 
-label twelvth_apartment_scene:
-    scene bg officeone
+#label twelvth_apartment_scene:
+    #scene bg officeone
     
-    menu:
-        "Leave office":
-            jump tenth_apartment_scene
+    #menu:
+        #"Leave office":
+            #jump tenth_apartment_scene
     
 
 
 screen firstOffice():
+    #Talk to violet
     frame:
         xpos 345
         ypos 50
@@ -193,39 +192,23 @@ screen firstOffice():
 
         action Jump("OfficeConversation")
 
+
+    # Go back
     frame:
         xpos 590
         ypos 835
         xsize 1310-590
         ysize 1055-835
-        background "#6527F5"
-
-    # back to alleyway
-
-
-
-
-
-
-
-
-    # into the office
-
-    frame:
-        xpos 515
-        ypos 850
-        xsize 720 - 515
-        ysize 1075 - 850
-        background "#6527F5"
+        background "#6687F5"
 
     button:
-        xpos 515
-        ypos 850
-        xsize 720 - 515
-        ysize 1075 - 850
+        xpos 590
+        ypos 835
+        xsize 1310-590
+        ysize 1055-835
         background None
         hover_background None
 
         mouse "move"
 
-        action Jump("twelvth_apartment_scene")
+        action Jump("tenth_apartment_scene")

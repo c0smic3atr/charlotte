@@ -93,6 +93,7 @@ label rick_menu:
                         pause 3.0
                         # increase trust
                         $ trust += 10
+                        call GoodChoice
                         
 
                         if sarah_facts['status']== "Dead" or anna_facts ['status']== "Dead":
@@ -109,10 +110,12 @@ label rick_menu:
                                 $ rick_facts['status'] = "Spared"   
                             $ rick_facts['resolved']= True
                             jump third_apartment_scene
+                            call BadChoice 
                         
                     "Mark as Dead" if rick_facts['marked']== False:
                             $ rick_facts['marked']= True
                             $ trust+=10
+                            call GoodChoice 
 
                 if rick_facts['status']== "Dead" and rick_facts['marked']== True:
                     $ rick_facts['resolved']= True
