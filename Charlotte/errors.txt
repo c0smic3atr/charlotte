@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/secondApartmentScene.rpy", line 175: expected menuitem
-    jump goodIndicator
-    ^
+File "game/OfficeScenes/office.rpy", line 163: end of line expected.
+    jump jump eleventh_apartment_scene
+              ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Apr 30 09:10:39 2026
+Fri May  1 08:55:56 2026
