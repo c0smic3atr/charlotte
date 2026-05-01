@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/OfficeScenes/office.rpy", line 163: end of line expected.
-    jump jump eleventh_apartment_scene
-              ^
+File "game/Apartment Scenes/secondApartmentScene.rpy", line 372: expected ':' not found.
+    label screen imageButton:
+                 ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri May  1 08:55:56 2026
+Fri May  1 10:01:33 2026

@@ -369,16 +369,26 @@ label bossConversation:
         $ trust -= 20
     jump second_apartment_scene
     
+#screen imagebutton():
+    #image button test
+    #imagebutton:
+        #idle "UserInterface/ArrowButton.png"
+        #action jump("first_apartment_scene")
+
+    #imagebutton auto "UserInterface/ArrowButton_%s.png":
+        #focus_mask True
+
 
 screen secondApartmentNavigation():
+    
     # back to the first apartment scene
 
-    frame:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background None
+    #frame:
+        #xpos 500
+        #ypos 980
+        #xsize 1190 - 500
+        #ysize 1060 - 980
+        #background None
 
     button:
         xpos 500
