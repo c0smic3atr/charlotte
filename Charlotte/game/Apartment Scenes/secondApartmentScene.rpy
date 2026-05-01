@@ -198,7 +198,7 @@ label DoorTwoConversation:
     #door 2 stuff!
     if secondAptDoor2NumberOfVisits == 1:
 
-            show character2two at center
+            show char2apt at center
           
             p "Hello, my name is-"
             s "Oh my gosh"
@@ -248,7 +248,7 @@ label DoorTwoConversation:
             if sarah_facts ['status'] == "Undiscovered":
                 $ sarah_facts['fact1'] = "Not much, again... gonna find her mom, see if she knows anything."
 
-            hide character2two
+            hide char2apt
 
             # boolean (?) After first interaction with Sarah Employer will have conversation with player character which goes as follows
     if secondAptDoor2NumberOfVisits == 1:
@@ -279,7 +279,7 @@ label DoorTwoConversation:
 
 
     elif secondAptDoor2NumberOfVisits == 2:
-        show character2two at center
+        show char2apt at center
         s "Oh, hey! You're back!"
         s "Do you need something?"
         jump sarah_menu
@@ -313,8 +313,8 @@ if sarah_facts['resolved']== False:
 
                 $ sarah_facts ['status'] = "Dead"
                 $ sarah_facts['portrait'] = "sarah dead"
-                hide character2two
-                show character2mono at center
+                hide char2apt
+                show char22mono at center
                 pause 3.0
                 $ sarah_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her. My head hurts."
                 
