@@ -185,7 +185,35 @@ label twentysixth_apartment_scene:
 
 label twentyseventh_apartment_scene:
     scene bg back room hospital
+    call screen backRoomNav
     "You're in the back room"
+    #show character1onehospital
+    #p "Hey, are you awake?"
+    #v "..."
+    #p "Hmm?"
+    #p "..."
+    #p "I'm here-"
+    #p "I'm here to..."
+    #thought "To what, ask if she's feeling alright?"
+    #thought "Write down her symptoms for what? Just so they know? Don't they already?"
+    #pause 2.0
+    #p "I'm sorry this happened."
+    #p "I don't know what to do."
+    #v "..."
+    #p "Hah, kind of hard to tell if you fit the profile if you won't talk to me."
+    #p "Is this what the sickness really does?"
+    #p "Just... destroys your mind and body"
+    #p "Leaves you unable to move"
+    #p "Or talk..."
+    #thought "Somebody should be talking care of her, not coming to-"
+    #p "Put you out fo your misery..."
+    #p "Isn't that what you've been saying this whole time?"
+    #p "Like a dog."
+    #$ violet_facts['portriat'] = "violet portrait"
+    #$ violet_facts['name'] = "Violet Carlton"
+    #jump violet_menu
+
+label violetConvo:
     show character1onehospital
     if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead" and lydia_facts['status']!= "Dead" and orion_facts['status']!= "Dead" and martin_facts['status']!= "Dead":
         p "Hey, are you awake?"
@@ -258,7 +286,7 @@ label twentyseventh_apartment_scene:
         p "Like a dog."
 
 
-    label violet_menu:
+label violet_menu:
     if violet_facts['resolved']==  False:
         menu:
                 "Do What Needs to Be Done" if violet_facts['status']!= "Dead":
@@ -587,6 +615,70 @@ screen leftRoomNav():
         ypos 930
         xsize 1885 - 1160
         ysize 1060 - 930
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("twentyfourth_apartment_scene")
+
+screen backRoomNav():
+    #Talk with violet
+
+    frame:
+        xpos 45
+        ypos 440
+        xsize 305 - 45
+        ysize 810 - 440
+        background "#6527F5"
+
+    button:
+        xpos 45
+        ypos 440
+        xsize 305 - 45
+        ysize 810 - 440
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("violetConvo")
+
+    #Exit the hospital
+
+    frame:
+        xpos 570
+        ypos 305
+        xsize 740 - 570
+        ysize 490 - 305
+        background "#6527F5"
+
+    button:
+        xpos 570
+        ypos 305
+        xsize 740 - 570
+        ysize 490 - 305
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("twentyeigth_apartment_scene")
+
+    #Go back
+
+    frame:
+        xpos 580
+        ypos 925
+        xsize 1475 - 580
+        ysize 1060 - 925
+        background "#6527F5"
+
+    button:
+        xpos 580
+        ypos 925
+        xsize 1475 - 580
+        ysize 1060 - 925
         background None
         hover_background None
 
