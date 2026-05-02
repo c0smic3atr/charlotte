@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/TrustEndings.rpy", line 29: expected ':' not found.
-    label low_trust_ending
-                          ^
-
-File "game/TrustEndings.rpy", line 35: expected ':' not found.
-    label no_trust_ending
-                         ^
+File "game/Apartment Scenes/RoadScene.rpy", line 61: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    if timesTalkedtoLydia == 0:
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May  2 12:59:40 2026
+Sat May  2 12:14:21 2026

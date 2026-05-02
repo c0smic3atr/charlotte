@@ -1,5 +1,7 @@
 define v = Character("Violet")
 define m = Character("Martin")
+default timesTalkedtoMartin = 0
+default timesTalkedtoViolet = 0
 label eigteenth_apartment_scene:
     $ contamination_level = 3
     call use_oxygen
@@ -60,7 +62,7 @@ label twentysecond_apartment_scene:
             jump twentyfirst_apartment_scene
 
 label twentythird_apartment_scene:
-    scene bg operating room
+    scene bg hosor
     "You're in the operating room"
     menu: 
         "Go back":
@@ -83,7 +85,7 @@ label twentyfourth_apartment_scene:
 label twentyfifth_apartment_scene:
     scene bg hos2room
     call screen leftRoomNav
-    "Youre in the first hospital room"
+    
     #show char2hoss
     #p "Woah! Uh, I'm sorry, you scared me..."
     #m "UhhH- aGH..."
@@ -98,17 +100,39 @@ label twentyfifth_apartment_scene:
     #jump martin_menu
 
 label martinConvo:
-    show char2hoss
-    p "Woah! Uh, I'm sorry, you scared me..."
-    m "UhhH- aGH..."
-    thought "He looks dead already..."
-    p "I wish you could tell me more about what's happening here. I guess I wasn't the first person to come check on you, was I?"
-    m "..."
-    p "Guess you won't solve a probelm if you're the one who created it, huh..."
-    p "Mullan should be sorry."
-    $ martin_facts['portrait']= "martin portrait"
-    #$ martin_facts['name'] "Martin Kelly"
-    $ martin_facts['fact1']= "This is inhumane. I can't just... kill him, though. That's not how people handle this... people wouldn't have done this in the first place. Am I just your clean-up crew? Here to take out those who are left and tell you how far along everyone else is?"
+    if timesTalkedtoMartin == 0:
+        show char2hoss
+        if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead" and lydia_facts['status']!= "Dead" and orion_facts['status']!= "Dead" and aster_facts['status']!= "Dead":
+            p "Woah! Uh, I'm sorry, you scared me..."
+            m "UhhH- aGH..."
+            thought "He looks dead already..."
+            p "I wish you could tell me more about what's happening here. I guess I wasn't the first person to come check on you, was I?"
+            m "..."
+            p "Guess it doesn't make sense to solve a problem when you're the one who created it."
+            p "Mullan should be sorry."
+            $ martin_facts['fact1']= "Would you call this a fate worse than death?"
+            $ martin_facts['portrait']= "martin portrait"
+            #$ martin_facts['name'] "Martin Kelly"
+        else:
+            p "Woah! Uh, I'm sorry, you scared me..."
+            m "..."
+            thought "He looks dead already..."
+            p "Look like you've been here a while."
+            p "How long has it been, anyway?"
+            p "I haven't heard from Mullan in a while"
+            p "Got kind of sick of hearing his voice, anyway."
+            p "Voice of a killer."
+            p "Guess I can't say anything, anymore..."
+            p "Is that why they sent me here?"
+            p "To become like them?"
+            p "Get used to it?"
+            p "Does it matter?"
+            pause 2.0
+            p "They should be sorry."
+            $ martin_facts['fact1']= "Would you call this a fate worse than death?"
+            $ martin_facts['portrait']= "martin portrait"
+        
+    $ timesTalkedtoMartin += 1
     jump martin_menu
 
 label martin_menu:
@@ -122,35 +146,36 @@ label martin_menu:
                     pause 3.0
                     hide hospital2charamonooo
                     $ trust-=10
-                    call GoodChoice
+                    $ martin_facts['fact1']= "I won't leave him to rot, too. Might just be trying to prove I'm not as sick as you are."
 
                 "Do Nothing" if martin_facts['resolved']== False:
                     if martin_facts['status']!= "Dead":
                         $ martin_facts['status']= "Spared"
+                        $ martin_facts['fact1']= "This is inhumane. I can't just... kill him, though. That's not how people handle this... people wouldn't have done this in the first place. Am I just your clean-up crew? Here to take out those who are left and tell you how far along everyone else is?"
+                    $ martin_facts['resolved']= True
+                        
                     $ trust -=5
-                    call BadChoice
 
                 "Mark as Dead" if martin_facts['marked']== False:
                     $ martin_facts['marked']= True
-                    call GoodChoice
         
-        if martin_facts['status']== "Dead" and martin_facts['marked']== True:
-            $ martin_facts['resolved']= True
+    if martin_facts['status']== "Dead" and martin_facts['marked']== True:
+        $ martin_facts['resolved']= True
 
-    else:
+    if martin_facts['resolved']== True:
         p "I can't..."
-        jump twentyfourth_apartment_scene
+        jump twentyfifth_apartment_scene
 
-
+    jump twentyfifth_apartment_scene
 
 
 
     #pause 3.0
     #show hospital2charamono
     
-    menu:
-        "Go back":
-            jump twentyfourth_apartment_scene
+    #menu:
+    #    "Go back":
+    #        jump twentyfourth_apartment_scene
 
 label twentysixth_apartment_scene:
     scene bg hos2hos
@@ -160,7 +185,7 @@ label twentysixth_apartment_scene:
             jump twentyfourth_apartment_scene
 
 label twentyseventh_apartment_scene:
-    scene bg back room hospital
+    scene bg hosend
     call screen backRoomNav
     "You're in the back room"
     #show character1onehospital
@@ -190,31 +215,88 @@ label twentyseventh_apartment_scene:
     #jump violet_menu
 
 label violetConvo:
+if timesTalkedtoViolet == 0:
     show character1onehospital
-    p "Hey, are you awake?"
-    v "..."
-    p "Hmm?"
-    p "..."
-    p "I'm here-"
-    p "I'm here to..."
-    thought "To what, ask if she's feeling alright?"
-    thought "Write down her symptoms for what? Just so they know? Don't they already?"
-    pause 2.0
-    p "I'm sorry this happened."
-    p "I don't know what to do."
-    v "..."
-    p "Hah, kind of hard to tell if you fit the profile if you won't talk to me."
-    p "Is this what the sickness really does?"
-    p "Just... destroys your mind and body"
-    p "Leaves you unable to move"
-    p "Or talk..."
-    thought "Somebody should be talking care of her, not coming to-"
-    p "Put you out fo your misery..."
-    p "Isn't that what you've been saying this whole time?"
-    p "Like a dog."
-    $ violet_facts['portriat'] = "violet portrait"
-    $ violet_facts['name'] = "Violet Carlton"
+    if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead" and lydia_facts['status']!= "Dead" and orion_facts['status']!= "Dead" and martin_facts['status']!= "Dead":
+        p "Hey, are you awake?"
+        v "..."
+        p "Hmm?"
+        p "..."
+        p "I'm here-"
+        p "I'm here to..."
+        thought "To what, ask if she's feeling alright?"
+        thought "Write down her symptoms for what? Just so they know? Don't they already?"
+        pause 2.0
+        p "I'm sorry this happened."
+        p "I don't know what to do."
+        v "..."
+        p "Hah, kind of hard to tell if you fit the profile if you won't talk to me."
+        p "Is this what the sickness really does?"
+        p "Just... destroys your mind and body"
+        p "Leaves you unable to move"
+        p "Or talk..."
+        thought "Somebody should be talking care of her, not coming to-"
+        p "Put you out fo your misery..."
+        p "Isn't that what they've been saying this whole time?"
+        p "Like a dog."
+        $ violet_facts['portriat'] = "violet portrait"
+        $ violet_facts['name'] = "Violet Carlton"
+        $ timesTalkedtoViolet += 1
+        jump violet_menu
+    if orion_facts['status']== "Dead":
+        p "Hey, are you awake?"
+        v "..."
+        p "Hmm?"
+        p "I'm here-"
+        p "I'm here to..."
+        thought "To what, ask if she's feeling alright?"
+        thought "Write down her symptoms... for what? Just so they know? Don't they already?"
+        p "I'm sorry."
+        p "You're Violet, right?"
+        p "Violet Carlton?"
+        p "I'm- not sure whether to be sorry or not, honestly."
+        p "He wasn't gonna live long anyway..."
+        p "Just a short, miserable life before he inevitably ended up like you."
+        p "You can't tell me you're happy"
+        p "You can't tell me that's what you would have wanted for your son."
+        p "You know, once upon a time, I wanted kids."
+        p "Wanted some simple life in a small town, just like you."
+        p "Just... wasn't in the cards, I guess."
+        p "If I had a kid, I wouldn't have wanted him to live through this."
+        p "It was-"
+        p "It was the right thing to do and you know it."
+        p "Don't look at me like that."
+        p "I just... put him out of his misery..."
+        p "Hah, isn't that what they've been telling me this whole time?"
+        p "Like a dog."
+        $ violet_facts['portriat'] = "violet portrait"
+        $ violet_facts['name'] = "Violet Carlton"
+        $ timesTalkedtoViolet += 1
+        jump violet_menu
+    else:
+        p "Hey, are you awake?"
+        v "..."
+        p "Hmm?"
+        p "..."
+        p "I'm here-"
+        p "I'm here to..."
+        thought "To what, ask if she's feeling alright?"
+        thought "Write down her symptoms for what? Just so they know? Don't they already?"
+        pause 2.0
+        p "I'm sorry this happened."
+        p "I can't pretend my involvement is going to help anything"
+        p "Won't pretend I've helped at all since I got here..."
+        p "I can't undo what Mullan and his people did all those years ago"
+        p "And I can't change things now..."
+        p "All I can do is pull the trigger, I guess."
+        p "Put you out of your misery"
+        p "Like a dog."
+        $ violet_facts['portriat'] = "violet portrait"
+        $ violet_facts['name'] = "Violet Carlton"
+    $ timesTalkedtoViolet += 1       
+    $ violet_facts['fact1']= "I'm sick of writing in this thing." 
     jump violet_menu
+
 
 
 label violet_menu:
@@ -222,37 +304,38 @@ label violet_menu:
         menu:
                 "Do What Needs to Be Done" if violet_facts['status']!= "Dead":
                     hide character1onehospital
-                    show chara1hospitalmono
+                    show hosonrchar
                     pause 3.0
-                    hide chara1hospitalmono
-                    call GoodChoice
+                    hide hosonrchar
                     $ violet_facts['status']= "Dead"
                     $ violet_facts['portrait']= "violet dead"
+                    $ violet_facts['fact1']= "Sometimes it's the moral thing to do, right? Was it ever a hard decision for you? Did you ever even think twice?"
 
                 "Do nothing" if violet_facts ['resolved']== False:
                     if violet_facts['status']!= "Dead":
                         $ violet_facts['status']= "Spared"
                     $ violet_facts['resolved']= True
                     $ trust-=10
-                    call BadChoice
+                    $ violet_facts['fact1']= "Feels like an execution. Unjust. I doubt it matters one way or another to you."
                 "Mark as Dead" if violet_facts['marked']== False:
                     $ violet_facts['marked']= True
                     $ trust += 10
-                    call GoodChoice
 
         if violet_facts['status']== "Dead" and violet_facts['marked']== True:
             $ violet_facts['resolved']= True
     
     elif violet_facts['resolved']== True:
         thought "I can't do this any more."
+    
+    jump twentyseventh_apartment_scene
 
 
-    menu:
-        "Exit the hospital":
-            jump twentyeigth_apartment_scene
+    #menu:
+        #"Exit the hospital":
+            #jump twentyeigth_apartment_scene
 
-        "Go back":
-            jump twentyfourth_apartment_scene
+        #"Go back":
+            #jump twentyfourth_apartment_scene
 
 screen eigteenthApartmentNav():
     # to blockage

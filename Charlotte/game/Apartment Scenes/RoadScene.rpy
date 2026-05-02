@@ -4,6 +4,7 @@ default timesTalkedtoOrion = 0
 define o = Character ("Orion")
 
 label sixth_apartment_scene:
+    $ current_time = "6:42"
     
     $ contamination_level = 1
     call use_oxygen
@@ -13,24 +14,30 @@ label sixth_apartment_scene:
     scene bg parking lot
     call screen sixthApartmentNav
 
+    
+    "I see something on the table."
+   
+    # Pause until the player clicks the object
+    $ renpy.pause(hard=True)
+
     "In parking lot"
     menu:
         "Go back":
             jump fifth_apartment_scene
 
 label seventh_apartment_scene:
+    $ current_time = "6:42"
     scene bg aptdoors
-    thought "The Hell? The sky's changed... and the weather. What time is it anyway?"
-    thought "It's getting dark out. Swear I got here at, like, noon?"
-    thought "Whatever, gotta stay focused."
+    
     call screen seventhApartmentNav
+    $ current_time = "6:42"
     if timesTalkedtoLydia == 0:
-
+        p "Hello, I'm agent Walker, I'm here to-"
         #"At apartments2"
         #menu: 
             #"Talk":
                 #show chara4colorr at left
-                #p "Hello, I'm agent Walker, I'm here to-"
+                
                 #l "What's with the gas mask?"
                 #p "Huh? Why?"
                 #l "Just makes you look a little weird 's all."
@@ -55,7 +62,8 @@ label seventh_apartment_scene:
         #menu:
             #"Go back":
                 #jump fifth_apartment_scene
-        label Door3Conversation:
+label Door3Conversation:
+    
 
             if timesTalkedtoLydia == 0:
                 # Door 3 stuff
@@ -75,7 +83,7 @@ label seventh_apartment_scene:
                 p "Yeah, there was the whole quarentine thing put in place so-"
                 l "You should do us all a favor and get lost. Probably doing yourself a favor in the process."
                 l "We haven't been fooled by your bullshit."
-                if anna_facts['status']== "Spared" and sarah_facts['status']== "Spared" and rick_facts['status']== "Spared":
+                if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead":
                     thought "What's her problem? I haven't pulled anything."
                 p "..."
                 p "Are you alright?"
@@ -116,55 +124,52 @@ label seventh_apartment_scene:
 
 
     #Discovered Lydia!!
-    $ lydia_facts['portrait'] = "lydia portrait"
-    $ lydia_facts['name'] = "Lydia Qualley"
+            $ lydia_facts['portrait'] = "lydia portrait"
+            $ lydia_facts['name'] = "Lydia Qualley"
 
-    jump seventh_apartment_scene
+            jump seventh_apartment_scene
 
-    label lydia_menu:
-    if lydia_facts['resolved']== False:
+            label lydia_menu:
+            if lydia_facts['resolved']== False:
 
-        menu: 
-                    "Kill her" if lydia_facts['status']!="Dead":
-                        $ lydia_facts ['status'] = "Dead"
-                        $ lydia_facts['portrait'] = "lydia dead"
-                        hide character1apt
-                        show character4mono at left
-                        pause 3.0
-                        hide character4mono
-                        if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']== "Dead":
-                            $ lydia_facts['fact1'] = "Wouldn't say much. So, what, do unhelpful people deserve to die? That your profile?"
-                        else:
-                            $ lydia_facts['fact1'] = "She looked young. How old was she? Did she even fit the profile?"
-                        
-                        
-                        
-                        #if anna_facts['status']== "Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
-                            #$ lydia_facts['fact1']= "Oh my God, she looked young. How old was she? Did she even fit the profile?"
-                        #else:
-                            #$ lydia_facts['fact1'] = "Wouldn't say much. Do unhelpful people deserve to die? Is that the profile?"
-                        $ trust += 10
-                        call GoodChoice 
+                menu: 
+                        "Kill her" if lydia_facts['status']!="Dead":
+                            $ lydia_facts ['status'] = "Dead"
+                            $ lydia_facts['portrait'] = "lydia dead"
+                            hide character1apt
+                            show character4mono at left
+                            pause 3.0
+                            hide character4mono
+                            if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']== "Dead":
+                                $ lydia_facts['fact1'] = "Wouldn't say much. So, what, do unhelpful people deserve to die? That your profile?"
+                            else:
+                                $ lydia_facts['fact1'] = "She looked young. How old was she? Did she even fit the profile?"
+                            
+                            
+                            
+                            #if anna_facts['status']== "Spared" and sarah_facts['status']=="Spared" and rick_facts['status']=="Spared":
+                                #$ lydia_facts['fact1']= "Oh my God, she looked young. How old was she? Did she even fit the profile?"
+                            #else:
+                                #$ lydia_facts['fact1'] = "Wouldn't say much. Do unhelpful people deserve to die? Is that the profile?"
+                            $ trust += 10
 
-                    "Do nothing" if lydia_facts['resolved']== False:
-                        if lydia_facts['status']!="Dead":
-                            $ lydia_facts ['status']= "Spared"
-                        $ lydia_facts['resolved'] = True
-                        $ trust -= 5
-                        call BadChoice 
-                        $ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything... total waste of time. Is everybody gonna be like this? All cryptic and shit?"
+                        "Do nothing" if lydia_facts['resolved']== False:
+                            if lydia_facts['status']!="Dead":
+                                $ lydia_facts ['status']= "Spared"
+                            $ lydia_facts['resolved'] = True
+                            $ trust -= 5
+                            $ lydia_facts['fact1']= "I was kinda condescending, but she deserved it. Wouldn't tell me anything... total waste of time. Is everybody gonna be like this? All cryptic and shit?"
 
-                    "Mark as Dead" if lydia_facts['marked']== False:
-                        $ lydia_facts['marked']= True
-                        $ trust +=10
-                        call GoodChoice
-    if lydia_facts['status']== "Dead" and lydia_facts['marked']== True:
-            $ lydia_facts['resolved']= True
-    $ timesTalkedtoLydia += 1
+                        "Mark as Dead" if lydia_facts['marked']== False:
+                            $ lydia_facts['marked']= True
+                            $ trust +=10
+            if lydia_facts['status']== "Dead" and lydia_facts['marked']== True:
+                    $ lydia_facts['resolved']= True
+            $ timesTalkedtoLydia += 1
         
 
                     
-    jump seventh_apartment_scene
+            jump seventh_apartment_scene
 
         
 
@@ -186,7 +191,7 @@ label Door4Conversation:
         o "Woah... So have you ever killed someone?"
         
         if anna_facts['status']== "Dead" or sarah_facts['status']=="Dead" or rick_facts['status']=="Dead" or lydia_facts['status']=="Dead":
-            thought "I'm gonna be sick..."
+            thought "My head hurts..."
         
         p "..."
         o "It's okay, I get it. My dad used to have a super secret job too, couldn't tell me anything about it."
@@ -197,8 +202,9 @@ label Door4Conversation:
         o "Dunno... different places."
         o "Like Heaven, I guess. Or they were taken, or just ran away."
         p "..."
-        thought "Taken away? What's he mean by that? I kind of doubt even he knows."
-        thought "Poor kid's whole mood changed..."
+        thought "Taken away? What's he mean by that?"
+        thought "I kinda doubt he even know..."
+        thought "Poor kid's whole mood changed."
         p "Um"
         p "Cool shirt."
         p "Crabs."
@@ -271,9 +277,8 @@ label orion_menu:
                         pause 3.0
                         hide character5mono
                         $ trust -=10
-                        call GoodChoice
                         if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']== "Dead" or lydia_facts['status']== "Dead":
-                            $ orion_facts['fact1']= "I used to want kids. Knew I'd never find the time. Don't any more."
+                            $ orion_facts['fact1']= "I used to want kids. Knew I'd never find the time, thanks to you. Don't any more."
                         else:
                             $ orion_facts['fact1'] = "Guess he fit the profile."
 
@@ -282,10 +287,9 @@ label orion_menu:
                             $ orion_facts['status']= "Spared"
                         $ orion_facts['resolved']= True
                         $ trust -=10
-                        call BadChoice
                         if orion_facts['status']!="Dead":
                             $ orion_facts['fact1'] = "Little kid, all alone. Said some people have run away, which means it could be spreading already. Gonna look for his mom, I guess. I feel like an errand boy."
-
+                        call BadChoice
                     "Mark as Dead" if orion_facts['marked']== False:
                         $ orion_facts['marked']= True
                         $ trust += 10
@@ -322,7 +326,8 @@ label eigth_apartment_scene:
 
 
 label ninth_apartment_scene:
-    scene bg blockedroad
+    scene bg 12345
+    
     call screen ninthApartmentNav
 
     "You cannot go here"
@@ -333,6 +338,7 @@ label ninth_apartment_scene:
             jump fifth_apartment_scene
 
 
+default object_visible = False
 
 screen sixthApartmentNav():
     #back to 5th apartment scene
@@ -354,28 +360,41 @@ screen sixthApartmentNav():
 
         mouse "move"
 
-        action Jump("fifth_apartment_scene")
+        action [SetVariable("object_visible", False), Jump("fifth_apartment_scene")]
 
-    #grab the note (DOESNT WORK YET MAKE THE NOTE THING FIRST)
+    # 1. Define variables to track if the object has been clicked
+   
 
-    frame:
-        xpos 145
-        ypos 685
-        xsize 390 - 145
-        ysize 780 - 685
-        background "#77C7BA"
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+                idle "test.png" # The image that appears
+                xpos 500 ypos 300       # Position on screen
+                mouse "move"
+           
+                # Action: Set variable to False to make it disappear
+                action [SetVariable("object_visible", False)]
 
-    button:
-        xpos 145
-        ypos 685
-        xsize 390 - 145
-        ysize 780 - 685
-        background None
-        hover_background None
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.28
+        idle "test2.png"
+        action [SetVariable("object_visible", True)]
 
-        mouse "move"
 
-        action Jump("fifth_apartment_scene")
+
+# 2. Define the screen with the clickable object
+screen hidden_object_scene():
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+            idle "test.png" # The image that appears
+            xpos 500 ypos 300       # Position on screen
+           
+            # Action: Set variable to False to make it disappear
+            action [SetVariable("object_visible", False)]
 
 
 screen seventhApartmentNav():

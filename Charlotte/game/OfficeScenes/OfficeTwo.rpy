@@ -32,6 +32,9 @@ label sixteenth_apartment_scene:
     scene bg officetable
     call screen officeTableButtonNav
     "Youre at the table"
+    thought "All relations have ceased? But they sent me. Nothing's ceased."
+    thought "I thought I was the first to be sent out since..."
+    thought "These notes are from forever ago..."
     menu:
         
         "Go back":
