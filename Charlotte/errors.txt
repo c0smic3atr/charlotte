@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/secondApartmentScene.rpy", line 372: expected ':' not found.
-    label screen imageButton:
-                 ^
+File "game/TrustEndings.rpy", line 29: expected ':' not found.
+    label low_trust_ending
+                          ^
+
+File "game/TrustEndings.rpy", line 35: expected ':' not found.
+    label no_trust_ending
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri May  1 10:01:33 2026
+Sat May  2 12:59:40 2026
