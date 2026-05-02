@@ -10,8 +10,9 @@ label second_apartment_scene:
     
     scene bg doors
 
-
-    call screen secondApartmentNavigation
+    call screen imagebutton
+    
+    #call screen secondApartmentNavigation
 
     #menu:
         #"Knock on door 1":
@@ -369,14 +370,16 @@ label bossConversation:
         $ trust -= 20
     jump second_apartment_scene
     
-#screen imagebutton():
+screen imagebutton():
     #image button test
-    #imagebutton:
-        #idle "UserInterface/ArrowButton.png"
-        #action jump("first_apartment_scene")
-
-    #imagebutton auto "UserInterface/ArrowButton_%s.png":
-        #focus_mask True
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
+        action Jump("first_apartment_scene")
+        
 
 
 screen secondApartmentNavigation():
@@ -390,17 +393,17 @@ screen secondApartmentNavigation():
         #ysize 1060 - 980
         #background None
 
-    button:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background None
-        hover_background None
+    #button:
+        #xpos 500
+        #ypos 980
+        #xsize 1190 - 500
+        #ysize 1060 - 980
+        #background None
+        #hover_background None
 
-        mouse "move"
+        #mouse "move"
 
-        action Jump("first_apartment_scene")
+        #action Jump("first_apartment_scene")
 
     # to door 1 convo
     frame:

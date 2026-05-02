@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/secondApartmentScene.rpy", line 372: expected ':' not found.
-    label screen imageButton:
-                 ^
+File "game/Apartment Scenes/secondApartmentScene.rpy", line 376: keyword argument 'xanchor' appears more than once in a imagebutton statement.
+    xanchor 0.5
+           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri May  1 10:01:33 2026
+Sat May  2 09:46:26 2026
