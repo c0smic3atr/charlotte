@@ -4,7 +4,8 @@ label twentyeigth_apartment_scene:
     if oxygen <= 0:
         jump out_of_oxygen
     
-    scene bg enter end scene
+    scene bg gggh
+    
     "Fence before end scene"
     menu:
         "Continue onward":
