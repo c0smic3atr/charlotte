@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/RoadScene.rpy", line 362: Line is indented, but the preceding default statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    if object_visible:
-    ^
+File "game/Apartment Scenes/RoadScene.rpy", line 374: 'zorder' is not a keyword argument or valid child of the imagebutton statement.
+    zorder 10
+          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May  2 11:10:26 2026
+Sat May  2 14:06:04 2026
