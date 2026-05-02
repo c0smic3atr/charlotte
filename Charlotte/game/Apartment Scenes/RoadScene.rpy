@@ -73,7 +73,7 @@ label Door3Conversation:
                 p "Yeah, there was the whole quarentine thing put in place so-"
                 l "You should do us all a favor and get lost. Probably doing yourself a favor in the process."
                 l "We haven't been fooled by your bullshit."
-                if anna_facts['status']== "Spared" and sarah_facts['status']== "Spared" and rick_facts['status']== "Spared":
+                if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead":
                     thought "What's her problem? I haven't pulled anything."
                 p "..."
                 p "Are you alright?"
@@ -192,8 +192,9 @@ label Door4Conversation:
         o "Dunno... different places."
         o "Like Heaven, I guess. Or they were taken, or just ran away."
         p "..."
-        thought "Taken away? What's he mean by that? I kind of doubt even he knows."
-        thought "Poor kid's whole mood changed..."
+        thought "Taken away? What's he mean by that?"
+        thought "I kinda doubt he even know..."
+        thought "Poor kid's whole mood changed."
         p "Um"
         p "Cool shirt."
         p "Crabs."
@@ -278,10 +279,11 @@ label orion_menu:
                         $ trust -=10
                         if orion_facts['status']!="Dead":
                             $ orion_facts['fact1'] = "Little kid, all alone. Said some people have run away, which means it could be spreading already. Gonna look for his mom, I guess. I feel like an errand boy."
-
+                        call BadChoice
                     "Mark as Dead" if orion_facts['marked']== False:
                         $ orion_facts['marked']= True
                         $ trust += 10
+                        call GoodChoice
     
     elif orion_facts['resolved']== True:
         "..."

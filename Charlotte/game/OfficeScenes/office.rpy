@@ -17,7 +17,7 @@ label OfficeConversation:
         $ aster_facts['portrait'] = "aster portrait"
         $ aster_facts['name'] = "Aster Han"
 
-        if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead":
+        if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead" or lydia_facts['status']== "Dead" or orion_facts['status']== "Dead":
             p "Um, hello?"
             x "Jane, is that you?"
             p "No, it's not."
@@ -92,13 +92,16 @@ label OfficeConversation:
         show character1office at left
         
         x "You don't have anything to say that I want to hear."
+        hide character1office
+        $ timesTalkedtoAster += 1
+        
+if aster_facts['resolved']== True and timesTalkedtoAster:
+    thought "I've got to get going."
+    jump eleventh_apartment_scene
         
         
-        
-        
-        
-    else:
-        thought "..."      
+    #else:
+        #thought "..."      
     
     jump aster_menu
 
@@ -130,7 +133,8 @@ label aster_menu:
                         $ trust +=10
 
     else:
-        menu:
+        if aster_facts['resolved']== False:
+            menu:
                     "Kill Her" if aster_facts['status']!= "Dead":
                         $ aster_facts['status'] = "Dead"
                         $ aster_facts['portrait'] = "aster dead"
@@ -159,8 +163,8 @@ label aster_menu:
     menu:
         "Go back":
             jump tenth_apartment_scene
-        "this is a test":
-            jump eleventh_apartment_scene
+        #"this is a test":
+            #jump eleventh_apartment_scene
 
 #label twelvth_apartment_scene:
     #scene bg officeone

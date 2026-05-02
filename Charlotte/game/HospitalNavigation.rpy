@@ -102,13 +102,13 @@ label twentyfifth_apartment_scene:
 label martinConvo:
     if timesTalkedtoMartin == 0:
         show char2hoss
-        if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead" and lydia_facts['status']!= "Dead" and orion_facts['status']!= "Dead":
+        if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead" and lydia_facts['status']!= "Dead" and orion_facts['status']!= "Dead" and aster_facts['status']!= "Dead":
             p "Woah! Uh, I'm sorry, you scared me..."
             m "UhhH- aGH..."
             thought "He looks dead already..."
             p "I wish you could tell me more about what's happening here. I guess I wasn't the first person to come check on you, was I?"
             m "..."
-            p "Guess you won't solve a probelm if you're the one who created it, huh..."
+            p "Guess it doesn't make sense to solve a problem when you're the one who created it."
             p "Mullan should be sorry."
             $ martin_facts['fact1']= "Would you call this a fate worse than death?"
             $ martin_facts['portrait']= "martin portrait"

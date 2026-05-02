@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/HospitalNavigation.rpy", line 218, in script
-    if timesTalkedtoViolet = 0:
-SyntaxError: invalid syntax (game/HospitalNavigation.rpy, line 218)
+  File "game/OfficeScenes/office.rpy", line 97, in script
+    if aster_facts['resolved']== True and timesTalkedtoAster = >3:
+SyntaxError: invalid syntax (game/OfficeScenes/office.rpy, line 97)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/HospitalNavigation.rpy", line 218, in script
-    if timesTalkedtoViolet = 0:
+  File "game/OfficeScenes/office.rpy", line 97, in script
+    if aster_facts['resolved']== True and timesTalkedtoAster = >3:
   File "C:\RenPy\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
     if renpy.python.py_eval(condition):
   File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
@@ -20,9 +20,9 @@ Full traceback:
     raise orig_e
   File "C:\RenPy\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
     tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/HospitalNavigation.rpy, line 218)
+SyntaxError: invalid syntax (game/OfficeScenes/office.rpy, line 97)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 Charlotte 1.0
-Fri May  1 08:48:07 2026
+Sat May  2 09:10:22 2026

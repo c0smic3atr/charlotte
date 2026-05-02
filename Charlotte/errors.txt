@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/RoadScene.rpy", line 123: if statement expects a non-empty block.
-    if lydia_facts['resolved']== False:
-                                       ^
+File "game/OfficeScenes/office.rpy", line 101: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri May  1 08:24:28 2026
+Sat May  2 09:08:05 2026

@@ -44,10 +44,8 @@ label third_apartment_scene:
                     p "..."
                     p "Wuh- well, why didn't you leave? When you saw?"
                     thought "I'm talking like he caught me in a... lie, or something"
-                    thought "Something normal"
-                    thought "It's not..."
-                    thought "It's not, it can't be"
-                    r "What, a creep in a gas mask poppin' off rounds on kids?"
+                    
+                    r "What, some creep executing kids?"
                     r "Psh, why would I care one way or another..."
                     r "I got shit to do."
             else:
@@ -93,14 +91,14 @@ label rick_menu:
                         pause 3.0
                         # increase trust
                         $ trust += 10
-                        call GoodChoice
+                        #call GoodChoice
                         
 
                         if sarah_facts['status']== "Dead" or anna_facts ['status']== "Dead":
-                            $ rick_facts['fact1']= "What's the profile? I don't get it. Helpfulness? Positivity? Do you even know... am I supposed to just kill everyone?"
+                            $ rick_facts['fact1']= "What's the profile? I don't get it. Helpfulness? Positivity? Do you even know... am I supposed to kill everyone?"
 
                         elif rick_facts['status']== "Dead": 
-                            $ rick_facts['fact1'] = "I forgot what it felt like to shoot a gun. I'd always been so nervous to hit a person by mistake, before... by mistake. This is a mistake. What am I doing?"
+                            $ rick_facts['fact1'] = "I forgot what it felt like to shoot a gun. I'd always been so nervous to hit a person by mistake, before... by mistake. What am I doing?"
                             
                         jump third_apartment_scene
                             
@@ -146,12 +144,14 @@ label rick_menu:
                     jump third_apartment_scene
                 
 
-                if rick_facts['status']== "Spared" and (sarah_facts['status']== "Dead" or anna_facts['status']== "Dead"):
-                    show character4four at left
-                    r "What, you want me to do something about it?"
-                    r "Assuage your guilt?"
-                    r "Not gonna happen."
-                if rick_facts['resolved']== True:
+                #if rick_facts['status']== "Spared" and (sarah_facts['status']== "Dead" or anna_facts['status']== "Dead"):
+                    #show character4four at left
+                    #r "What, you want me to do something about it?"
+                    #r "Assuage your guilt?"
+                    #r "Not gonna happen."
+                    #$ timesTalkedtoRick += 1
+                
+                elif rick_facts['resolved']== True:
                     thought "He's not gonna answer..."   
                     jump third_apartment_scene
 
