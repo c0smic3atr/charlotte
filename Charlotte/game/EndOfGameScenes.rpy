@@ -5,7 +5,7 @@ label twentyeigth_apartment_scene:
         jump out_of_oxygen
     
     scene bg gggh
-    
+
     "Fence before end scene"
     menu:
         "Continue onward":
@@ -15,7 +15,7 @@ label twentyeigth_apartment_scene:
 
 
 label twentyninth_apartment_scene:
-    scene bg end
+    scene bg vvb 
     "You're outside the warehouse"
     
     menu:

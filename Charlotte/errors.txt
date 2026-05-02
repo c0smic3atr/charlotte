@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/OfficeScenes/office.rpy", line 101: expected statement.
-    else:
-        ^
+File "game/clock.rpy", line 38: end of line expected.
+    key "n" action Hide("clock_screen")
+            ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May  2 09:08:05 2026
+Sat May  2 11:42:00 2026

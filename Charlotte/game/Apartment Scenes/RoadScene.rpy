@@ -316,7 +316,8 @@ label eigth_apartment_scene:
 
 
 label ninth_apartment_scene:
-    scene bg blockedroad
+    scene bg 12345
+    
     call screen ninthApartmentNav
 
     "You cannot go here"
