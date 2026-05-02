@@ -1,7 +1,7 @@
 define v = Character("Violet")
 define m = Character("Martin")
 label eigteenth_apartment_scene:
-    $ oxygen_loss = 6
+    $ contamination_level = 3
     call use_oxygen
     if oxygen <= 0:
         jump out_of_oxygen
@@ -230,7 +230,7 @@ label violet_menu:
                     $ violet_facts['portrait']= "violet dead"
 
                 "Do nothing" if violet_facts ['resolved']== False:
-                    if violet_facts['status']!= Dead:
+                    if violet_facts['status']!= "Dead":
                         $ violet_facts['status']= "Spared"
                     $ violet_facts['resolved']= True
                     $ trust-=10
