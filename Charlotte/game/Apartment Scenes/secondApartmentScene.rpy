@@ -10,7 +10,7 @@ label second_apartment_scene:
     
     scene bg doors
 
-    call screen imagebutton
+    call screen secondApartmentNavigation
     
     #call screen secondApartmentNavigation
 
@@ -374,7 +374,8 @@ label bossConversation:
         $ trust -= 20
     jump second_apartment_scene
     
-screen imagebutton():
+
+screen secondApartmentNavigation():
     #image button test
     imagebutton:
         xanchor 0.5
@@ -383,31 +384,7 @@ screen imagebutton():
         ypos 0.28
         idle "Arrowbutton.png"
         action Jump("first_apartment_scene")
-        
-
-
-screen secondApartmentNavigation():
     
-    # back to the first apartment scene
-
-    #frame:
-        #xpos 500
-        #ypos 980
-        #xsize 1190 - 500
-        #ysize 1060 - 980
-        #background None
-
-    #button:
-        #xpos 500
-        #ypos 980
-        #xsize 1190 - 500
-        #ysize 1060 - 980
-        #background None
-        #hover_background None
-
-        #mouse "move"
-
-        #action Jump("first_apartment_scene")
 
     # to door 1 convo
     frame:
