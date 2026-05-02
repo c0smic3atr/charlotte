@@ -362,18 +362,6 @@ screen sixthApartmentNav():
 
         action [SetVariable("object_visible", False), Jump("fifth_apartment_scene")]
 
-    # 1. Define variables to track if the object has been clicked
-   
-
-    if object_visible:
-        # The area to click that pops up/shows the image
-        imagebutton:
-                idle "test.png" # The image that appears
-                xpos 500 ypos 300       # Position on screen
-                mouse "move"
-           
-                # Action: Set variable to False to make it disappear
-                action [SetVariable("object_visible", False)]
 
     imagebutton:
         xanchor 0.5
@@ -382,6 +370,16 @@ screen sixthApartmentNav():
         ypos 0.28
         idle "test2.png"
         action [SetVariable("object_visible", True)]
+
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+                idle "CarNoteArt.png" # The image that appears
+                xpos 165 ypos 80       # Position on screen
+                mouse "move"
+           
+                # Action: Set variable to False to make it disappear
+                action [SetVariable("object_visible", False)]
 
 
 
