@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/Apartment Scenes/RoadScene.rpy", line 61: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    if timesTalkedtoLydia == 0:
-    ^
+File "game/characterImagePull.rpy", line 1: is not terminated with a newline. (Check strings and parenthesis.)
+    """"
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May  2 12:14:21 2026
+Sat May  2 13:54:33 2026

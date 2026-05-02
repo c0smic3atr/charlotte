@@ -2,17 +2,28 @@ label trust_endings:
     scene black
   
 
-    if (trust >= 100):
+    if(orion_facts['status'] == "Dead"):
+        jump scumbag_ending
+    
+    elif (trust >= 100):
         jump high_trust_ending
     elif (trust>= 51):
         jump med_trust_ending
     elif (trust<=50):
         jump low_trust_ending
-    elif (trust<=0):
+    else:
         jump no_trust_ending
 
 
-
+label scumbag_ending:
+    "Oh my god..."
+    "The hell is wrong with you?"
+    "***Vomiting noises***"
+    "Not even hell wants you"
+    "If I were in a room with you and Hitler..."
+    "... and I had a gun with two bullets"
+    "... I would shoot you twice."
+    return
 
 label high_trust_ending:
     "in the end your compliance with death left them utterly happy to keep you and to even make you one of them, now you shall never be the same"

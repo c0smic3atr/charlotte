@@ -1,10 +1,10 @@
-define sarah = Character("Sarah")
+define sarah = Character("Samantha")
 
 image sarah = "characters/sarah/chara 2 colorr.png"
 
 
 #Notebook facts about sarah
-default sarah_facts = {
+default samantha_facts = {
  "hasBeenDiscovered": False,
  "status": "Undiscovered",
  "marked" : False,

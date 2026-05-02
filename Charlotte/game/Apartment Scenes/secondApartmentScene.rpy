@@ -248,11 +248,11 @@ label DoorTwoConversation:
             p "Right, I will."
             s "Thanks! Uh, good luck with your walfare checks!"
 
-            #Discovered Sarah!!
-            $ sarah_facts['portrait'] = "sarah portrait"
-            $ sarah_facts['name'] = "Sarah Han"
-            if sarah_facts ['status'] == "Undiscovered":
-                $ sarah_facts['fact1'] = "Not much... gonna find her sister, see if she knows anything."
+            #Discovered Samantha!!
+            $ samantha_facts['portrait'] = "samantha portrait"
+            $ samantha_facts['name'] = "samantha Han"
+            if samantha_facts ['status'] == "Undiscovered":
+                $ samantha_facts['fact1'] = "Not much... gonna find her sister, see if she knows anything."
 
             hide char2apt
 
@@ -278,7 +278,7 @@ label DoorTwoConversation:
             # Immediately after, the player gains access to their logbook for the first time which has tutorial information, character info, gas mask management, and employer trust management
             # From here you can interact with Sarah again and choose whether or not to kill her, and whether or not to mark her as killed in your logbook
 
-            $ sarah_facts['status'] = "Targeted"
+            $ samantha_facts['status'] = "Targeted"
 
             jump second_apartment_scene
             
