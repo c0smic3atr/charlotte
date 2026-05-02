@@ -14,6 +14,12 @@ label sixth_apartment_scene:
     scene bg parking lot
     call screen sixthApartmentNav
 
+    
+    "I see something on the table."
+   
+    # Pause until the player clicks the object
+    $ renpy.pause(hard=True)
+
     "In parking lot"
     menu:
         "Go back":
@@ -332,6 +338,7 @@ label ninth_apartment_scene:
             jump fifth_apartment_scene
 
 
+default object_visible = False
 
 screen sixthApartmentNav():
     #back to 5th apartment scene
@@ -353,7 +360,41 @@ screen sixthApartmentNav():
 
         mouse "move"
 
-        action Jump("fifth_apartment_scene")
+        action [SetVariable("object_visible", False), Jump("fifth_apartment_scene")]
+
+    # 1. Define variables to track if the object has been clicked
+   
+
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+                idle "test.png" # The image that appears
+                xpos 500 ypos 300       # Position on screen
+                mouse "move"
+           
+                # Action: Set variable to False to make it disappear
+                action [SetVariable("object_visible", False)]
+
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.28
+        idle "test2.png"
+        action [SetVariable("object_visible", True)]
+
+
+
+# 2. Define the screen with the clickable object
+screen hidden_object_scene():
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+            idle "test.png" # The image that appears
+            xpos 500 ypos 300       # Position on screen
+           
+            # Action: Set variable to False to make it disappear
+            action [SetVariable("object_visible", False)]
 
 
 screen seventhApartmentNav():
