@@ -34,6 +34,7 @@ label thirteenth_apartment_scene:
     call screen deadEnd
 
     "You've met a dead end"
+    $ current_time = "2:51"
     menu:
         "Go back":
             jump tenth_apartment_scene

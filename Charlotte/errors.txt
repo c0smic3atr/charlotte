@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/clock.rpy", line 38: end of line expected.
-    key "n" action Hide("clock_screen")
-            ^
+File "game/Apartment Scenes/RoadScene.rpy", line 61: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    if timesTalkedtoLydia == 0:
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May  2 11:42:00 2026
+Sat May  2 12:14:21 2026

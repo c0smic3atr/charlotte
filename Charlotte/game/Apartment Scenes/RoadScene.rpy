@@ -4,6 +4,7 @@ default timesTalkedtoOrion = 0
 define o = Character ("Orion")
 
 label sixth_apartment_scene:
+    $ current_time = "6:42"
     
     $ contamination_level = 1
     call use_oxygen
@@ -19,9 +20,11 @@ label sixth_apartment_scene:
             jump fifth_apartment_scene
 
 label seventh_apartment_scene:
+    $ current_time = "6:42"
     scene bg aptdoors
     
     call screen seventhApartmentNav
+    $ current_time = "6:42"
     if timesTalkedtoLydia == 0:
         p "Hello, I'm agent Walker, I'm here to-"
         #"At apartments2"
@@ -54,6 +57,7 @@ label seventh_apartment_scene:
             #"Go back":
                 #jump fifth_apartment_scene
 label Door3Conversation:
+    
 
             if timesTalkedtoLydia == 0:
                 # Door 3 stuff

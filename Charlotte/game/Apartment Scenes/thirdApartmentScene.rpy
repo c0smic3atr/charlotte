@@ -6,6 +6,7 @@ default timesTalkedtoRick = 0
 
 
 label third_apartment_scene:
+    $ current_time = "12:24"
     
     $ fenceInteract1NumberOfVisits +=1
     

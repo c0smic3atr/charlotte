@@ -10,6 +10,7 @@ label eleventh_apartment_scene:
    
 
 label OfficeConversation:
+    $ current_time = "2:13"
     show character1office
     if timesTalkedtoAster == 0:
     
@@ -131,7 +132,7 @@ label aster_menu:
                     "Mark as Dead" if aster_facts['marked']== False:
                         $ aster_facts['marked']= True
                         $ trust +=10
-
+        jump eleventh_apartment_scene
     else:
         if aster_facts['resolved']== False:
             menu:
@@ -152,17 +153,19 @@ label aster_menu:
                     "Mark as Dead" if aster_facts['marked']== False:
                         $ aster_facts['marked']= True
                         $ trust+=10
-
+    jump eleventh_apartment_scene
     #"Menu exit"          
 
     if aster_facts['status']== "Dead" and aster_facts['marked']== True:
         $ aster_facts['resolved']= True
+    jump eleventh_apartment_scene
+
 
     #"Start next menu"
 
-    menu:
-        "Go back":
-            jump tenth_apartment_scene
+    #menu:
+        #"Go back":
+            #jump tenth_apartment_scene
         #"this is a test":
             #jump eleventh_apartment_scene
 

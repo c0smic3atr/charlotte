@@ -3,6 +3,7 @@ default secondAptDoor2NumberOfVisits = 0
 
 
 label second_apartment_scene:
+    $ current_time = "12:17"
     $ contamination_level = 1
     call use_oxygen
     if oxygen <= 0:
