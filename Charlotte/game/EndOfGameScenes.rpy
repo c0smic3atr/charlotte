@@ -30,7 +30,8 @@ label thirtieth_apartment_scene:
     menu:
         "Go back":
             jump twentyninth_apartment_scene
-
+        "End it":
+            jump trust_endings
 
     # This ends the game.
 

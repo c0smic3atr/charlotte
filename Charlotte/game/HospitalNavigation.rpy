@@ -3,7 +3,7 @@ define m = Character("Martin")
 default timesTalkedtoMartin = 0
 default timesTalkedtoViolet = 0
 label eigteenth_apartment_scene:
-    $ oxygen_loss = 6
+    $ contamination_level = 3
     call use_oxygen
     if oxygen <= 0:
         jump out_of_oxygen

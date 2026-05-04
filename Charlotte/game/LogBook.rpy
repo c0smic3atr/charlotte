@@ -79,10 +79,10 @@ screen notebook_screen():
                             
               
                 elif notebook_page == 2:
-                    add sarah_facts['portrait']:
+                    add samantha_facts['portrait']:
                         xalign 0.5
                         yalign 0.5
-                    if sarah_facts['marked'] == True:
+                    if samantha_facts['marked'] == True:
                         add "notebookdead":
                             xalign 0.17
                             yalign 0.25
@@ -174,10 +174,10 @@ screen notebook_screen():
 
                     elif notebook_page == 2:
 
-                        text sarah_facts['name'] size 42
+                        text samantha_facts['name'] size 42
                         text "Notes:" size 30
 
-                        text "* [sarah_facts['fact1']]"
+                        text "* [samantha_facts['fact1']]"
                         
                     elif notebook_page == 4:
 
