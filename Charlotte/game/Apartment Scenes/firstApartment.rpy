@@ -1,5 +1,7 @@
 ﻿label first_apartment_scene:
     scene bg aptonee
+
+    call oxygen_warning
     
     call screen firstApartmentNavigation
     #

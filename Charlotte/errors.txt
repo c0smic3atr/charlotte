@@ -2,8 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/characterImagePull.rpy", line 1: is not terminated with a newline. (Check strings and parenthesis.)
-    """"
+File "game/oxygenWarning.rpy", line 6: expected statement.
+    xalign 0.17
+            ^
+
+File "game/oxygenWarning.rpy", line 7: expected statement.
+    yalign 0.25
+            ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May  2 13:54:33 2026
+Mon May  4 09:59:56 2026

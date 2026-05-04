@@ -1,6 +1,6 @@
 define sarah = Character("Samantha")
 
-image sarah = "characters/sarah/chara 2 colorr.png"
+image samantha = "characters/sarah/char2apt.png"
 
 
 #Notebook facts about sarah
