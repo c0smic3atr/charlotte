@@ -5,8 +5,11 @@ label twentyeigth_apartment_scene:
         jump out_of_oxygen
     
     scene bg enter end scene
+    call oxygen_warning 
+    "Warning oxygen change"
     call screen EndSceneNav
-    "Fence before end scene"
+  
+
     menu:
         "Continue onward":
             scene

@@ -25,18 +25,21 @@ label eigteenth_apartment_scene:
 label twentieth_apartment_scene:
     scene bg blockade
     "Youre at the blockade"
-    call oxygen_warning 
-    "Warning oxygen change"
+    
     menu:
         "Go back":
             jump eigteenth_apartment_scene
 
 label ninteenth_apartment_scene:
     scene bg hospitallook
-    call screen enteringHospital
-   
+    
+    call oxygen_warning 
+    "Warning oxygen change"
 
     "You're approaching the hospital"
+    
+    call screen enteringHospital
+    
    
     menu:
         "Enter Hospital":
