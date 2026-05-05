@@ -58,7 +58,7 @@ screen firstApartmentNavigation():
 
         mouse "move"
 
-        action Jump("third_apartment_scene")
+        action Jump("theDumpsterArea")
 
         # to the fifth apartment scene
     frame:
