@@ -343,24 +343,24 @@ label violet_menu:
 screen eigteenthApartmentNav():
     # to blockage
 
-    frame:
-        xpos 175
-        ypos 105
-        xsize 415 - 175
-        ysize 255 - 105
-        background "#6527F5"
+    #frame:
+        #xpos 175
+        #ypos 105
+        #xsize 415 - 175
+        #ysize 255 - 105
+        #background "#6527F5"
 
-    button:
-        xpos 175
-        ypos 105
-        xsize 415 - 175
-        ysize 255 - 105
-        background None
-        hover_background None
+    #button:
+        #xpos 175
+        #ypos 105
+        #xsize 415 - 175
+        #ysize 255 - 105
+        #background None
+        #hover_background None
 
-        mouse "move"
+        #mouse "move"
 
-        action Jump("twentieth_apartment_scene")
+        #action Jump("twentieth_apartment_scene")
 
     # down the road
 
@@ -446,7 +446,7 @@ screen enteringHospital():
 
         mouse "move"
 
-        action Jump("fifteenth_apartment_scene")
+        action Jump("eigteenth_apartment_scene")
 
 screen hospitalMainRoom():
 

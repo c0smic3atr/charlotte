@@ -313,7 +313,6 @@ label orion_menu:
 
 label eigth_apartment_scene:
     scene bg park
-    call screen eigthApartmentNav
 
     "At park"
     menu:
@@ -454,28 +453,6 @@ screen seventhApartmentNav():
 
         action Jump("Door4Conversation")
 
-
-screen eigthApartmentNav():
-    #back to 5th apartment scene
-
-    frame:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background "#6527F5"
-
-    button:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background None
-        hover_background None
-
-        mouse "move"
-
-        action Jump("fifth_apartment_scene")
 
 
 screen ninthApartmentNav():

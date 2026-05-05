@@ -77,27 +77,6 @@ screen fifthApartmentNav():
         action Jump("ninth_apartment_scene")
 
 
-    # to the park
-
-    frame:
-        xpos 1390
-        ypos 710
-        xsize 1880 - 1390
-        ysize 1030 - 710
-        background None
-
-    button:
-        xpos 1390
-        ypos 710
-        xsize 1880 - 1390
-        ysize 1030 - 710
-        background None
-        hover_background None
-
-        mouse "move"
-
-        action Jump("eigth_apartment_scene")
-
     #back to 1st apartment scene
 
     frame:
