@@ -12,7 +12,7 @@ label second_apartment_scene:
     scene bg doors
 
     call screen secondApartmentNavigation
-    
+   
     #call screen secondApartmentNavigation
 
     #menu:

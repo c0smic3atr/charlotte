@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/oxygenWarning.rpy", line 6: expected statement.
-    xalign 0.17
-            ^
-
-File "game/oxygenWarning.rpy", line 7: expected statement.
-    yalign 0.25
-            ^
+File "game/oxygenWarning.rpy", line 9: end of line expected.
+    label oxygen_warning:(x=0.5, y=0.4, t=1.0):
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon May  4 09:59:56 2026
+Tue May  5 08:39:05 2026

@@ -5,7 +5,6 @@ define o = Character ("Orion")
 
 label sixth_apartment_scene:
     $ current_time = "6:42"
-    
     $ contamination_level = 1
     call use_oxygen
     if oxygen <= 0:
