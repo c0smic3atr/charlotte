@@ -60,6 +60,7 @@ label twentyfirst_apartment_scene:
 
 label twentysecond_apartment_scene:
     scene bg storageroom
+    call screen StorageRoomNav
     "You're in the storage room"
     menu: 
         "Go back":
@@ -67,6 +68,7 @@ label twentysecond_apartment_scene:
 
 label twentythird_apartment_scene:
     scene bg hosor
+    call screen OperatingRoomNav
     "You're in the operating room"
     menu: 
         "Go back":
@@ -183,6 +185,7 @@ label martin_menu:
 
 label twentysixth_apartment_scene:
     scene bg hos2hos
+    call screen RightRoomNav
     "You're in the second hospital room"
     menu:
         "Go back":
@@ -344,24 +347,24 @@ label violet_menu:
 screen eigteenthApartmentNav():
     # to blockage
 
-    frame:
-        xpos 175
-        ypos 105
-        xsize 415 - 175
-        ysize 255 - 105
-        background "#6527F5"
+    #frame:
+        #xpos 175
+        #ypos 105
+        #xsize 415 - 175
+        #ysize 255 - 105
+        #background "#6527F5"
 
-    button:
-        xpos 175
-        ypos 105
-        xsize 415 - 175
-        ysize 255 - 105
-        background None
-        hover_background None
+    #button:
+        #xpos 175
+        #ypos 105
+        #xsize 415 - 175
+        #ysize 255 - 105
+        #background None
+        #hover_background None
 
-        mouse "move"
+        #mouse "move"
 
-        action Jump("twentieth_apartment_scene")
+        #action Jump("twentieth_apartment_scene")
 
     # down the road
 
@@ -447,7 +450,7 @@ screen enteringHospital():
 
         mouse "move"
 
-        action Jump("fifteenth_apartment_scene")
+        action Jump("eigteenth_apartment_scene")
 
 screen hospitalMainRoom():
 
@@ -513,6 +516,15 @@ screen hospitalMainRoom():
         mouse "move"
 
         action Jump("twentythird_apartment_scene")
+
+    #Go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
+        action Jump("ninteenth_apartment_scene")
 
 screen hallwayNav():
     #Left room
@@ -642,6 +654,16 @@ screen leftRoomNav():
 
         action Jump("twentyfourth_apartment_scene")
 
+screen RightRoomNav():
+    #Go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
+        action Jump("twentyfourth_apartment_scene")
+
 screen backRoomNav():
     #Talk with violet
 
@@ -705,3 +727,24 @@ screen backRoomNav():
         mouse "move"
 
         action Jump("twentyfourth_apartment_scene")
+
+screen StorageRoomNav():
+    #Go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
+        action Jump("twentyfirst_apartment_scene")
+
+
+screen OperatingRoomNav():
+    #Go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
+        action Jump("twentyfirst_apartment_scene")

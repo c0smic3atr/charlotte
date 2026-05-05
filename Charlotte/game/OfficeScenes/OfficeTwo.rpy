@@ -183,89 +183,81 @@ screen officeTwoNav():
 
 
 screen officeTableButtonNav():
-    # go back
-
-    frame:
-        xpos 210
-        ypos 920
-        xsize 1730 - 210
-        ysize 1065 - 920
-        background "#6527F5"
-
-    button:
-        xpos 210
-        ypos 920
-        xsize 1730 - 210
-        ysize 1065 - 920
-        background None
-        hover_background None
-
-        mouse "move"
-
-        action Jump("fifteenth_apartment_scene")
+    #Go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
+        action [SetVariable("object_visible", False), Jump("fifteenth_apartment_scene")]
 
 
-    #grab the note (DOESNT WORK YET MAKE THE NOTE THING FIRST)
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.28
+        idle "test2.png"
+        action [SetVariable("object_visible", True)]
 
-        #frame:
-            #xpos 145
-            #ypos 685
-            #xsize 390 - 145
-            #ysize 780 - 685
-            #background "#77C7BA"
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+                idle "test.png" # The image that appears
+                xpos 165 ypos 80       # Position on screen
+                mouse "move"
+           
+                # Action: Set variable to False to make it disappear
+                action [SetVariable("object_visible", False)]
 
-        #button:
-            #xpos 145
-            #ypos 685
-            #xsize 390 - 145
-            #ysize 780 - 685
-            #background None
-            #hover_background None
-
-            #mouse "move"
-
-            #action Jump("fifth_apartment_scene")
+# 2. Define the screen with the clickable object
+screen hidden_object_scene():
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+            idle "test.png" # The image that appears
+            xpos 500 ypos 300       # Position on screen
+           
+            # Action: Set variable to False to make it disappear
+            action [SetVariable("object_visible", False)]
 
 screen officeDeskButtonNav():
-    # go back
-
-    frame:
-        xpos 260
-        ypos 785
-        xsize 1260 - 260
-        ysize 1055 - 785
-        background "#6527F5"
-
-    button:
-        xpos 260
-        ypos 785
-        xsize 1260 - 260
-        ysize 1055 - 785
-        background None
-        hover_background None
-
-        mouse "move"
-
-        action Jump("fifteenth_apartment_scene")
+    #Go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
+        action [SetVariable("object_visible", False), Jump("fifteenth_apartment_scene")]
 
 
-    #grab the note (DOESNT WORK YET MAKE THE NOTE THING FIRST)
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.28
+        idle "test2.png"
+        action [SetVariable("object_visible", True)]
 
-        #frame:
-            #xpos 50
-            #ypos 25
-            #xsize 330 - 50
-            #ysize 325 - 25
-            #background "#77C7BA"
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+                idle "test.png" # The image that appears
+                xpos 165 ypos 80       # Position on screen
+                mouse "move"
+           
+                # Action: Set variable to False to make it disappear
+                action [SetVariable("object_visible", False)]
 
-        #button:
-            #xpos 50
-            #ypos 25
-            #xsize 330 - 50
-            #ysize 325 - 25
-            #background None
-            #hover_background None
-
-            #mouse "move"
-
-            #action Jump("fifth_apartment_scene")
+# 2. Define the screen with the clickable object
+screen hidden_object_scene():
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+            idle "test.png" # The image that appears
+            xpos 500 ypos 300       # Position on screen
+           
+            # Action: Set variable to False to make it disappear
+            action [SetVariable("object_visible", False)]
