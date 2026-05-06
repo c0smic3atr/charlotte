@@ -14,7 +14,7 @@ if timesEnteredAlleyNavigation == 0:
     thought "Why- why's it morning again?"
     thought "I need to get this over with."
     call oxygen_warning 
-    "Warning oxygen change, check filtration level"
+    y "Warning oxygen change, check filtration level"
     $ timesEnteredAlleyNavigation += 1
   
 

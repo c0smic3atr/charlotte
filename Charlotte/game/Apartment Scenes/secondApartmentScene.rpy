@@ -271,7 +271,7 @@ label DoorTwoConversation:
             e "And for the love of God, remember to mark disposals in your logbook. It's the only way we'll know if you're actually doing your job or not."
 
             
-            thought "Press N to Access the Logbook"
+            y "Press N to access your logbook"
                 
                
             #Goes to front doors again, in which you can click on samantha again and now have the option to execute

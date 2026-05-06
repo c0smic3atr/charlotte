@@ -84,7 +84,7 @@ label twentythird_apartment_scene:
     $ current_time = "1:12"
     scene bg hosor
     call screen OperatingRoomNav
-    "You're in the operating room"
+    thought "Place looks pretty abandoned... how long's it been since people were receiving care here?"
     menu: 
         "Go back":
             jump twentyfirst_apartment_scene
