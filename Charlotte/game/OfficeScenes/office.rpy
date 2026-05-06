@@ -110,30 +110,8 @@ if aster_facts['resolved']== True and timesTalkedtoAster:
     jump eleventh_apartment_scene
 
 label aster_menu:
-    if aster_facts['resolved']== False:
-
-        menu:
-                    "Kill Her" if aster_facts['status'] != "Dead":
-                        $ aster_facts['status'] = "Dead"
-                        $ aster_facts['portrait'] = "aster dead"
-                        hide character1office
-                        show character6mono
-                        pause 3.0
-                        hide character6mono
-                        $ trust -=10
-                        $ aster_facts['fact1'] = "These people really are sick... if you know they're in this state, why aren't we helping them? Can we help them?"
-                    "Keep Doing Nothing" if aster_facts['resolved']== False:
-                        if aster_facts['status']!= "Dead":
-                            $ aster_facts['status'] = "Spared"
-                        $ aster_facts['resolved']= True
-
-                        $ trust -=10
-
-                    "Mark as Dead" if aster_facts['marked']== False:
-                        $ aster_facts['marked']= True
-                        $ trust +=10
-        jump eleventh_apartment_scene
-    else:
+    
+    if anna_facts['status']== "Dead" or sarah_facts['status']== "Dead" or rick_facts['status']=="Dead" or lydia_facts['status']== "Dead" or orion_facts['status']== "Dead":
         if aster_facts['resolved']== False:
             menu:
                     "Kill Her" if aster_facts['status']!= "Dead":
@@ -153,7 +131,33 @@ label aster_menu:
                     "Mark as Dead" if aster_facts['marked']== False:
                         $ aster_facts['marked']= True
                         $ trust+=10
-    jump eleventh_apartment_scene
+        jump eleventh_apartment_scene
+
+    else:
+        if aster_facts['resolved']== False:
+            #if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead" and lydia_facts['status']!= "Dead" and orion_facts['status']!= "Dead":
+
+                menu:
+                            "Kill Her" if aster_facts['status'] != "Dead":
+                                $ aster_facts['status'] = "Dead"
+                                $ aster_facts['portrait'] = "aster dead"
+                                hide character1office
+                                show character6mono
+                                pause 3.0
+                                hide character6mono
+                                $ trust -=10
+                                $ aster_facts['fact1'] = "These people really are sick... if you know they're in this state, why aren't we helping them? Can we help them?"
+                            "Keep Doing Nothing" if aster_facts['resolved']== False:
+                                if aster_facts['status']!= "Dead":
+                                    $ aster_facts['status'] = "Spared"
+                                $ aster_facts['resolved']= True
+
+                                $ trust -=10
+
+                            "Mark as Dead" if aster_facts['marked']== False:
+                                $ aster_facts['marked']= True
+                                $ trust +=10
+                jump eleventh_apartment_scene
     #"Menu exit"          
 
     if aster_facts['status']== "Dead" and aster_facts['marked']== True:

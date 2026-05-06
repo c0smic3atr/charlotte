@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/oxygenWarning.rpy", line 9: end of line expected.
-    label oxygen_warning:(x=0.5, y=0.4, t=1.0):
-                         ^
+File "game/OfficeScenes/office.rpy", line 136: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue May  5 08:39:05 2026
+Wed May  6 09:59:38 2026

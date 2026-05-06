@@ -4,7 +4,7 @@ label twentyeigth_apartment_scene:
     if oxygen <= 0:
         jump out_of_oxygen
     
-    scene bg enter end scene
+    scene bg gggh
     call screen EndSceneNav
     "Fence before end scene"
     menu:
@@ -15,7 +15,7 @@ label twentyeigth_apartment_scene:
 
 
 label twentyninth_apartment_scene:
-    scene bg end
+    scene bg vvb
     call screen WarehouseNav
     "You're outside the warehouse"
     

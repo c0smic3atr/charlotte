@@ -38,7 +38,7 @@ label thirteenth_apartment_scene:
     scene bg alleyydead
     call screen deadEnd
 
-    "You've met a dead end"
+    thought "There's nothing here..."
     $ current_time = "2:51"
     menu:
         "Go back":

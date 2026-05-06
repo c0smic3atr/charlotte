@@ -1,6 +1,7 @@
 ﻿label first_apartment_scene:
     scene bg aptonee
 
+    play music "music/Atmosphere.mp3" fadein 1.0 loop volume 1
    
     
     call screen firstApartmentNavigation

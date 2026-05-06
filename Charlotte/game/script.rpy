@@ -19,7 +19,7 @@ label start:
     # images directory to show it.
 
     scene bg car scenes
-    play music "Quiet-Contemplation" fadein 1.0
+    play music "music/Quiet-Contemplation.mp3" fadein 1.0 loop volume 0.5
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
