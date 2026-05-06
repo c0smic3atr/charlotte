@@ -7,13 +7,18 @@ label tenth_apartment_scene:
     
     scene bg mainalley
 if timesEnteredAlleyNavigation == 0:
+  
 
     thought "Ugh, it's hard to breathe in this place. Do I keep passing out or something? Is my gas mask broken?"
     thought "Why- why's it morning again?"
     thought "I need to get this over with."
+    call oxygen_warning 
+    "Warning oxygen change, check filtration level"
     $ timesEnteredAlleyNavigation += 1
+  
 
     call screen alleyNav
+   
 else: 
     call screen alleyNav
 

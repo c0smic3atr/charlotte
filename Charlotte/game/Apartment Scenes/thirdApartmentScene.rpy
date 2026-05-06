@@ -4,24 +4,25 @@ define r = Character ("Rick")
 default fenceInteract1NumberOfVisits = 0
 default timesTalkedtoRick = 0
 
+label theDumpsterArea:
+    scene bg dumpster
+
+    call screen dumpsterButtons
 
 label third_apartment_scene:
     $ current_time = "12:24"
     
     $ fenceInteract1NumberOfVisits +=1
     
-    scene bg dumpster
+    #scene bg dumpster
+
+    #call screen dumpsterButtons
+
     if timesTalkedtoRick == 0:
 
-        
 
-        menu:
-            "Return":
-                jump first_apartment_scene
-
-            "Talk":
-                show character4four at left
-                $ timesTalkedtoRick +=1
+        show character4four at left
+        $ timesTalkedtoRick +=1
 
 
         if numberOfPeopleKilled == 0:
@@ -167,3 +168,34 @@ label rick_menu:
         "Go back":
             jump first_apartment_scene
 
+
+
+screen dumpsterButtons():
+    # rick convo
+    frame:
+        xpos 785
+        ypos 430
+        xsize 1470 - 785
+        ysize 890 - 430
+        background "#77C7BA"
+
+    button:
+        xpos 785
+        ypos 430
+        xsize 1470 - 785
+        ysize 890 - 430
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("third_apartment_scene")
+
+    #go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
+        action Jump("first_apartment_scene")

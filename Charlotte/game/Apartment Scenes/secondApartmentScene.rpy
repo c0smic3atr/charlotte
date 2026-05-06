@@ -12,7 +12,7 @@ label second_apartment_scene:
     scene bg doors
 
     call screen secondApartmentNavigation
-    
+   
     #call screen secondApartmentNavigation
 
     #menu:
@@ -32,7 +32,7 @@ label second_apartment_scene:
             #a "Yeah. I mean, you can't blame us for wanting out"
             #p "You know we can't just let you go"
             #a "Some of us know better than others"
-            #a "Make sure to talk to Sarah next door. She's something of an optimist"
+            #a "Make sure to talk to samantha next door. She's something of an optimist"
             #a "Seems to be handling things better than most"
 
             #jump second_apartment_scene
@@ -256,7 +256,7 @@ label DoorTwoConversation:
 
             hide char2apt
 
-            # boolean (?) After first interaction with Sarah Employer will have conversation with player character which goes as follows
+            # boolean (?) After first interaction with samantha Employer will have conversation with player character which goes as follows
     if secondAptDoor2NumberOfVisits == 1:
             e "Walker." 
             thought "Woah, I didn't expect contact so soon..."
@@ -274,9 +274,9 @@ label DoorTwoConversation:
             thought "Press N to Access the Logbook"
                 
                
-            #Goes to front doors again, in which you can click on Sarah again and now have the option to execute
+            #Goes to front doors again, in which you can click on samantha again and now have the option to execute
             # Immediately after, the player gains access to their logbook for the first time which has tutorial information, character info, gas mask management, and employer trust management
-            # From here you can interact with Sarah again and choose whether or not to kill her, and whether or not to mark her as killed in your logbook
+            # From here you can interact with samantha again and choose whether or not to kill her, and whether or not to mark her as killed in your logbook
 
             $ samantha_facts['status'] = "Targeted"
 
@@ -288,14 +288,14 @@ label DoorTwoConversation:
         show char2apt at center
         s "Oh, hey! You're back!"
         s "Do you need something?"
-        jump sarah_menu
+        jump samantha_menu
         
 
                 
-    elif sarah_facts['resolved'] == False:
+    elif samantha_facts['resolved'] == False:
 
         
-        jump sarah_menu
+        jump samantha_menu
         
     else:
         
@@ -303,55 +303,55 @@ label DoorTwoConversation:
         jump second_apartment_scene
 
     
-label sarah_menu:
+label samantha_menu:
 
 #  default somethingToDo = True
-# if sarah_facts['status'] != "Dead" or sarah_facts['marked'] == False:
+# if samantha_facts['status'] != "Dead" or samantha_facts['marked'] == False:
     #    $ somethingToDo = True
     #else:
     #   $ somethingToDo = False
 
-if sarah_facts['resolved']== False:
+if samantha_facts['resolved']== False:
 
     menu:
-            "Kill Her" if sarah_facts['status'] !="Dead":
+            "Kill Her" if samantha_facts['status'] !="Dead":
                 s "Um... is there something wrong??"
 
-                $ sarah_facts ['status'] = "Dead"
-                $ sarah_facts['portrait'] = "sarah dead"
+                $ samantha_facts ['status'] = "Dead"
+                $ samantha_facts['portrait'] = "samantha dead"
                 hide char2apt
                 show char22mono at center
                 pause 3.0
-                $ sarah_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her? My head hurts."
+                $ samantha_facts['fact1']= "So, what, I'm just supposed to write something? Something... she didn't say anything that matters. Is that why you had me kill her? Why'd I kill her? My head hurts."
                 #call GoodChoice
                 $ trust-=10
 
                 #jump bossConversation
             
-            "Do Nothing" if sarah_facts['resolved']== False:
-                if sarah_facts['status']!="Dead":
-                    $ sarah_facts['status'] = "Spared"
-                $ sarah_facts['resolved'] = True
-                if sarah_facts['status']!= "Dead":
+            "Do Nothing" if samantha_facts['resolved']== False:
+                if samantha_facts['status']!="Dead":
+                    $ samantha_facts['status'] = "Spared"
+                $ samantha_facts['resolved'] = True
+                if samantha_facts['status']!= "Dead":
                     p "Um... no. Never mind."
                 
-                if sarah_facts['status']!="Dead":
-                    $ sarah_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her sister, see if she knows anything."
+                if samantha_facts['status']!="Dead":
+                    $ samantha_facts['fact1'] = "Sounded easier in my head. How do you look someone in the eyes and just... She seemed fine. She's fine, and it's fine. I'm gonna look for her sister, see if she knows anything."
                 call BadChoice
                 $ trust-=10
 
                 #jump bossConversation
 
-            "Mark as Dead" if sarah_facts['marked']== False:
-                $ sarah_facts['marked']= True
+            "Mark as Dead" if samantha_facts['marked']== False:
+                $ samantha_facts['marked']= True
                 $ trust +=10
                 call GoodChoice
 
-    if sarah_facts['status']== "Dead" and sarah_facts['marked']== True:
-            $ sarah_facts['resolved']= True
+    if samantha_facts['status']== "Dead" and samantha_facts['marked']== True:
+            $ samantha_facts['resolved']= True
     
     
-elif sarah_facts['resolved']== True:
+elif samantha_facts['resolved']== True:
     thought "What am I doing?"
     jump second_apartment_scene
    
@@ -363,14 +363,14 @@ elif sarah_facts['resolved']== True:
 label bossConversation:
     #scene black
     #"boss"
-    if sarah_facts['status'] == "Dead":
+    if samantha_facts['status'] == "Dead":
         
         # increase trust
         $ trust += 10
-    elif sarah_facts['status'] == "Hiding":
+    elif samantha_facts['status'] == "Hiding":
         
         $ trust += 2
-    elif sarah_facts['status'] == "Spared":
+    elif samantha_facts['status'] == "Spared":
         
         $ trust -= 20
     jump second_apartment_scene

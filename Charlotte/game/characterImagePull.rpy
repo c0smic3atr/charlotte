@@ -2,8 +2,8 @@
 #portraits
 image anna portrait = "images/characters/portraits/anna portrait.png"
 image anna dead = "images/characters/portraits/anna dead portrait.png"
-image samantha portrait = "images/characters/portraits/sarah portrait.png"
-image samantha dead = "images/characters/portraits/sarah dead portrait.png"
+image samantha portrait = "images/characters/portraits/samantha portrait.png"
+image samantha dead = "images/characters/portraits/samantha dead portrait.png"
 image rick portrait = "images/characters/portraits/rick portrait.png"
 image rick dead = "images/characters/portraits/rick dead portrait.png"
 image lydia portrait = "images/characters/portraits/lydia portrait.png"

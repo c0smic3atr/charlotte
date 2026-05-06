@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characterImagePull.rpy", line 1: is not terminated with a newline. (Check strings and parenthesis.)
-    """"
+File "game/oxygenWarning.rpy", line 9: end of line expected.
+    label oxygen_warning:(x=0.5, y=0.4, t=1.0):
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May  2 13:54:33 2026
+Tue May  5 08:39:05 2026
