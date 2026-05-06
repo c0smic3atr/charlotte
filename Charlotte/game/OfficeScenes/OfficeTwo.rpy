@@ -204,8 +204,8 @@ screen officeTableButtonNav():
     if object_visible:
         # The area to click that pops up/shows the image
         imagebutton:
-                idle "test.png" # The image that appears
-                xpos 165 ypos 80       # Position on screen
+                idle "DeskNote.png" # The image that appears
+                xpos 465 ypos 10       # Position on screen
                 mouse "move"
            
                 # Action: Set variable to False to make it disappear
@@ -236,8 +236,8 @@ screen officeDeskButtonNav():
     imagebutton:
         xanchor 0.5
         yanchor 0.5
-        xpos 0.5
-        ypos 0.28
+        xpos 165
+        ypos 80
         idle "test2.png"
         action [SetVariable("object_visible", True)]
 
@@ -245,7 +245,7 @@ screen officeDeskButtonNav():
         # The area to click that pops up/shows the image
         imagebutton:
                 idle "test.png" # The image that appears
-                xpos 165 ypos 80       # Position on screen
+                xpos 500 ypos 80       # Position on screen
                 mouse "move"
            
                 # Action: Set variable to False to make it disappear
