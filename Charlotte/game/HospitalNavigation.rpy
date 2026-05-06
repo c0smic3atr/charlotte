@@ -3,6 +3,7 @@ define m = Character("Martin")
 default timesTalkedtoMartin = 0
 default timesTalkedtoViolet = 0
 label eigteenth_apartment_scene:
+    $ current_time = "11:30"
     $ contamination_level = 4
     call use_oxygen
     if oxygen <= 0:
@@ -11,6 +12,7 @@ label eigteenth_apartment_scene:
 
   
     scene bg road to hospital
+    $ current_time = "11:30"
     call screen eigteenthApartmentNav
 
     "You've left the office building"
@@ -31,6 +33,7 @@ label twentieth_apartment_scene:
             jump eigteenth_apartment_scene
 
 label ninteenth_apartment_scene:
+    $ current_time = "11:30"
     scene bg hospitallook
     
     call oxygen_warning 
@@ -48,6 +51,7 @@ label ninteenth_apartment_scene:
             jump eigteenth_apartment_scene
 
 label twentyfirst_apartment_scene:
+    $ current_time = "1:12"
     scene bg fronthos
     call screen hospitalMainRoom
     "Youre in the hospital"
@@ -68,6 +72,7 @@ label twentyfirst_apartment_scene:
             jump ninteenth_apartment_scene
 
 label twentysecond_apartment_scene:
+    $ current_time = "1:12"
     scene bg storageroom
     call screen StorageRoomNav
     "You're in the storage room"
@@ -76,6 +81,7 @@ label twentysecond_apartment_scene:
             jump twentyfirst_apartment_scene
 
 label twentythird_apartment_scene:
+    $ current_time = "1:12"
     scene bg hosor
     call screen OperatingRoomNav
     "You're in the operating room"
@@ -84,6 +90,7 @@ label twentythird_apartment_scene:
             jump twentyfirst_apartment_scene
 
 label twentyfourth_apartment_scene:
+    $ current_time = "6:03"
     scene bg hall
     call screen hallwayNav
     "You're in the hallway"
@@ -102,6 +109,7 @@ label twentyfourth_apartment_scene:
             jump twentyfirst_apartment_scene
 
 label twentyfifth_apartment_scene:
+    $ current_time = "6:03"
     scene bg hos2room
     call screen leftRoomNav
     
@@ -119,6 +127,7 @@ label twentyfifth_apartment_scene:
     #jump martin_menu
 
 label martinConvo:
+    $ current_time = "6:09"
     if timesTalkedtoMartin == 0:
         show char2hoss
         if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead" and lydia_facts['status']!= "Dead" and orion_facts['status']!= "Dead" and aster_facts['status']!= "Dead":
@@ -155,6 +164,7 @@ label martinConvo:
     jump martin_menu
 
 label martin_menu:
+    $ current_time = "6:09"
     if martin_facts['resolved']== False:
         menu:
                 "Kill Him" if martin_facts['status']!= "Dead":
@@ -199,6 +209,7 @@ label martin_menu:
     #        jump twentyfourth_apartment_scene
 
 label twentysixth_apartment_scene:
+    $ current_time = "6:12"
     scene bg hos2hos
     call screen RightRoomNav
     "You're in the second hospital room"
@@ -207,6 +218,7 @@ label twentysixth_apartment_scene:
             jump twentyfourth_apartment_scene
 
 label twentyseventh_apartment_scene:
+    $ current_time = "6:12"
     scene bg hosend
     call screen backRoomNav
     "You're in the back room"
@@ -237,8 +249,10 @@ label twentyseventh_apartment_scene:
     #jump violet_menu
 
 label violetConvo:
+    
 if timesTalkedtoViolet == 0:
     show character1onehospital
+    $ current_time = "9:01"
     if anna_facts['status']!= "Dead" and sarah_facts['status']!= "Dead" and rick_facts['status']!= "Dead" and lydia_facts['status']!= "Dead" and orion_facts['status']!= "Dead" and martin_facts['status']!= "Dead":
         p "Hey, are you awake?"
         v "..."

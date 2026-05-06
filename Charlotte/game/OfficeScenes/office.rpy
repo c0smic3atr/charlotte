@@ -2,6 +2,7 @@ define x = Character("Aster")
 default timesTalkedtoAster = 0
 
 label eleventh_apartment_scene:
+    $ current_time = "3:12"
     scene bg officeone
     call screen firstOffice
 
@@ -10,7 +11,7 @@ label eleventh_apartment_scene:
    
 
 label OfficeConversation:
-    $ current_time = "2:13"
+    $ current_time = "3:12"
     show character1office
     if timesTalkedtoAster == 0:
     

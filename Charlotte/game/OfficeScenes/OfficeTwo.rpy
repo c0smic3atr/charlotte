@@ -1,4 +1,5 @@
 label fourteenth_apartment_scene:
+    $ current_time = "5:28"
     $ contamination_level = 3
     call use_oxygen
     if oxygen <= 0:
@@ -14,6 +15,7 @@ label fourteenth_apartment_scene:
             jump tenth_apartment_scene
 
 label fifteenth_apartment_scene:
+    $ current_time = "5:31"
     scene bg mainoffice
     call screen officeTwoNav
 
@@ -29,6 +31,7 @@ label fifteenth_apartment_scene:
             jump fourteenth_apartment_scene
 
 label sixteenth_apartment_scene:
+    $ current_time = "5:31"
     scene bg officetable
     call screen officeTableButtonNav
     "Youre at the table"
@@ -41,6 +44,7 @@ label sixteenth_apartment_scene:
             jump fifteenth_apartment_scene
 
 label seventeenth_apartment_scene:
+    $ current_time = "5:31"
     scene bg officedesk
     call screen officeDeskButtonNav
     "You're at the desk"
