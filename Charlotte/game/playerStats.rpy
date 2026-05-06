@@ -5,7 +5,7 @@ default oxygen = 100
 default max_trust = 100
 default max_oxygen = 100
 
-default oxygen_loss_rate = 1
+default oxygen_loss_rate = 3
 
 default filter_level = 1
 default contamination_level = 1

@@ -2,57 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/EndOfGameScenes.rpy", line 11: end of line expected.
-(Perhaps you left out a " at the end of the first line.)
-    "Warning oxygen change
-    
-        menu:
-            "Continue onward":
-                scene
-            "Go back":
-                  ^
-                jump twentyseventh_apartment_scene
-    
-    
-    label twentyninth_apartment_scene:
-        scene bg end
-        call screen WarehouseNav
-        "You're outside the warehouse"
-        
-        menu:
-            "Investigate body bags":
-                jump thirtieth_apartment_scene
-            "Go back":
-                jump twentyeigth_apartment_scene
-    
-    label thirtieth_apartment_scene:
-        scene bg bodybag
-        call screen BodyBagNav
-        "You're looking at the bags"
-        menu:
-            "Go back":
-                jump twentyninth_apartment_scene
-    
-    
-        # This ends the game.
-    
-        return
-    
-    screen EndSceneNav():
-        frame:
-            xpos 155
-            ypos 50
-            xsize 1845 - 155
-            ysize 725 - 50
-            background "
-
-File "game/EndOfGameScenes.rpy", line 52: expected statement.
-    button:
-          ^
-
-File "game/EndOfGameScenes.rpy", line 66: expected statement.
-    imagebutton:
-               ^
+File "game/OfficeScenes/office.rpy", line 135: expected statement.
+    BadChoice
+             ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue May  5 09:35:50 2026
+Wed May  6 10:13:22 2026

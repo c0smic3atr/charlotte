@@ -4,6 +4,10 @@ default timesTalkedtoAster = 0
 label eleventh_apartment_scene:
     scene bg officeone
     call screen firstOffice
+    $ contamination_level = 1
+    call use_oxygen
+    if oxygen <= 0:
+        jump out_of_oxygen
 
 
 
@@ -128,10 +132,12 @@ label aster_menu:
                         $ aster_facts['resolved']= True
 
                         $ trust -=10
+                        call BadChoice
 
                     "Mark as Dead" if aster_facts['marked']== False:
                         $ aster_facts['marked']= True
                         $ trust +=10
+                        call GoodChoice
         jump eleventh_apartment_scene
     else:
         if aster_facts['resolved']== False:
@@ -153,6 +159,7 @@ label aster_menu:
                     "Mark as Dead" if aster_facts['marked']== False:
                         $ aster_facts['marked']= True
                         $ trust+=10
+                        call GoodChoice
     jump eleventh_apartment_scene
     #"Menu exit"          
 

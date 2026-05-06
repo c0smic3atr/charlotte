@@ -26,6 +26,10 @@ label sixth_apartment_scene:
 
 label seventh_apartment_scene:
     $ current_time = "6:42"
+    $ contamination_level = 1
+    call use_oxygen
+    if oxygen <= 0:
+        jump out_of_oxygen
     scene bg aptdoors
     
     call screen seventhApartmentNav
@@ -162,6 +166,7 @@ label Door3Conversation:
                         "Mark as Dead" if lydia_facts['marked']== False:
                             $ lydia_facts['marked']= True
                             $ trust +=10
+                            call GoodChoice
             if lydia_facts['status']== "Dead" and lydia_facts['marked']== True:
                     $ lydia_facts['resolved']= True
             $ timesTalkedtoLydia += 1
