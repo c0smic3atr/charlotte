@@ -74,25 +74,14 @@ screen throughWindow():
         action Jump("fifteenth_apartment_scene")
 
 
-    # back to tenth apartment scene
-
-    frame:
-        xpos 690
-        ypos 890
-        xsize 990 - 690
-        ysize 1070 - 890
-        background "#6527F5"
-
-    button:
-        xpos 690
-        ypos 890
-        xsize 990 - 690
-        ysize 1070 - 890
-        background None
-        hover_background None
-
+    #go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
         mouse "move"
-
         action Jump("tenth_apartment_scene")
 
 screen officeTwoNav():
@@ -160,27 +149,17 @@ screen officeTwoNav():
         action Jump("eigteenth_apartment_scene")
 
 
-    # back to fourteenth apartment scene
-
-    frame:
-        xpos 690
-        ypos 890
-        xsize 990 - 690
-        ysize 1070 - 890
-        background "#6527F5"
-
-    button:
-        xpos 690
-        ypos 890
-        xsize 990 - 690
-        ysize 1070 - 890
-        background None
-        hover_background None
-
+    #go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
         mouse "move"
-
         action Jump("fourteenth_apartment_scene")
 
+default object_visible2 = False
 
 screen officeTableButtonNav():
     #Go back
@@ -199,28 +178,25 @@ screen officeTableButtonNav():
         xpos 0.5
         ypos 0.28
         idle "test2.png"
-        action [SetVariable("object_visible", True)]
+        action [SetVariable("object_visible", True), SetVariable("object_visible2", True)]
+
+    if object_visible2:
+            imagebutton:
+                idle "testArrow.png"
+                xpos 1823 ypos 400
+                mouse "move"
+
+                action [SetVariable("object_visible2", False)]
 
     if object_visible:
         # The area to click that pops up/shows the image
         imagebutton:
-                idle "DeskNote.png" # The image that appears
+                idle "TableNote.png" # The image that appears
                 xpos 465 ypos 10       # Position on screen
                 mouse "move"
            
                 # Action: Set variable to False to make it disappear
                 action [SetVariable("object_visible", False)]
-
-# 2. Define the screen with the clickable object
-screen hidden_object_scene():
-    if object_visible:
-        # The area to click that pops up/shows the image
-        imagebutton:
-            idle "test.png" # The image that appears
-            xpos 500 ypos 300       # Position on screen
-           
-            # Action: Set variable to False to make it disappear
-            action [SetVariable("object_visible", False)]
 
 screen officeDeskButtonNav():
     #Go back
@@ -230,6 +206,7 @@ screen officeDeskButtonNav():
         xpos 0.5
         ypos 0.28
         idle "Arrowbutton.png"
+        mouse "move"
         action [SetVariable("object_visible", False), Jump("fifteenth_apartment_scene")]
 
 
@@ -244,20 +221,10 @@ screen officeDeskButtonNav():
     if object_visible:
         # The area to click that pops up/shows the image
         imagebutton:
-                idle "test.png" # The image that appears
-                xpos 500 ypos 80       # Position on screen
+                idle "DeskNote.png" # The image that appears
+                xpos 90 ypos 5       # Position on screen
                 mouse "move"
            
                 # Action: Set variable to False to make it disappear
                 action [SetVariable("object_visible", False)]
 
-# 2. Define the screen with the clickable object
-screen hidden_object_scene():
-    if object_visible:
-        # The area to click that pops up/shows the image
-        imagebutton:
-            idle "test.png" # The image that appears
-            xpos 500 ypos 300       # Position on screen
-           
-            # Action: Set variable to False to make it disappear
-            action [SetVariable("object_visible", False)]

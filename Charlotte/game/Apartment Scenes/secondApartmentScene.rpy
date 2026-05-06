@@ -384,6 +384,7 @@ screen secondApartmentNavigation():
         xpos 0.5
         ypos 0.28
         idle "Arrowbutton.png"
+        mouse "move"
         action Jump("first_apartment_scene")
     
 

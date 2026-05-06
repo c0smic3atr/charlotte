@@ -341,23 +341,13 @@ default object_visible = False
 screen sixthApartmentNav():
     #back to 5th apartment scene
 
-    frame:
-        xpos 580
-        ypos 830
-        xsize 1470 - 580
-        ysize 1060 - 830
-        background None
-
-    button:
-        xpos 580
-        ypos 830
-        xsize 1470 - 580
-        ysize 1060 - 830
-        background None
-        hover_background None
-
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
         mouse "move"
-
         action [SetVariable("object_visible", False), Jump("fifth_apartment_scene")]
 
 
@@ -367,6 +357,7 @@ screen sixthApartmentNav():
         xpos 0.5
         ypos 0.28
         idle "test2.png"
+        mouse "move"
         action [SetVariable("object_visible", True)]
 
     if object_visible:
@@ -379,40 +370,17 @@ screen sixthApartmentNav():
                 # Action: Set variable to False to make it disappear
                 action [SetVariable("object_visible", False)]
 
-
-
-# 2. Define the screen with the clickable object
-screen hidden_object_scene():
-    if object_visible:
-        # The area to click that pops up/shows the image
-        imagebutton:
-            idle "test.png" # The image that appears
-            xpos 500 ypos 300       # Position on screen
-           
-            # Action: Set variable to False to make it disappear
-            action [SetVariable("object_visible", False)]
-
-
 screen seventhApartmentNav():
     #back to 5th apartment scene
 
-    frame:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background None
-
-    button:
-        xpos 500
-        ypos 980
-        xsize 1190 - 500
-        ysize 1060 - 980
-        background None
-        hover_background None
-
+    #image button test
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
         mouse "move"
-
         action Jump("fifth_apartment_scene")
 
     # Talk with Door 3
