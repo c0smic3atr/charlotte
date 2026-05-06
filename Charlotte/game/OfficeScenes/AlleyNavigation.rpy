@@ -1,5 +1,6 @@
 default timesEnteredAlleyNavigation = 0
 label tenth_apartment_scene:
+    $ current_time = "2:14"
     $ contamination_level = 3
     call use_oxygen
     if oxygen <= 0:

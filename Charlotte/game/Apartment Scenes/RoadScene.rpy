@@ -65,6 +65,7 @@ label seventh_apartment_scene:
         #menu:
             #"Go back":
                 #jump fifth_apartment_scene
+$ current_time = "6:42"
 label Door3Conversation:
     
 
@@ -180,6 +181,7 @@ label Door3Conversation:
 
 
 label Door4Conversation:
+    $ current_time = "6:59"
     
     if timesTalkedtoOrion == 0:
         show character2apt

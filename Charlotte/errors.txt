@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/OfficeScenes/office.rpy", line 136: expected statement.
-    else:
-        ^
+File "game/Apartment Scenes/RoadScene.rpy", line 72: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    if timesTalkedtoLydia == 0:
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed May  6 09:59:38 2026
+Wed May  6 10:32:11 2026
