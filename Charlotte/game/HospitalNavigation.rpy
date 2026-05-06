@@ -699,6 +699,25 @@ screen StorageRoomNav():
         mouse "move"
         action Jump("twentyfirst_apartment_scene")
 
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.28
+        idle "test2.png"
+        mouse "move"
+        action [SetVariable("object_visible", True)]
+
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+                idle "HospitalNote.png" # The image that appears
+                xpos 550 ypos 10       # Position on screen
+                mouse "move"
+           
+                # Action: Set variable to False to make it disappear
+                action [SetVariable("object_visible", False)]
+
 
 screen OperatingRoomNav():
     #Go back

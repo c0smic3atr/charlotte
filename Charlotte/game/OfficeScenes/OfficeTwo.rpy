@@ -178,15 +178,9 @@ screen officeTableButtonNav():
         xpos 0.5
         ypos 0.28
         idle "test2.png"
-        action [SetVariable("object_visible", True), SetVariable("object_visible2", True)]
+        action [SetVariable("object_visible", True)]
 
-    if object_visible2:
-            imagebutton:
-                idle "testArrow.png"
-                xpos 1823 ypos 400
-                mouse "move"
-
-                action [SetVariable("object_visible2", False)]
+    
 
     if object_visible:
         # The area to click that pops up/shows the image
@@ -196,7 +190,15 @@ screen officeTableButtonNav():
                 mouse "move"
            
                 # Action: Set variable to False to make it disappear
-                action [SetVariable("object_visible", False)]
+                action [SetVariable("object_visible2", True), SetVariable("object_visible", False)]
+                
+    if object_visible2:
+            imagebutton:
+                idle "testArrow.png"
+                xpos 1823 ypos 400
+                mouse "move"
+
+                action [SetVariable("object_visible2", False)]
 
 screen officeDeskButtonNav():
     #Go back
