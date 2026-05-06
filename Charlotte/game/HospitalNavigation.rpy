@@ -3,7 +3,7 @@ define m = Character("Martin")
 default timesTalkedtoMartin = 0
 default timesTalkedtoViolet = 0
 label eigteenth_apartment_scene:
-    $ contamination_level = 3
+    $ contamination_level = 4
     call use_oxygen
     if oxygen <= 0:
         jump out_of_oxygen
@@ -25,18 +25,21 @@ label eigteenth_apartment_scene:
 label twentieth_apartment_scene:
     scene bg blockade
     "Youre at the blockade"
-    call oxygen_warning 
-    "Warning oxygen change"
+    
     menu:
         "Go back":
             jump eigteenth_apartment_scene
 
 label ninteenth_apartment_scene:
     scene bg hospitallook
-    call screen enteringHospital
-   
+    
+    call oxygen_warning 
+    "Warning oxygen change"
 
     "You're approaching the hospital"
+    
+    call screen enteringHospital
+    
    
     menu:
         "Enter Hospital":
@@ -48,6 +51,12 @@ label twentyfirst_apartment_scene:
     scene bg fronthos
     call screen hospitalMainRoom
     "Youre in the hospital"
+
+    $ contamination_level = 4
+    call use_oxygen
+    if oxygen <= 0:
+        jump out_of_oxygen
+
     menu:
         "Enter storage room":
             jump twentysecond_apartment_scene
@@ -78,6 +87,10 @@ label twentyfourth_apartment_scene:
     scene bg hall
     call screen hallwayNav
     "You're in the hallway"
+    $ contamination_level = 4
+    call use_oxygen
+    if oxygen <= 0:
+        jump out_of_oxygen
     menu:
         "Enter left door":
             jump twentyfifth_apartment_scene
@@ -161,9 +174,11 @@ label martin_menu:
                     $ martin_facts['resolved']= True
                         
                     $ trust -=5
+                    call BadChoice
 
                 "Mark as Dead" if martin_facts['marked']== False:
                     $ martin_facts['marked']= True
+                    call GoodChoice
         
     if martin_facts['status']== "Dead" and martin_facts['marked']== True:
         $ martin_facts['resolved']= True
@@ -323,10 +338,12 @@ label violet_menu:
                         $ violet_facts['status']= "Spared"
                     $ violet_facts['resolved']= True
                     $ trust-=10
+                    call BadChoice
                     $ violet_facts['fact1']= "Feels like an execution. Unjust. I doubt it matters one way or another to you."
                 "Mark as Dead" if violet_facts['marked']== False:
                     $ violet_facts['marked']= True
                     $ trust += 10
+                    call GoodChoice
 
         if violet_facts['status']== "Dead" and violet_facts['marked']== True:
             $ violet_facts['resolved']= True
