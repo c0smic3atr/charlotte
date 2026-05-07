@@ -184,19 +184,19 @@ label aster_menu:
 
 
 screen firstOffice():
-    #Talk to violet
+    #Talk to Aster
     frame:
-        xpos 345
-        ypos 50
-        xsize 735- 345
-        ysize 334 - 50
-        background "#6527F5"
+        xpos 1195
+        ypos 210
+        xsize 1385 - 1195
+        ysize 770 - 210
+        background None
 
     button:
-        xpos 345
-        ypos 50
-        xsize 735 - 345
-        ysize 335 - 50
+        xpos 1195
+        ypos 210
+        xsize 1385 - 1195
+        ysize 770 - 210
         background None
         hover_background None
 

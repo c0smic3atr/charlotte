@@ -18,23 +18,13 @@ label fifth_apartment_scene:
 
 screen fifthApartmentNav():
     # to the parking lot scene
-    frame:
-        xpos 230
-        ypos 165
-        xsize 520 - 230
-        ysize 560 - 165
-        background None
-
-    button:
-        xpos 230
-        ypos 165
-        xsize 520 - 230
-        ysize 560 - 165
-        background None
-        hover_background None
-
+    imagebutton:
+        xanchor 750
+        yanchor 0.9
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton5.png"
         mouse "move"
-
         action Jump("sixth_apartment_scene")
 
 
@@ -60,23 +50,13 @@ screen fifthApartmentNav():
 
     # to continue down the road
 
-    frame:
-        xpos 1750
-        ypos 305
-        xsize 1900 - 1750
-        ysize 560 - 305
-        background None
-
-    button:
-        xpos 1750
-        ypos 305
-        xsize 1900 - 1750
-        ysize 560 - 305
-        background None
-        hover_background None
-
+    imagebutton:
+        xanchor -800
+        yanchor -100
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton4.png"
         mouse "move"
-
         action Jump("ninth_apartment_scene")
 
 

@@ -173,17 +173,17 @@ label rick_menu:
 screen dumpsterButtons():
     # rick convo
     frame:
-        xpos 785
-        ypos 430
-        xsize 1470 - 785
-        ysize 890 - 430
-        background "#77C7BA"
+        xpos 715
+        ypos 490
+        xsize 1620 - 715
+        ysize 940 - 490
+        background None
 
     button:
-        xpos 785
-        ypos 430
-        xsize 1470 - 785
-        ysize 890 - 430
+        xpos 715
+        ypos 490
+        xsize 1620 - 715
+        ysize 940 - 490
         background None
         hover_background None
 

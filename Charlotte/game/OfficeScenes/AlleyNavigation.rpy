@@ -50,17 +50,17 @@ screen alleyNav():
     # 1st alley
 
     frame:
-        xpos 840
-        ypos 30
-        xsize 1010 - 840
-        ysize 120 - 30
-        background "#e0005d88"
+        xpos 865
+        ypos 370
+        xsize 1040 - 865
+        ysize 520 - 370
+        background None
 
     button:
-        xpos 840
-        ypos 30
-        xsize 1010 - 840
-        ysize 120 - 30
+        xpos 865
+        ypos 370
+        xsize 1040 - 865
+        ysize 520 - 370
         background None
         hover_background None
 
@@ -71,17 +71,17 @@ screen alleyNav():
     # 2nd alley
 
     frame:
-        xpos 1440
-        ypos 270
-        xsize 1500 - 1440
-        ysize 470 - 270
-        background "#e0005d88"
+        xpos 1140
+        ypos 430
+        xsize 1250 - 1140
+        ysize 765 - 430
+        background None
 
     button:
-        xpos 1440
-        ypos 270
-        xsize 1500 - 1440
-        ysize 470 - 270
+        xpos 1140
+        ypos 430
+        xsize 1250 - 1140
+        ysize 765 - 430
         background None
         hover_background None
 
@@ -92,17 +92,17 @@ screen alleyNav():
     # 3rd alley
 
     frame:
-        xpos 400
-        ypos 150
-        xsize 490 - 400
-        ysize 310 - 150
-        background "#e0005d88"
+        xpos 680
+        ypos 350
+        xsize 750 - 680
+        ysize 615 - 350
+        background None
 
     button:
-        xpos 400
-        ypos 150
-        xsize 490 - 400
-        ysize 310 - 150
+        xpos 680
+        ypos 350
+        xsize 750 - 680
+        ysize 615 - 350
         background None
         hover_background None
 

@@ -359,11 +359,11 @@ screen sixthApartmentNav():
 
 
     imagebutton:
-        xanchor 0.5
-        yanchor 0.5
+        xanchor 550
+        yanchor -400
         xpos 0.5
         ypos 0.28
-        idle "test2.png"
+        idle "carNoteButton.png"
         mouse "move"
         action [SetVariable("object_visible", True)]
 
@@ -438,44 +438,24 @@ screen ninthApartmentNav():
 
     # to the alley
 
-    frame:
-        xpos 1465
-        ypos 730
-        xsize 1740 - 1465
-        ysize 870 - 730
-        background "#e0005d88"
-
-    button:
-        xpos 1465
-        ypos 730
-        xsize 1740 - 1465
-        ysize 870 - 730
-        background None
-        hover_background None
-
+    imagebutton:
+        xanchor -600
+        yanchor -650
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton3.png"
         mouse "move"
-
         action Jump("tenth_apartment_scene")
 
 
 
-    #back to 5th apartment scene
 
-    frame:
-        xpos 7
-        ypos 490
-        xsize 181 - 7
-        ysize 760 - 490
-        background "#6527F5"
-
-    button:
-        xpos 7
-        ypos 490
-        xsize 181 - 7
-        ysize 760 - 490
-        background None
-        hover_background None
-
+    #go back
+    imagebutton:
+        xanchor 950
+        yanchor -200
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton2.png"
         mouse "move"
-
         action Jump("fifth_apartment_scene")

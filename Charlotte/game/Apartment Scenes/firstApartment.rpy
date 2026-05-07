@@ -63,22 +63,12 @@ screen firstApartmentNavigation():
 
         action Jump("theDumpsterArea")
 
-        # to the fifth apartment scene
-    frame:
-        xpos 1540
-        ypos 60
-        xsize 1915 - 1540
-        ysize 425 - 60
-        background None
-
-    button:
-        xpos 1540
-        ypos 60
-        xsize 1915 - 1540
-        ysize 425 - 60
-        background None
-        hover_background None
-
+    # to the fifth apartment scene
+    imagebutton:
+        xanchor -800
+        yanchor 0.8
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton4.png"
         mouse "move"
-
         action Jump("fifth_apartment_scene")
