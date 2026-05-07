@@ -59,11 +59,11 @@ screen throughWindow():
     # through the window
 
     frame:
-        xpos 190
-        ypos 100
-        xsize 660 - 190
-        ysize 260 - 100
-        background "#6527F5"
+        xpos 2
+        ypos 10
+        xsize 585 - 2
+        ysize 350 - 10
+        background None
 
     button:
         xpos 190
@@ -92,17 +92,17 @@ screen officeTwoNav():
     # Table
 
     frame:
-        xpos 85
-        ypos 265
-        xsize 300 - 85
-        ysize 390 - 265
-        background "#6527F5"
+        xpos 2
+        ypos 480
+        xsize 315 - 2
+        ysize 760 - 480
+        background None
 
     button:
-        xpos 85
-        ypos 265
-        xsize 300 - 85
-        ysize 390 - 265
+        xpos 2
+        ypos 480
+        xsize 315 - 2
+        ysize 760 - 480
         background None
         hover_background None
 
@@ -113,17 +113,17 @@ screen officeTwoNav():
     # Desk
 
     frame:
-        xpos 1290
-        ypos 205
-        xsize 1550 - 1290
-        ysize 355 - 205
-        background "#6527F5"
+        xpos 965
+        ypos 165
+        xsize 1645 - 965
+        ysize 420 - 165
+        background None
 
     button:
-        xpos 1290
-        ypos 205
-        xsize 1550 - 1290
-        ysize 355 - 205
+        xpos 965
+        ypos 165
+        xsize 1645 - 965
+        ysize 420 - 165
         background None
         hover_background None
 
@@ -134,17 +134,17 @@ screen officeTwoNav():
     # Door
 
     frame:
-        xpos 485
-        ypos 2
-        xsize 620 - 485
-        ysize 145 - 2
-        background "#6527F5"
+        xpos 335
+        ypos 60
+        xsize 670 - 335
+        ysize 595 - 60
+        background None
 
     button:
-        xpos 485
-        ypos 2
-        xsize 620 - 485
-        ysize 145 - 2
+        xpos 335
+        ypos 60
+        xsize 670 - 335
+        ysize 595 - 60
         background None
         hover_background None
 
@@ -163,8 +163,6 @@ screen officeTwoNav():
         mouse "move"
         action Jump("fourteenth_apartment_scene")
 
-default object_visible2 = False
-
 screen officeTableButtonNav():
     #Go back
     imagebutton:
@@ -179,9 +177,9 @@ screen officeTableButtonNav():
     imagebutton:
         xanchor 0.5
         yanchor 0.5
-        xpos 0.5
-        ypos 0.28
-        idle "test2.png"
+        xpos 0.45
+        ypos 0.55
+        idle "TableNoteButton.png"
         action [SetVariable("object_visible", True)]
 
     
@@ -194,15 +192,9 @@ screen officeTableButtonNav():
                 mouse "move"
            
                 # Action: Set variable to False to make it disappear
-                action [SetVariable("object_visible2", True), SetVariable("object_visible", False)]
+                action [SetVariable("object_visible", False)]
                 
-    if object_visible2:
-            imagebutton:
-                idle "testArrow.png"
-                xpos 1823 ypos 400
-                mouse "move"
-
-                action [SetVariable("object_visible2", False)]
+default object_visible2 = False
 
 screen officeDeskButtonNav():
     #Go back
@@ -213,15 +205,15 @@ screen officeDeskButtonNav():
         ypos 0.28
         idle "Arrowbutton.png"
         mouse "move"
-        action [SetVariable("object_visible", False), Jump("fifteenth_apartment_scene")]
+        action [SetVariable("object_visible", False), SetVariable("object_visible2", False), Jump("fifteenth_apartment_scene")]
 
 
     imagebutton:
         xanchor 0.5
         yanchor 0.5
-        xpos 165
-        ypos 80
-        idle "test2.png"
+        xpos 175
+        ypos 180
+        idle "deskNoteButton.png"
         action [SetVariable("object_visible", True)]
 
     if object_visible:
@@ -232,5 +224,12 @@ screen officeDeskButtonNav():
                 mouse "move"
            
                 # Action: Set variable to False to make it disappear
-                action [SetVariable("object_visible", False)]
+                action [SetVariable("object_visible", False), SetVariable("object_visible2", True)]
 
+    if object_visible2:
+                imagebutton:
+                    idle "DeskNote2.png"
+                    xpos 90 ypos 5 
+                    mouse "move"
+
+                    action [SetVariable("object_visible2", False)]
