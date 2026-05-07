@@ -376,26 +376,6 @@ label violet_menu:
             #jump twentyfourth_apartment_scene
 
 screen eigteenthApartmentNav():
-    # to blockage
-
-    #frame:
-        #xpos 175
-        #ypos 105
-        #xsize 415 - 175
-        #ysize 255 - 105
-        #background "#6527F5"
-
-    #button:
-        #xpos 175
-        #ypos 105
-        #xsize 415 - 175
-        #ysize 255 - 105
-        #background None
-        #hover_background None
-
-        #mouse "move"
-
-        #action Jump("twentieth_apartment_scene")
 
     # down the road
 
@@ -555,6 +535,7 @@ screen hospitalMainRoom():
         xpos 0.5
         ypos 0.28
         idle "Arrowbutton.png"
+        mouse "move"
         action Jump("ninteenth_apartment_scene")
 
 screen hallwayNav():
@@ -621,25 +602,14 @@ screen hallwayNav():
 
         action Jump("twentyseventh_apartment_scene")
 
-    #Go back
-
-    frame:
-        xpos 210
-        ypos 900
-        xsize 1640 - 210
-        ysize 1060 - 900
-        background "#6527F5"
-
-    button:
-        xpos 210
-        ypos 900
-        xsize 1640 - 210
-        ysize 1060 - 900
-        background None
-        hover_background None
-
+    #go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
         mouse "move"
-
         action Jump("twentyfirst_apartment_scene")
 
 screen leftRoomNav():
@@ -693,6 +663,7 @@ screen RightRoomNav():
         xpos 0.5
         ypos 0.28
         idle "Arrowbutton.png"
+        mouse "move"
         action Jump("twentyfourth_apartment_scene")
 
 screen backRoomNav():
@@ -738,25 +709,14 @@ screen backRoomNav():
 
         action Jump("twentyeigth_apartment_scene")
 
-    #Go back
-
-    frame:
-        xpos 580
-        ypos 925
-        xsize 1475 - 580
-        ysize 1060 - 925
-        background "#6527F5"
-
-    button:
-        xpos 580
-        ypos 925
-        xsize 1475 - 580
-        ysize 1060 - 925
-        background None
-        hover_background None
-
+    #go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
         mouse "move"
-
         action Jump("twentyfourth_apartment_scene")
 
 screen StorageRoomNav():
@@ -767,7 +727,27 @@ screen StorageRoomNav():
         xpos 0.5
         ypos 0.28
         idle "Arrowbutton.png"
+        mouse "move"
         action Jump("twentyfirst_apartment_scene")
+
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.28
+        idle "test2.png"
+        mouse "move"
+        action [SetVariable("object_visible", True)]
+
+    if object_visible:
+        # The area to click that pops up/shows the image
+        imagebutton:
+                idle "HospitalNote.png" # The image that appears
+                xpos 550 ypos 10       # Position on screen
+                mouse "move"
+           
+                # Action: Set variable to False to make it disappear
+                action [SetVariable("object_visible", False)]
 
 
 screen OperatingRoomNav():
@@ -778,4 +758,5 @@ screen OperatingRoomNav():
         xpos 0.5
         ypos 0.28
         idle "Arrowbutton.png"
+        mouse "move"
         action Jump("twentyfirst_apartment_scene")

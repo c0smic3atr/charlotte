@@ -112,43 +112,22 @@ screen alleyNav():
 
     # back to ninth apartment scene
 
-    frame:
-        xpos 690
-        ypos 890
-        xsize 990 - 690
-        ysize 1070 - 890
-        background "#6527F5"
-
-    button:
-        xpos 690
-        ypos 890
-        xsize 990 - 690
-        ysize 1070 - 890
-        background None
-        hover_background None
-
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
         mouse "move"
-
         action Jump("ninth_apartment_scene")
 
 screen deadEnd():
     # back to tenth apartment scene
-
-    frame:
-        xpos 690
-        ypos 890
-        xsize 990 - 690
-        ysize 1070 - 890
-        background "#6527F5"
-
-    button:
-        xpos 690
-        ypos 890
-        xsize 990 - 690
-        ysize 1070 - 890
-        background None
-        hover_background None
-
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
         mouse "move"
-
         action Jump("tenth_apartment_scene")

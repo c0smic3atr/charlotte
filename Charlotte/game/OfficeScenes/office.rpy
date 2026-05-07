@@ -205,22 +205,12 @@ screen firstOffice():
         action Jump("OfficeConversation")
 
 
-    # Go back
-    frame:
-        xpos 590
-        ypos 835
-        xsize 1310-590
-        ysize 1055-835
-        background "#6687F5"
-
-    button:
-        xpos 590
-        ypos 835
-        xsize 1310-590
-        ysize 1055-835
-        background None
-        hover_background None
-
+    #go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
         mouse "move"
-
         action Jump("tenth_apartment_scene")

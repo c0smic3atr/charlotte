@@ -80,23 +80,12 @@ screen fifthApartmentNav():
         action Jump("ninth_apartment_scene")
 
 
-    #back to 1st apartment scene
-
-    frame:
-        xpos 200
-        ypos 925
-        xsize 870 - 200
-        ysize 1060 - 925
-        background None
-
-    button:
-        xpos 200
-        ypos 925
-        xsize 870 - 200
-        ysize 1060 - 925
-        background None
-        hover_background None
-
+    #go back
+    imagebutton:
+        xanchor 0.5
+        yanchor -675
+        xpos 0.5
+        ypos 0.28
+        idle "Arrowbutton.png"
         mouse "move"
-
         action Jump("first_apartment_scene")
