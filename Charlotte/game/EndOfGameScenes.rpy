@@ -107,3 +107,103 @@ screen BodyBagNav():
         ypos 0.28
         idle "Arrowbutton.png"
         action Jump("twentyninth_apartment_scene")
+
+    # ending 1
+    frame:
+        xpos 75
+        ypos 50
+        xsize 375 - 75
+        ysize 335 - 50
+        background "#6527F5"
+
+    button:
+        xpos 75
+        ypos 50
+        xsize 375 - 75
+        ysize 335 - 50
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("scumbag_ending")
+    
+    # ending 2
+    frame:
+        xpos 530
+        ypos 50
+        xsize 375 - 75
+        ysize 335 - 50
+        background "#6527F5"
+
+    button:
+        xpos 530
+        ypos 50
+        xsize 375 - 75
+        ysize 335 - 50
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("high_trust_ending")
+
+    # ending 3
+    frame:
+        xpos 950
+        ypos 50
+        xsize 375 - 75
+        ysize 335 - 50
+        background "#6527F5"
+
+    button:
+        xpos 950
+        ypos 50
+        xsize 375 - 75
+        ysize 335 - 50
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("med_trust_ending")
+
+    # ending 4
+    frame:
+        xpos 1460
+        ypos 50
+        xsize 375 - 75
+        ysize 335 - 50
+        background "#6527F5"
+
+    button:
+        xpos 1460
+        ypos 50
+        xsize 375 - 75
+        ysize 335 - 50
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("low trust ending")
+
+    # ending 5
+    frame:
+        xpos 745
+        ypos 435
+        xsize 375 - 75
+        ysize 335 - 50
+        background "#6527F5"
+
+    button:
+        xpos 745
+        ypos 435
+        xsize 375 - 75
+        ysize 335 - 50
+        background None
+        hover_background None
+
+        mouse "move"
+
+        action Jump("no_trust_ending")
